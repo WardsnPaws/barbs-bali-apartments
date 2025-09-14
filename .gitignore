@@ -1,0 +1,33 @@
+# Config files with secrets
+config/config_secrets.php
+
+# Composer
+/vendor/
+composer.phar
+
+# Logs
+*.log
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*~
+
+# WampServer specific
+.htaccess

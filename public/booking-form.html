@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Hide event text for privacy 
+
+.fc-event-title {
+    display: none !important;
+}-->
+  <title>Book Your Stay – Barbs Bali Apartments</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- SEO Meta Tags -->
+  <link rel="canonical" href="https://www.barbsbaliapartments.com/booking/booking-form-enhanced.html">
+  <meta name="description" content="Book your stay at Barb's Bali Apartments. Select dates, choose your apartment, and complete your booking online.">
+  <meta name="robots" content="index, follow">
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Book Your Stay – Barb's Bali Apartments">
+  <meta property="og:description" content="Book your stay at Barb's Bali Apartments. Select dates, choose your apartment, and complete your booking online.">
+  <meta property="og:url" content="https://www.barbsbaliapartments.com/booking/booking-form-enhanced.html">
+  <meta property="og:image" content="https://www.barbsbaliapartments.com/images/resort-hero.jpg">
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Book Your Stay – Barb's Bali Apartments">
+  <meta name="twitter:description" content="Book your stay at Barb's Bali Apartments. Select dates, choose your apartment, and complete your booking online.">
+  <meta name="twitter:image" content="https://www.barbsbaliapartments.com/images/resort-hero.jpg">
+  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/index.global.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/index.global.min.js"></script>
+  <style>
+    body { 
+    font-family: Arial, sans-serif; 
+    padding: 20px; 
+    background: #f5f5f5;
+    margin: 0;
+    }
+
+    .container {
+    max-width: 640px;
+    margin: 0 auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .step {
+    display: none;
+    }
+
+    .step.active {
+    display: block;
+    }
+
+    .step-header {
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #e0e0e0;
+    }
+
+    .step-number {
+    background: #007bff;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-bottom: 6px;
+    font-size: 14px;
+    }
+
+    #calendar {
+    max-width: 100%;
+    margin: 12px 0;
+    }
+
+    .date-selection {
+    background: #f8f9fa;
+    padding: 12px;
+    border-radius: 8px;
+    margin: 12px 0;
+    }
+
+    .selected-dates {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    }
+
+    .date-box {
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    border: 2px solid #007bff;
+    text-align: center;
+    min-width: 100px;
+    }
+
+    .date-box strong {
+    display: block;
+    color: #007bff;
+    font-size: 16px;
+    }
+
+    .date-box span {
+    color: #666;
+    font-size: 12px;
+    }
+
+    .apartment-selector {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin: 18px 0;
+    flex-wrap: wrap;
+    }
+
+    .apartment-card {
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: center;
+    min-width: 150px;
+    flex: 1;
+    max-width: 240px;
+    }
+
+    .apartment-card:hover {
+    border-color: #007bff;
+    transform: translateY(-2px);
+    }
+
+    .apartment-card.selected {
+    border-color: #007bff;
+    background: #f0f8ff;
+    }
+
+    .apartment-card.unavailable {
+    border-color: #dc3545;
+    background: #f8d7da;
+    cursor: not-allowed;
+    opacity: 0.7;
+    }
+
+    .apartment-card h3 {
+    margin: 0 0 8px 0;
+    color: #333;
+    font-size: 16px;
+    }
+
+    .apartment-card p {
+    margin: 0;
+    color: #666;
+    font-size: 13px;
+    }
+
+    .apartment-card .price {
+    color: #007bff;
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: 8px;
+    }
+
+    .form-group {
+    margin-bottom: 16px;
+    }
+
+    label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #333;
+    font-size: 14px;
+    }
+
+    input, select {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+    }
+
+    input:focus, select:focus {
+    outline: none;
+    border-color: #007bff;
+    }
+
+    .extras-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin: 16px 0;
+    }
+
+    .extra-item {
+    background: #f8f9fa;
+    padding: 10px;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s;
+    }
+
+    .extra-item:hover {
+    border-color: #007bff;
+    }
+
+    .extra-item.selected {
+    border-color: #007bff;
+    background: #f0f8ff;
+    }
+
+    .extra-item input[type="checkbox"] {
+    width: auto;
+    margin-right: 8px;
+    }
+
+    .btn {
+    background: #007bff;
+    color: white;
+    padding: 8px 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s;
+    }
+
+    .btn:hover {
+    background: #0056b3;
+    }
+
+    .btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    }
+
+    .btn-secondary {
+    background: #6c757d;
+    }
+
+    .btn-secondary:hover {
+    background: #545b62;
+    }
+
+    .button-group {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 20px;
+    }
+
+    .calendar-legend {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+    }
+
+    .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    }
+
+    .legend-color {
+    width: 14px;
+    height: 14px;
+    border-radius: 4px;
+    }
+
+    .availability-info {
+    background: #e7f3ff;
+    padding: 12px;
+    border-radius: 8px;
+    margin: 12px 0;
+    text-align: center;
+    font-size: 14px;
+    }
+
+    .availability-info h4 {
+    margin: 0 0 8px 0;
+    color: #007bff;
+    font-size: 15px;
+    }
+
+    /* Custom date highlighting */
+    .fc-day.fc-day-selected-checkin {
+    background-color: #007bff !important;
+    color: white !important;
+    }
+
+    .fc-day.fc-day-selected-range {
+    background-color: #cce5ff !important;
+    }
+
+    @media (max-width: 600px) {
+    .container {
+    padding: 16px;
+    margin: 8px;
+    }
+
+    .selected-dates {
+    flex-direction: column;
+    }
+
+    .apartment-selector {
+    flex-direction: column;
+    }
+
+    .button-group {
+    flex-direction: column;
+    }
+    }
+  </style>
+  <!-- Google tag (gtag.js) - Measurement ID: G-TJLSKX04Y3 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TJLSKX04Y3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-TJLSKX04Y3', { 'send_page_view': true });
+  </script>
+</head>
+<body>
+
+<div class="container">
+  <!-- Step 1: Calendar Date Selection -->
+  <div id="step1" class="step active">
+    <div class="step-header">
+    <div class="step-number">1</div>
+    <h2>Select Your Dates</h2>
+    <p>Choose your check-in and check-out dates to see availability</p>
+    </div>
+
+    <div class="calendar-legend">
+    <div class="legend-item">
+    <div class="legend-color" style="background: #2e8b57;"></div>
+    <span>Apartment 6205 Booked</span>
+    </div>
+    <div class="legend-item">
+    <div class="legend-color" style="background: #4682b4;"></div>
+    <span>Apartment 6207 Booked</span>
+    </div>
+    <div class="legend-item">
+    <div class="legend-color" style="background: #8a2be2;"></div>
+    <span>Both Apartments Booked</span>
+    </div>
+    <div class="legend-item">
+    <div class="legend-color" style="background: #007bff;"></div>
+    <span>Selected Check-in</span>
+    </div>
+    <div class="legend-item">
+    <div class="legend-color" style="background: #cce5ff;"></div>
+    <span>Selected Range</span>
+    </div>
+    </div>
+
+    <div id="calendar"></div>
+
+    <div class="date-selection" id="dateSelection" style="display: none;">
+    <div class="selected-dates">
+    <div class="date-box">
+    <strong id="checkinDisplay">Select Check-in</strong>
+    <span>Check-in Date</span>
+    </div>
+    <div style="font-size: 20px; color: #007bff;">→</div>
+    <div class="date-box">
+    <strong id="checkoutDisplay">Select Check-out</strong>
+    <span>Check-out Date</span>
+    </div>
+    </div>
+    </div>
+
+    <div class="button-group">
+    <button class="btn" id="nextToApartments" disabled>Next: Choose Apartment</button>
+    </div>
+  </div>
+
+  <!-- Step 2: Apartment Selection -->
+  <div id="step2" class="step">
+    <div class="step-header">
+    <div class="step-number">2</div>
+    <h2>Choose Your Apartment</h2>
+    <p>Select from available apartments for your dates</p>
+    </div>
+
+    <div class="availability-info">
+    <h4>Your Selected Dates</h4>
+    <p><strong id="selectedDatesDisplay"></strong></p>
+    </div>
+
+    <div class="apartment-selector" id="apartmentOptions">
+    <div class="apartment-card" data-apartment="1">
+    <h3>Apartment 6205</h3>
+    <p>Modern 2-bedroom apartment with ocean view</p>
+    <div class="price">Available</div>
+    </div>
+    <div class="apartment-card" data-apartment="2">
+    <h3>Apartment 6207</h3>
+    <p>Spacious 2-bedroom apartment with garden view</p>
+    <div class="price">Available</div>
+    </div>
+    <div class="apartment-card" data-apartment="3">
+    <h3>Both Apartments</h3>
+    <p>Perfect for larger groups or families</p>
+    <div class="price">Book Both</div>
+    </div>
+    </div>
+
+    <div class="button-group">
+    <button class="btn btn-secondary" onclick="goToStep(1)">Back</button>
+    <button class="btn" id="nextToBooking" disabled>Next: Booking Details</button>
+    </div>
+  </div>
+
+  <!-- Step 3: Booking Details -->
+  <div id="step3" class="step">
+    <div class="step-header">
+    <div class="step-number">3</div>
+    <h2>Booking Details</h2>
+    <p>Enter your information to complete the booking</p>
+    </div>
+
+    <div class="availability-info">
+    <h4>Booking Summary</h4>
+    <p><strong id="bookingSummary"></strong></p>
+    </div>
+
+    <form id="bookingForm" method="POST" action="booking-process.php">
+    <input type="hidden" name="apartment_id" id="selectedApartment">
+    <input type="hidden" name="checkin_date" id="selectedCheckin">
+    <input type="hidden" name="checkout_date" id="selectedCheckout">
+
+    <div class="form-group">
+        <label>First Name: <span style="color: red;">*</span></label>
+    <input type="text" name="guest_first_name" required />
+    </div>
+
+    <div class="form-group">
+        <label>Last Name: <span style="color: red;">*</span></label>
+    <input type="text" name="guest_last_name" required />
+    </div>
+
+    <div class="form-group">
+        <label>Email: <span style="color: red;">*</span></label>
+    <input type="email" name="guest_email" required />
+    </div>
+
+    <div class="form-group">
+        <label>Phone Number:</label>
+        <input type="tel" name="guest_phone" placeholder="e.g. +61 400 123 456" />
+        <small style="color: #666; font-size: 12px;">Include country code (e.g. +61 for Australia)</small>
+    </div>
+
+    <div class="form-group">
+        <label>Address:</label>
+        <textarea name="guest_address" rows="3" placeholder="Street address, city, state/province, country" 
+                  style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit; font-size: 14px; resize: vertical;"></textarea>
+        <small style="color: #666; font-size: 12px;">This helps us with emergency contact and check-in coordination</small>
+    </div>
+
+    <div class="form-group">
+    <label>
+    <input type="checkbox" name="sofa_bed" value="1" style="width: auto; margin-right: 8px;" />
+    Add Sofa Bed ($5 per night)
+    </label>
+    </div>
+
+    <h3>Optional Extras</h3>
+    <div class="extras-grid">
+    <div class="extra-item">
+    <label>
+    <input type="checkbox" name="extras[]" value="3" />
+    Airport Pickup ($35)
+    </label>
+    </div>
+    <div class="extra-item">
+    <label>
+    <input type="checkbox" name="extras[]" value="4" />
+    Airport Drop-off ($25)
+    </label>
+    </div>
+    <div class="extra-item">
+    <label>
+    <input type="checkbox" name="extras[]" value="5" />
+    Late Checkout ($40)
+    </label>
+    </div>
+    <div class="extra-item">
+    <label>
+    <input type="checkbox" name="extras[]" value="6" />
+    Daily Linen Change ($5 per night)
+    </label>
+    </div>
+    </div>
+
+    <div class="button-group">
+    <button type="button" class="btn btn-secondary" onclick="goToStep(2)">Back</button>
+    <button type="submit" class="btn">Complete Booking</button>
+    </div>
+    </form>
+  </div>
+</div>
+
+<script>
+let selectedCheckin = null;
+let selectedCheckout = null;
+let selectedApartment = null;
+let calendar = null;
+let bookingEvents = [];
+let selectingCheckin = true;
+
+// Initialize the booking flow
+document.addEventListener('DOMContentLoaded', function() {
+  loadBookingData();
+});
+
+function loadBookingData() {
+  fetch('get-calendar-data.php')
+    .then(response => response.json())
+    .then(data => {
+    bookingEvents = data.events || [];
+    initializeCalendar(); // Initialize calendar after data is loaded
+    })
+    .catch(error => {
+    console.error('Error loading booking data:', error);
+    bookingEvents = [];
+    initializeCalendar(); // Initialize calendar even if data loading fails
+    });
+}
+
+function initializeCalendar() {
+  const calendarEl = document.getElementById('calendar');
+  calendar = new FullCalendar.Calendar(calendarEl, {
+    initialView: 'dayGridMonth',
+    height: 'auto',
+    headerToolbar: {
+    left: 'prev,next dayGridMonth',
+    center: 'title',
+    right: ''
+    },
+    events: function(fetchInfo, successCallback, failureCallback) {
+    // Use the loaded booking events
+    successCallback(bookingEvents);
+    },
+    dateClick: function(info) {
+    handleDateClick(info.dateStr);
+    },
+    validRange: {
+    start: new Date().toISOString().split('T')[0]
+    },
+    eventDisplay: 'block',
+    displayEventTime: false
+  });
+  
+  calendar.render();
+}
+
+function handleDateClick(dateStr) {
+  const clickedDate = new Date(dateStr);
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  if (clickedDate < today) {
+    return; // Can't select past dates
+  }
+
+  if (!selectedCheckin || (selectedCheckin && selectedCheckout)) {
+    // No check-in selected yet OR both dates already selected
+    // Start new selection cycle: set check-in to clicked date, clear check-out
+    selectedCheckin = dateStr;
+    selectedCheckout = null;
+
+    document.getElementById('checkinDisplay').textContent = formatDate(dateStr);
+    document.getElementById('checkoutDisplay').textContent = 'Select Check-out';
+    document.getElementById('dateSelection').style.display = 'block';
+    document.getElementById('nextToApartments').disabled = true;
+
+    // Highlight check-in date only
+    highlightCheckinDate(dateStr);
+
+  } else {
+    // Check-in is selected but no check-out yet
+    const checkinDate = new Date(selectedCheckin);
+    if (clickedDate <= checkinDate) {
+    alert('Check-out date must be after check-in date.');
+    return;
+    }
+
+    selectedCheckout = dateStr;
+    document.getElementById('checkoutDisplay').textContent = formatDate(dateStr);
+    document.getElementById('nextToApartments').disabled = false;
+
+    // Highlight date range
+    highlightDateRange(selectedCheckin, dateStr);
+  }
+}
+
+function formatDate(dateStr) {
+  const date = new Date(dateStr);
+  return date.toLocaleDateString('en-US', { 
+    weekday: 'short', 
+    month: 'short', 
+    day: 'numeric' 
+  });
+}
+
+function goToStep(stepNumber) {
+  // Hide all steps
+  document.querySelectorAll('.step').forEach(step => step.classList.remove('active'));
+  
+  // Show selected step
+  document.getElementById('step' + stepNumber).classList.add('active');
+  
+  if (stepNumber === 2) {
+    showApartmentAvailability();
+  } else if (stepNumber === 3) {
+    showBookingSummary();
+  }
+}
+
+function showApartmentAvailability() {
+  const checkinFormatted = formatDate(selectedCheckin);
+  const checkoutFormatted = formatDate(selectedCheckout);
+  document.getElementById('selectedDatesDisplay').textContent = `${checkinFormatted} → ${checkoutFormatted}`;
+  
+  // Check availability for each apartment
+  checkApartmentAvailability(1, 'Apartment 6205');
+  checkApartmentAvailability(2, 'Apartment 6207');
+  checkBothApartmentsAvailability();
+  
+  // Initialize apartment selection
+  initializeApartmentSelection();
+}
+
+function checkApartmentAvailability(aptId, aptName) {
+  const formData = new FormData();
+  formData.append('apartment_id', aptId);
+  formData.append('checkin_date', selectedCheckin);
+  formData.append('checkout_date', selectedCheckout);
+  
+  fetch('check-availability.php', {
+    method: 'POST',
+    body: formData
+  })
+  .then(response => response.json())
+  .then(data => {
+    const aptCard = document.querySelector(`[data-apartment="${aptId}"]`);
+    const aptNumber = (aptId == 1) ? "6205" : "6207";
+    
+    if (data.success && data.apartments && data.apartments[aptNumber]) {
+    aptCard.classList.remove('unavailable');
+    aptCard.querySelector('.price').textContent = 'Available';
+    aptCard.querySelector('.price').style.color = '#28a745';
+    } else {
+    aptCard.classList.add('unavailable');
+    aptCard.querySelector('.price').textContent = 'Not Available';
+    aptCard.querySelector('.price').style.color = '#dc3545';
+    }
+  })
+  .catch(error => {
+    console.error('Error checking availability:', error);
+  });
+}
+
+function checkBothApartmentsAvailability() {
+  Promise.all([
+    checkAptAvailable(1),
+    checkAptAvailable(2)
+  ]).then(results => {
+    const bothCard = document.querySelector('[data-apartment="3"]');
+    
+    if (results[0] && results[1]) {
+    bothCard.classList.remove('unavailable');
+    bothCard.querySelector('.price').textContent = 'Both Available';
+    bothCard.querySelector('.price').style.color = '#28a745';
+    } else {
+    bothCard.classList.add('unavailable');
+    bothCard.querySelector('.price').textContent = 'Not Available';
+    bothCard.querySelector('.price').style.color = '#dc3545';
+    }
+  });
+}
+
+function checkAptAvailable(aptId) {
+  const formData = new FormData();
+  formData.append('apartment_id', aptId);
+  formData.append('checkin_date', selectedCheckin);
+  formData.append('checkout_date', selectedCheckout);
+  
+  return fetch('check-availability.php', {
+    method: 'POST',
+    body: formData
+  })
+  .then(res => res.json())
+  .then(data => {
+    const aptNumber = (aptId == 1) ? "6205" : "6207";
+    return data.success && data.apartments && data.apartments[aptNumber];
+  });
+}
+
+function initializeApartmentSelection() {
+  document.querySelectorAll('.apartment-card').forEach(card => {
+    card.addEventListener('click', function() {
+    if (this.classList.contains('unavailable')) {
+    return; // Don't allow selection of unavailable apartments
+    }
+    
+    // Remove previous selection
+    document.querySelectorAll('.apartment-card').forEach(c => c.classList.remove('selected'));
+    
+    // Select this apartment
+    this.classList.add('selected');
+    selectedApartment = (this.dataset.apartment === '3' ? '3' : this.dataset.apartment);
+    
+    // Enable next button
+    document.getElementById('nextToBooking').disabled = false;
+    });
+  });
+}
+
+function showBookingSummary() {
+  const checkinFormatted = formatDate(selectedCheckin);
+  const checkoutFormatted = formatDate(selectedCheckout);
+  const apartmentName = getApartmentName(selectedApartment);
+  
+  document.getElementById('bookingSummary').textContent = 
+    `${apartmentName} • ${checkinFormatted} → ${checkoutFormatted}`;
+  
+  // Populate hidden form fields
+  document.getElementById('selectedApartment').value = selectedApartment;
+  document.getElementById('selectedCheckin').value = selectedCheckin;
+  document.getElementById('selectedCheckout').value = selectedCheckout;
+}
+
+function getApartmentName(aptId) {
+  switch(aptId) {
+    case '1': return 'Apartment 6205';
+    case '2': return 'Apartment 6207';
+    case '3': return 'Apartment 6205 & 6207';
+    default: return 'Selected Apartment';
+  }
+}
+
+// Initialize navigation buttons
+document.getElementById('nextToApartments').addEventListener('click', function() {
+  goToStep(2);
+});
+
+document.getElementById('nextToBooking').addEventListener('click', function() {
+  goToStep(3);
+});
+
+// Handle extra item selection styling
+document.querySelectorAll('.extra-item').forEach(item => {
+  const checkbox = item.querySelector('input[type="checkbox"]');
+  checkbox.addEventListener('change', function() {
+    if (this.checked) {
+    item.classList.add('selected');
+    } else {
+    item.classList.remove('selected');
+    }
+  });
+});
+
+// Date highlighting functions
+function highlightCheckinDate(dateStr) {
+  // Clear previous highlights
+  clearDateHighlights();
+  
+  // Highlight the check-in date
+  const dateCell = document.querySelector(`.fc-day[data-date="${dateStr}"]`);
+  if (dateCell) {
+    dateCell.classList.add('fc-day-selected-checkin');
+  }
+}
+
+function highlightDateRange(startDateStr, endDateStr) {
+  // Clear previous highlights
+  clearDateHighlights();
+  
+  // Convert strings to Date objects
+  const startDate = new Date(startDateStr);
+  const endDate = new Date(endDateStr);
+  
+  // Iterate through each day in the range
+  const currentDate = new Date(startDate);
+  while (currentDate <= endDate) {
+    const dateStr = currentDate.toISOString().split('T')[0];
+    const dateCell = document.querySelector(`.fc-day[data-date="${dateStr}"]`);
+    if (dateCell) {
+    if (dateStr === startDateStr) {
+    dateCell.classList.add('fc-day-selected-checkin');
+    } else {
+    dateCell.classList.add('fc-day-selected-range');
+    }
+    }
+    currentDate.setDate(currentDate.getDate() + 1);
+  }
+}
+
+function clearDateHighlights() {
+  // Remove all custom highlight classes
+  document.querySelectorAll('.fc-day').forEach(day => {
+    day.classList.remove('fc-day-selected-checkin', 'fc-day-selected-range');
+  });
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Thank You - Barbs Bali Apartments</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            text-align: center; 
+            padding: 40px 20px; 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            max-width: 500px;
+            width: 100%;
+        }
+        h1 { 
+            color: #2e8b57; 
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+        p { 
+            margin: 15px 0; 
+            line-height: 1.6;
+            color: #555;
+        }
+        .home-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            margin-top: 20px;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+        .home-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .celebration {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="celebration">🎉</div>
+        <h1>Thank You for Your Booking!</h1>
+        
+        <p>Your payment was successful and your reservation is confirmed.</p>
+        
+        <p>A confirmation email has been sent to your address with all the details.</p>
+        
+        <p>We look forward to welcoming you at Barbs Bali Apartments!</p>
+        
+        <a href="#" class="home-button" onclick="goHome(); return false;">← Back to Home</a>
+    </div>
+
+    <script>
+        function goHome() {
+            // Multiple methods to ensure proper navigation
+            
+            // Method 1: Try to break out of iframe/modal
+            if (window.parent && window.parent !== window) {
+                try {
+                    window.parent.location.href = window.location.origin + '/';
+                    return;
+                } catch(e) {
+                    console.log('Parent redirect failed:', e);
+                }
+            }
+            
+            // Method 2: Try top window
+            if (window.top && window.top !== window) {
+                try {
+                    window.top.location.href = window.location.origin + '/';
+                    return;
+                } catch(e) {
+                    console.log('Top redirect failed:', e);
+                }
+            }
+            
+            // Method 3: Standard redirect
+            try {
+                window.location.replace(window.location.origin + '/');
+            } catch(e) {
+                // Method 4: Fallback
+                window.location.href = '/';
+            }
+        }
+        
+        // Auto-redirect after 10 seconds
+        setTimeout(function() {
+            console.log('Auto-redirecting to home...');
+            goHome();
+        }, 10000);
+        
+        // Also handle if this page is loaded in an iframe
+        if (window !== window.top) {
+            console.log('Page loaded in iframe - will redirect parent');
+            // Add a message to let user know
+            document.body.insertAdjacentHTML('beforeend', 
+                '<div style="margin-top: 20px; font-size: 0.9em; color: #666;">Auto-redirecting in 10 seconds...</div>'
+            );
+        }
+    </script>
+</body>
+</html>

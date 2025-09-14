@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <img src="http://localhost/booking/email-tracker.php?email_id={{email_id}}" width="1" height="1" style="display:none;" />
+
+  <meta charset="UTF-8" />
+  <style>
+    body { font-family: Arial, sans-serif; color: #333; }
+    .container { padding: 20px; }
+    h2 { color: #8b0000; }
+    h3 { color: #555; margin-top: 25px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    td { padding: 5px 0; }
+    .highlight { background-color: #ffebee; padding: 15px; border-radius: 5px; margin: 15px 0; border-left: 4px solid #8b0000; }
+    .preparation { background-color: #f3e5f5; padding: 15px; border-radius: 5px; margin: 15px 0; border-left: 4px solid #9c27b0; }
+    ul { margin: 10px 0; padding-left: 20px; }
+    li { margin: 5px 0; }
+    .urgent { font-weight: bold; color: #8b0000; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>🏠 Upcoming Guest Arrival – Housekeeping Notice</h2>
+
+    <p>A guest is scheduled to arrive soon. Please prepare the apartment according to the specifications below.</p>
+
+    <div class="highlight">
+      <h3>Guest & Booking Information</h3>
+      <table>
+        <tr><td><strong>Guest Name:</strong></td><td>{{guestfirstname}} {{guestlastname}}</td></tr>
+        <tr><td><strong>Email:</strong></td><td>{{guestemail}}</td></tr>
+        <tr><td><strong>Reservation #:</strong></td><td>{{reservationnumber}}</td></tr>
+        <tr><td><strong>Apartment:</strong></td><td>{{apartmentnumber}}</td></tr>
+        <tr><td><strong>Check-in Date:</strong></td><td><span class="urgent">{{arrivaldatelong}}</span></td></tr>
+        <tr><td><strong>Check-out Date:</strong></td><td>{{departuredatelong}}</td></tr>
+        <tr><td><strong>Number of Nights:</strong></td><td>{{numberofnights}}</td></tr>
+        <tr><td><strong>Total Value:</strong></td><td>${{grandtotal}} AUD</td></tr>
+        {{sofabedrow}}
+      </table>
+    </div>
+
+    <div class="preparation">
+      <h3>🛏️ Special Preparation Requirements</h3>
+      <ul>
+        {{housekeepingextras}}
+      </ul>
+      
+      <h3>✅ Standard Preparation Checklist</h3>
+      <ul>
+        <li>Deep clean entire apartment</li>
+        <li>Fresh bed linens and towels</li>
+        <li>Restock amenities (toiletries, coffee, tea)</li>
+        <li>Check all appliances are working</li>
+        <li>Ensure WiFi is functioning</li>
+        <li>Stock refrigerator basics if requested</li>
+        <li>Verify air conditioning/heating works</li>
+        <li>Check and replace any burnt-out bulbs</li>
+      </ul>
+    </div>
+
+    <h3>📋 Guest Services Booked</h3>
+    <ul>
+      {{includedextras}}
+    </ul>
+
+    <h3>🚨 Important Notes</h3>
+    <ul>
+      <li><strong>Arrival Time:</strong> Standard check-in is 2:00 PM</li>
+      <li><strong>Payment Status:</strong> {{paymentstatus}}</li>
+      <li><strong>Special Requests:</strong> {{specialrequests}}</li>
+    </ul>
+
+    <p><strong>Completion Deadline:</strong> <span class="urgent">Please complete all preparations by 1:00 PM on {{arrivaldateshort}}</span></p>
+
+    <p>If there are any issues, maintenance needs, or questions about the preparation requirements, please contact the manager immediately.</p>
+
+    <p>Once preparation is complete, please confirm via the management system or direct message.</p>
+
+    <p><strong>Thank you for ensuring our guests have an excellent experience!</strong></p>
+
+    <p><strong>Barbs Bali Apartments Management</strong></p>
+  </div>
+</body>
+</html>

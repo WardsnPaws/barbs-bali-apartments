@@ -1,0 +1,7 @@
+{"minimum-stability": "beta",
+"prefer-stable": true,
+    "require": {
+        "square/square": "19.0.1.20220512",
+        "phpmailer/phpmailer": "^6.9"
+    }
+}

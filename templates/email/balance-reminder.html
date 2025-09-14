@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <img src="http://localhost/booking/email-tracker.php?email_id={{email_id}}" width="1" height="1" style="display:none;" />
+
+  <meta charset="UTF-8" />
+  <style>
+    body { font-family: Arial, sans-serif; color: #333; }
+    .container { padding: 20px; }
+    h2 { color: #d2691e; }
+    h3 { color: #555; margin-top: 25px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    td { padding: 5px 0; }
+    .highlight { background-color: #fff8e1; padding: 15px; border-radius: 5px; margin: 15px 0; border-left: 4px solid #d2691e; }
+    .urgent { background-color: #ffebee; border-left: 4px solid #f44336; }
+    ul { margin: 10px 0; padding-left: 20px; }
+    li { margin: 5px 0; }
+    .payment-button { display: inline-block; background-color: #d2691e; color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; margin: 10px 0; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Balance Reminder – Barbs Bali Apartments</h2>
+
+    <p>Hi {{guestfirstname}} {{guestlastname}},</p>
+
+    <p>This is a friendly reminder that the remaining balance for your upcoming stay is due.</p>
+
+    <div class="highlight">
+      <h3>Your Booking Details</h3>
+      <table>
+        <tr><td><strong>Reservation Number:</strong></td><td>{{reservationnumber}}</td></tr>
+        <tr><td><strong>Apartment:</strong></td><td>{{apartmentnumber}}</td></tr>
+        <tr><td><strong>Check-in:</strong></td><td>{{arrivaldatelong}}</td></tr>
+        <tr><td><strong>Check-out:</strong></td><td>{{departuredatelong}}</td></tr>
+        <tr><td><strong>Number of Nights:</strong></td><td>{{numberofnights}}</td></tr>
+        {{sofabedrow}}
+      </table>
+    </div>
+
+    <h3>Included Extras & Services</h3>
+    <ul>
+      {{includedextras}}
+    </ul>
+
+    <div class="highlight urgent">
+      <h3>Payment Summary</h3>
+      <table>
+        <tr><td><strong>Accommodation Total:</strong></td><td>${{accommodationtotal}} AUD</td></tr>
+        {{extrastotalrow}}
+        <tr><td><strong>Grand Total:</strong></td><td><strong>${{grandtotal}} AUD</strong></td></tr>
+        <tr><td><strong>Amount Paid:</strong></td><td>${{amountpaid}} AUD</td></tr>
+        <tr><td><strong>Balance Due:</strong></td><td><strong style="color: #d2691e; font-size: 1.2em;">${{balance}} AUD</strong></td></tr>
+      </table>
+    </div>
+
+    <p>Please pay your remaining balance at your earliest convenience:</p>
+    <p><a href="{{paymentlink_anyamount}}" class="payment-button">💳 Pay Balance Now</a></p>
+
+    <p>You can also manage your booking and make payments anytime using: <a href="{{bookingmanagementlink}}">My Booking Portal</a></p>
+
+    <h3>Payment Options</h3>
+    <ul>
+      <li>💳 Secure online payment via the link above</li>
+      <li>🏦 Bank transfer (contact us for details)</li>
+      <li>📧 Reply to this email if you have questions</li>
+    </ul>
+
+    {{urgencynotice}}
+
+    <p>We're looking forward to welcoming you soon!</p>
+
+    <p>Warm regards,<br />
+    <strong>Barbs Bali Apartments</strong><br/>
+    Your home away from home in Bali</p>
+  </div>
+</body>
+</html>

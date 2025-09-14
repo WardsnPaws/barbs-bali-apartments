@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <img src="http://localhost/booking/email-tracker.php?email_id={{email_id}}" width="1" height="1" style="display:none;" />
+
+  <meta charset="UTF-8" />
+  <style>
+    body { font-family: Arial, sans-serif; color: #333; }
+    .container { padding: 20px; }
+    h2 { color: #2e8b57; }
+    h3 { color: #555; margin-top: 25px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    td { padding: 5px 0; }
+    .highlight { background-color: #f0f8f0; padding: 15px; border-radius: 5px; margin: 15px 0; }
+    ul { margin: 10px 0; padding-left: 20px; }
+    li { margin: 5px 0; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Your Booking is Confirmed 🎉</h2>
+
+    <p>Hi {{guestfirstname}} {{guestlastname}},</p>
+
+    <p>Thank you for booking with Barbs Bali Apartments! Your reservation has been confirmed.</p>
+
+    <div class="highlight">
+      <h3>Booking Details</h3>
+      <table>
+        <tr><td><strong>Reservation Number:</strong></td><td>{{reservationnumber}}</td></tr>
+        <tr><td><strong>Apartment:</strong></td><td>{{apartmentnumber}}</td></tr>
+        <tr><td><strong>Check-in Date:</strong></td><td>{{arrivaldatelong}}</td></tr>
+        <tr><td><strong>Check-out Date:</strong></td><td>{{departuredatelong}}</td></tr>
+        <tr><td><strong>Number of Nights:</strong></td><td>{{numberofnights}}</td></tr>
+        {{sofabedrow}}
+      </table>
+    </div>
+    
+    <h3>Included Extras & Services</h3>
+    <ul>
+      {{includedextras}}
+    </ul>
+
+    <h3>Payment Summary</h3>
+    <table>
+      <tr><td><strong>Accommodation Total:</strong></td><td>${{accommodationtotal}} AUD</td></tr>
+      {{extrastotalrow}}
+      <tr><td><strong>Grand Total:</strong></td><td><strong>${{grandtotal}} AUD</strong></td></tr>
+      <tr><td><strong>Amount Paid:</strong></td><td>${{amountpaid}} AUD</td></tr>
+      <tr><td><strong>Balance Due:</strong></td><td><strong>${{balance}} AUD</strong></td></tr>
+    </table>
+
+    {{balancesection}}
+
+    <h3>What's Next?</h3>
+    <ul>
+      <li>You can manage your booking anytime using this link: <a href="{{bookingmanagementlink}}">My Booking</a></li>
+      <li>Add or modify extras up to your check-in date</li>
+      <li>We'll send you check-in details closer to your arrival date</li>
+    </ul>
+
+    <p>If you have any questions, feel free to reply to this email or contact us directly.</p>
+
+    <p>We're looking forward to welcoming you to Bali!</p>
+
+    <p>Warm regards,<br />
+    <strong>Barbs Bali Apartments</strong><br/>
+    Your home away from home in Bali</p>
+  </div>
+</body>
+</html>
