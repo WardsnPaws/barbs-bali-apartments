@@ -1,5 +1,5 @@
 <?php
-require_once '../config/config.php';
+require_once __DIR__ . '/../config/config.php';
 session_start();
 // CSRF token generation
 if (empty($_SESSION['csrf_token'])) {
@@ -97,7 +97,7 @@ async function main() {
     .then(res => res.json())
     .then(response => {
       if (response.success) {
-        window.location.href = "thank-you.html";
+        window.location.href = "../public/thank-you.html";
       } else {
         status.textContent = "❌ Payment failed: " + response.message;
       }
@@ -126,7 +126,7 @@ async function main() {
           body: JSON.stringify({ payment_method: 'paypal', booking: booking })
         })
         .then(() => {
-          window.location.href = "thank-you.html";
+          window.location.href = "../public/thank-you.html";
         });
       });
     },

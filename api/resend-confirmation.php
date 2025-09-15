@@ -1,8 +1,8 @@
 <?php
 // resend-confirmation.php
 
-require_once '../includes/core.php';
-require_once '../includes/email-utils.php';
+require_once __DIR__ . '/../includes/core.php';
+require_once __DIR__ . '/../includes/email-utils.php';
 
 $resNum = $_POST['reservation_number'] ?? '';
 
@@ -50,5 +50,5 @@ $body = replacePlaceholders($template, $placeholders);
 sendEmailSMTP($email, 'Booking Confirmation – Barbs Bali Apartments', $body);
 
 // Redirect back
-header("Location: my-booking.php?res=" . urlencode($resNum));
+header("Location: ../public/my-booking.php?res=" . urlencode($resNum));
 exit;

@@ -1,6 +1,6 @@
 // admin/tools/fetch-booking-summary.php
 <?php
-require_once __DIR__ . '/../../core.php';
+require_once __DIR__ . '/../../includes/core.php';
 
 
 $res = $_GET['res'] ?? '';

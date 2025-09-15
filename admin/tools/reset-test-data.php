@@ -1,6 +1,6 @@
 // admin/tools/reset-test-data.php
 <?php
-require_once __DIR__ . '/../../core.php';
+require_once __DIR__ . '/../../includes/core.php';
 
 
 $pdo = getPDO();

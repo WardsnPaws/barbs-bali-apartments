@@ -1,9 +1,9 @@
 <?php
 // pay-balance-process.php
 
-require_once '../includes/core.php';
-require_once 'email-utils.php';
-require 'vendor/autoload.php'; // Square SDK
+require_once __DIR__ . '/../includes/core.php';
+require_once __DIR__ . '/../includes/email-utils.php';
+require __DIR__ . '/../vendor/autoload.php'; // Square SDK
 
 use Square\SquareClient;
 use Square\Models\Money;

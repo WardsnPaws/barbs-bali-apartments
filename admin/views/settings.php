@@ -7,8 +7,8 @@ require_once __DIR__ . '/../auth.php'; // resolves to admin/auth.php
 // Ensure admin is logged in (now handled by auth.php)
 
 // Paths to files we will edit
-$configPath = realpath(__DIR__ . '/../../config.php') ?: (__DIR__ . '/../../config.php');
-$corePath   = realpath(__DIR__ . '/../../core.php')   ?: (__DIR__ . '/../../core.php');
+$configPath = realpath(__DIR__ . '/../../config/config.php') ?: (__DIR__ . '/../../config/config.php');
+$corePath   = realpath(__DIR__ . '/../../includes/core.php')   ?: (__DIR__ . '/../../includes/core.php');
 
 // Helper: readable file contents or empty string if missing
 function load_file_safe($path) {

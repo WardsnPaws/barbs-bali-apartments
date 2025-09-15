@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../../core.php';
+require_once __DIR__ . '/../../includes/core.php';
 
 $pdo = getPDO();
 $bookings = $pdo->query("SELECT * FROM bookings ORDER BY created_at DESC")->fetchAll(PDO::FETCH_ASSOC);

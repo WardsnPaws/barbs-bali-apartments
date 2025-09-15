@@ -42,7 +42,7 @@ if (!$viewFile) {
   <header>
     <h1>Admin Console – Barbs Bali Apartments</h1>
     <nav>
-      <a href="/index.html">🏠 Home</a>
+      <a href="../public/index.html">🏠 Home</a>
       <a href="?view=dashboard">Dashboard</a>
       <a href="?view=bookings">Bookings</a>
       <a href="?view=calendar">Calendar</a>

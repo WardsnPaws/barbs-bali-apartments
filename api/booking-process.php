@@ -1,5 +1,5 @@
 <?php
-// www/booking/booking-process.php
+// api/booking-process.php
 
 session_start(); // must be at the top before any output
 
@@ -18,6 +18,8 @@ foreach ($required as $field) {
 $guestFirstName = htmlspecialchars(trim($_POST['guest_first_name']));
 $guestLastName  = htmlspecialchars(trim($_POST['guest_last_name']));
 $guestEmail     = filter_var(trim($_POST['guest_email']), FILTER_SANITIZE_EMAIL);
+$guestPhone     = htmlspecialchars(trim($_POST['guest_phone'] ?? ''));
+$guestAddress   = htmlspecialchars(trim($_POST['guest_address'] ?? ''));
 $apartmentId    = $_POST['apartment_id']; // allow 'both' or numeric
 $checkinDate    = $_POST['checkin_date'];
 $checkoutDate   = $_POST['checkout_date'];
@@ -133,5 +135,5 @@ error_log("Session booking data: " . json_encode($_SESSION['booking']));
 error_log("Session amount due: " . $_SESSION['amount_due']);
 
 // Redirect to secure payment page
-header("Location: ../public/secure-payment.php");
+header("Location: secure-payment.php");
 exit;

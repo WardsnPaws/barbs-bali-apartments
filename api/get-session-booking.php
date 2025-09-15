@@ -1,6 +1,6 @@
 <?php
 // get-session-booking.php
-require_once 'core/price-calc.php';
+require_once __DIR__ . '/../includes/price-calc.php';
 session_start();
 header('Content-Type: application/json');
 

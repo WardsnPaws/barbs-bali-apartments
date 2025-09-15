@@ -1,8 +1,8 @@
 <?php
 // square-payment.php - Corrected for actual database schema
-require_once '../includes/core.php';
-require_once 'core/price-calc.php';
-require 'vendor/autoload.php';
+require_once __DIR__ . '/../includes/core.php';
+require_once __DIR__ . '/../includes/price-calc.php';
+require __DIR__ . '/../vendor/autoload.php';
 
 use Square\SquareClient;
 use Square\Models\Money;

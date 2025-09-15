@@ -1,6 +1,6 @@
 // admin/tools/index.php
 <?php
-require_once __DIR__ . '/../../core.php';
+require_once __DIR__ . '/../../includes/core.php';
 
 ?>
 <!DOCTYPE html>

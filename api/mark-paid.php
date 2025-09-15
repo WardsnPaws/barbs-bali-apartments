@@ -1,7 +1,7 @@
 <?php
-require_once '../includes/core.php';
-require_once 'core/price-calc.php';
-require_once '../includes/email-utils.php';
+require_once __DIR__ . '/../includes/core.php';
+require_once __DIR__ . '/../includes/price-calc.php';
+require_once __DIR__ . '/../includes/email-utils.php';
 
 header('Content-Type: application/json');
 

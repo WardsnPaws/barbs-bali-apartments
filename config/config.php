@@ -9,7 +9,7 @@
 
 // Load secrets from file outside webroot if present
 $secrets = [];
-$secretsFile = __DIR__ . '/../config_secrets.php';
+$secretsFile = __DIR__ . '/config_secrets.php';
 if (file_exists($secretsFile)) {
     $s = include $secretsFile;
     if (is_array($s)) $secrets = $s;

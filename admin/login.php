@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once '../core.php';
+require_once __DIR__ . '/../includes/core.php';
 
 $error = '';
 

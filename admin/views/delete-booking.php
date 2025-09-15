@@ -1,6 +1,6 @@
 <?php
-require_once '../core.php';
-require_once 'auth.php';
+require_once __DIR__ . '/../../includes/core.php';
+require_once __DIR__ . '/../auth.php';
 
 $pdo = getPDO();
 $id = $_GET['id'] ?? '';

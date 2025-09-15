@@ -4,7 +4,7 @@
 // core.php – Shared Core Functions
 // ────
 
-require_once 'config.php';
+require_once __DIR__ . '/../config/config.php';
 
 function getPDO() {
     try {

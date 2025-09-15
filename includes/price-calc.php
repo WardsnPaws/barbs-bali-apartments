@@ -1,6 +1,6 @@
 <?php
 // core/price-calc.php
-require_once __DIR__ . '/../config.php';
+require_once __DIR__ . '/../config/config.php';
 
 function calculateBookingTotal($bookingData) {
     $baseRates = json_decode(APARTMENT_RATES, true);

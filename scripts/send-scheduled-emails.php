@@ -1,6 +1,6 @@
 <?php
-require_once '../includes/core.php';
-require_once 'email-utils.php';
+require_once __DIR__ . '/../includes/core.php';
+require_once __DIR__ . '/../includes/email-utils.php';
 
 $pdo = getPDO();
 
@@ -24,7 +24,7 @@ foreach ($emails as $email) {
     $subject = "Barbs Bali – " . ucfirst(str_replace('-', ' ', $emailType));
 
     // Load and modify email template
-    $templatePath = __DIR__ . "/email-templates/{$emailType}.html";
+    $templatePath = __DIR__ . "/../templates/email/{$emailType}.html";
     if (!file_exists($templatePath)) continue;
     $template = file_get_contents($templatePath);
 

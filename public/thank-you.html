@@ -44,6 +44,9 @@
             margin-top: 20px;
             font-weight: bold;
             transition: transform 0.2s;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
         }
         .home-button:hover {
             transform: translateY(-2px);
@@ -52,6 +55,12 @@
         .celebration {
             font-size: 3em;
             margin-bottom: 10px;
+        }
+        .redirect-info {
+            margin-top: 20px; 
+            font-size: 0.9em; 
+            color: #666;
+            font-style: italic;
         }
     </style>
 </head>
@@ -66,55 +75,119 @@
         
         <p>We look forward to welcoming you at Barbs Bali Apartments!</p>
         
-        <a href="#" class="home-button" onclick="goHome(); return false;">← Back to Home</a>
+        <button class="home-button" onclick="goHome()">← Back to Home</button>
+        
+        <div class="redirect-info" id="redirectInfo">
+            Automatically redirecting to home page in <span id="countdown">10</span> seconds...
+        </div>
     </div>
 
     <script>
         function goHome() {
-            // Multiple methods to ensure proper navigation
+            console.log('goHome() called');
             
-            // Method 1: Try to break out of iframe/modal
+            // Determine the correct home URL based on current location
+            const currentPath = window.location.pathname;
+            let homeUrl;
+            
+            // If we're in the public folder structure
+            if (currentPath.includes('/public/')) {
+                homeUrl = './index.html'; // Same directory
+            } else if (currentPath.includes('/barbs-bali-apartments/')) {
+                homeUrl = '../public/index.html'; // Go up and into public
+            } else {
+                homeUrl = '/barbs-bali-apartments/public/index.html'; // Full path
+            }
+            
+            console.log('Attempting redirect to:', homeUrl);
+            
+            // Method 1: Try to close modal/iframe if we're in one
             if (window.parent && window.parent !== window) {
                 try {
-                    window.parent.location.href = window.location.origin + '/';
+                    // Try to close any modal in parent window
+                    if (window.parent.closeBookingModal) {
+                        window.parent.closeBookingModal();
+                        return;
+                    }
+                    // Try to navigate parent window
+                    window.parent.location.href = homeUrl;
                     return;
                 } catch(e) {
-                    console.log('Parent redirect failed:', e);
+                    console.log('Parent navigation failed:', e);
                 }
             }
             
             // Method 2: Try top window
             if (window.top && window.top !== window) {
                 try {
-                    window.top.location.href = window.location.origin + '/';
+                    if (window.top.closeBookingModal) {
+                        window.top.closeBookingModal();
+                        return;
+                    }
+                    window.top.location.href = homeUrl;
                     return;
                 } catch(e) {
-                    console.log('Top redirect failed:', e);
+                    console.log('Top window navigation failed:', e);
                 }
             }
             
-            // Method 3: Standard redirect
+            // Method 3: Direct navigation
             try {
-                window.location.replace(window.location.origin + '/');
+                window.location.href = homeUrl;
             } catch(e) {
-                // Method 4: Fallback
-                window.location.href = '/';
+                console.log('Direct navigation failed, trying fallback:', e);
+                // Method 4: Ultimate fallback - try different paths
+                const fallbacks = [
+                    'index.html',
+                    '../index.html', 
+                    '/index.html',
+                    '/'
+                ];
+                
+                for (let fallback of fallbacks) {
+                    try {
+                        window.location.href = fallback;
+                        break;
+                    } catch(err) {
+                        console.log('Fallback failed:', fallback, err);
+                    }
+                }
             }
         }
         
-        // Auto-redirect after 10 seconds
-        setTimeout(function() {
-            console.log('Auto-redirecting to home...');
-            goHome();
-        }, 10000);
+        // Countdown timer
+        let countdown = 10;
+        const countdownElement = document.getElementById('countdown');
+        const redirectInfo = document.getElementById('redirectInfo');
         
-        // Also handle if this page is loaded in an iframe
+        const timer = setInterval(function() {
+            countdown--;
+            if (countdownElement) {
+                countdownElement.textContent = countdown;
+            }
+            
+            if (countdown <= 0) {
+                clearInterval(timer);
+                if (redirectInfo) {
+                    redirectInfo.textContent = 'Redirecting now...';
+                }
+                console.log('Auto-redirecting to home...');
+                goHome();
+            }
+        }, 1000);
+        
+        // Debug info
+        console.log('Thank you page loaded');
+        console.log('Current location:', window.location.href);
+        console.log('Current pathname:', window.location.pathname);
+        console.log('Is in iframe?', window !== window.top);
+        
+        // If we detect we're in an iframe/modal, adjust the message
         if (window !== window.top) {
-            console.log('Page loaded in iframe - will redirect parent');
-            // Add a message to let user know
-            document.body.insertAdjacentHTML('beforeend', 
-                '<div style="margin-top: 20px; font-size: 0.9em; color: #666;">Auto-redirecting in 10 seconds...</div>'
-            );
+            console.log('Page loaded in iframe/modal - will try to close modal or redirect parent');
+            if (redirectInfo) {
+                redirectInfo.innerHTML = 'Closing booking form in <span id="countdown">' + countdown + '</span> seconds...';
+            }
         }
     </script>
 </body>

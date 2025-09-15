@@ -1,14 +1,16 @@
 <?php
-// pay-balance-process.php
+// api/process-extras-payment.php
 
 require_once __DIR__ . '/../includes/core.php';
-require __DIR__ . '/../vendor/autoload.php'; // Square SDK
+require __DIR__ . '/../vendor/autoload.php';
 
 use Square\SquareClient;
 use Square\Models\Money;
 use Square\Models\CreatePaymentRequest;
 
 header('Content-Type: application/json');
+
+session_start();
 
 $data = json_decode(file_get_contents("php://input"), true);
 
@@ -18,38 +20,45 @@ if (!isset($data['token'], $data['amount'], $data['reservation'])) {
     exit;
 }
 
-$token = $data['token'];
-$amount = floatval($data['amount']);
-$reservation = $data['reservation'];
-
-if ($amount < 1) {
-    echo json_encode(['success' => false, 'message' => 'Invalid amount.']);
+if (!isset($_SESSION['extras_payment'])) {
+    echo json_encode(['success' => false, 'message' => 'Payment session expired.']);
     exit;
 }
 
-// Get booking
+$token = $data['token'];
+$amount = floatval($data['amount']);
+$reservation = $data['reservation'];
+$paymentInfo = $_SESSION['extras_payment'];
+
+// Verify reservation matches
+if ($paymentInfo['reservation_number'] !== $reservation) {
+    echo json_encode(['success' => false, 'message' => 'Invalid reservation.']);
+    exit;
+}
+
+// Verify amount matches what we expect
+if (abs($amount - $paymentInfo['balance_owed']) > 0.01) {
+    echo json_encode(['success' => false, 'message' => 'Invalid payment amount.']);
+    exit;
+}
+
+if ($amount < 1) {
+    echo json_encode(['success' => false, 'message' => 'Invalid payment amount.']);
+    exit;
+}
+
+// Get booking from database
 $pdo = getPDO();
 $stmt = $pdo->prepare("SELECT * FROM bookings WHERE reservation_number = :res LIMIT 1");
 $stmt->execute([':res' => $reservation]);
 $booking = $stmt->fetch(PDO::FETCH_ASSOC);
 
 if (!$booking) {
-    echo json_encode(['success' => false, 'message' => 'Reservation not found.']);
+    echo json_encode(['success' => false, 'message' => 'Booking not found.']);
     exit;
 }
 
-// Verify the amount doesn't exceed balance owed
-$paidStmt = $pdo->prepare("SELECT SUM(amount) FROM payments WHERE booking_id = ?");
-$paidStmt->execute([$booking['id']]);
-$alreadyPaid = (float) $paidStmt->fetchColumn();
-$balanceLeft = max((float)$booking['total_price'] - $alreadyPaid, 0);
-
-if ($amount > $balanceLeft + 0.01) { // Allow small rounding differences
-    echo json_encode(['success' => false, 'message' => 'Amount exceeds balance owed.']);
-    exit;
-}
-
-// Set up Square payment
+// Process payment with Square
 try {
     $client = new SquareClient([
         'accessToken' => SQUARE_ACCESS_TOKEN,
@@ -68,7 +77,7 @@ try {
 
     $paymentRequest->setAutocomplete(true);
     $paymentRequest->setLocationId(SQUARE_LOCATION_ID);
-    $paymentRequest->setNote("Balance payment for reservation {$reservation}");
+    $paymentRequest->setNote("Extras payment for reservation {$reservation}");
 
     $paymentsApi = $client->getPaymentsApi();
     $response = $paymentsApi->createPayment($paymentRequest);
@@ -79,8 +88,11 @@ try {
         $insertPayment->execute([
             $booking['id'],
             $amount,
-            "Balance payment via Square"
+            "Extras payment - Balance due"
         ]);
+
+        // Clear the payment session
+        unset($_SESSION['extras_payment']);
 
         echo json_encode(['success' => true, 'message' => 'Payment processed successfully.']);
     } else {
@@ -93,6 +105,6 @@ try {
     }
 
 } catch (Exception $e) {
-    error_log("Balance payment error: " . $e->getMessage());
+    error_log("Extras payment error: " . $e->getMessage());
     echo json_encode(['success' => false, 'message' => 'Payment processing error. Please try again.']);
 }

@@ -1,6 +1,6 @@
 <?php
-require_once __DIR__ . '/../core.php';
-require_once __DIR__ . '/../core/price-calc.php';
+require_once __DIR__ . '/../includes/core.php';
+require_once __DIR__ . '/../includes/price-calc.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $id = $_POST['id'] ?? null;

@@ -438,7 +438,7 @@
     <p><strong id="bookingSummary"></strong></p>
     </div>
 
-    <form id="bookingForm" method="POST" action="booking-process.php">
+    <form id="bookingForm" method="POST" action="../api/booking-process.php">
     <input type="hidden" name="apartment_id" id="selectedApartment">
     <input type="hidden" name="checkin_date" id="selectedCheckin">
     <input type="hidden" name="checkout_date" id="selectedCheckout">
@@ -528,7 +528,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function loadBookingData() {
-  fetch('get-calendar-data.php')
+  fetch('../api/get-calendar-data.php')
     .then(response => response.json())
     .then(data => {
     bookingEvents = data.events || [];
@@ -651,7 +651,7 @@ function checkApartmentAvailability(aptId, aptName) {
   formData.append('checkin_date', selectedCheckin);
   formData.append('checkout_date', selectedCheckout);
   
-  fetch('check-availability.php', {
+  fetch('../api/check-availability.php', {
     method: 'POST',
     body: formData
   })
@@ -700,7 +700,7 @@ function checkAptAvailable(aptId) {
   formData.append('checkin_date', selectedCheckin);
   formData.append('checkout_date', selectedCheckout);
   
-  return fetch('check-availability.php', {
+  return fetch('../api/check-availability.php', {
     method: 'POST',
     body: formData
   })

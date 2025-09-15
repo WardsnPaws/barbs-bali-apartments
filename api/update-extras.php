@@ -1,8 +1,8 @@
 <?php
-// update-extras.php
+// api/update-extras.php
 
-require_once '../includes/core.php';
-require_once 'core/price-calc.php';
+require_once __DIR__ . '/../includes/core.php';
+require_once __DIR__ . '/../includes/price-calc.php';
 
 $resNum = $_POST['reservation_number'] ?? '';
 $selectedExtras = $_POST['extras'] ?? [];
@@ -92,11 +92,11 @@ if ($daysUntilCheckin <= 90 && $balanceOwed > 0) {
         'guest_name' => $booking['guest_first_name'] . ' ' . $booking['guest_last_name']
     ];
     
-    // Redirect to payment page
-    header("Location: extras-payment.php?res=" . urlencode($resNum));
+    // Redirect to payment page (now correctly pointing to public folder)
+    header("Location: ../public/extras-payment.php?res=" . urlencode($resNum));
     exit;
 } else {
     // Just redirect back to the dashboard with success message
-    header("Location: my-booking.php?res=" . urlencode($resNum) . "&updated=1");
+    header("Location: ../public/my-booking.php?res=" . urlencode($resNum) . "&updated=1");
     exit;
 }

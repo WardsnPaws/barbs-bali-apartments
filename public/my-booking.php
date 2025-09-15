@@ -1,7 +1,7 @@
 <?php
 // my-booking.php
 
-require_once '../includes/core.php';
+require_once __DIR__ . '/../includes/core.php';
 
 $resNum = $_GET['res'] ?? '';
 $pdo = getPDO();
@@ -36,8 +36,8 @@ $price_breakdown = null;
 $apt = ($booking['apartment_id'] == 1) ? '6205' : (($booking['apartment_id'] == 2) ? '6207' : 'Both');
 
 if ($isCombined) {
-    // compute per-apartment prices using core/price-calc.php
-    require_once 'core/price-calc.php';
+    // compute per-apartment prices using includes/price-calc.php
+    require_once __DIR__ . '/../includes/price-calc.php';
 
     // Get current extras for this booking
     $extrasStmt = $pdo->prepare("SELECT extra_id FROM booking_extras WHERE booking_id = ?");
@@ -112,7 +112,7 @@ $extras = $pdo->query("SELECT * FROM extras ORDER BY name ASC")->fetchAll(PDO::F
 
   <div class="header">
     <h2>Welcome back, <?= htmlspecialchars($guestName) ?></h2>
-    <a href="index.php" class="logout-btn">🚪 Logout</a>
+    <a href="index.html" class="logout-btn">🚪 Logout</a>
   </div>
 
   <?php if ($showUpdatedMessage): ?>
@@ -168,7 +168,7 @@ $extras = $pdo->query("SELECT * FROM extras ORDER BY name ASC")->fetchAll(PDO::F
       </div>
     <?php endif; ?>
     
-    <form method="POST" action="update-extras.php">
+    <form method="POST" action="../api/update-extras.php">
     <input type="hidden" name="reservation_number" value="<?= htmlspecialchars($resNum) ?>" />
     <?php foreach ($extras as $extra): ?>
     <label>
@@ -195,7 +195,7 @@ $extras = $pdo->query("SELECT * FROM extras ORDER BY name ASC")->fetchAll(PDO::F
 
   <div class="box">
     <h3>Email Confirmation</h3>
-    <form method="POST" action="resend-confirmation.php">
+    <form method="POST" action="../api/resend-confirmation.php">
     <input type="hidden" name="reservation_number" value="<?= htmlspecialchars($resNum) ?>" />
     <button type="submit">Resend Confirmation Email</button>
     </form>
@@ -223,7 +223,7 @@ $extras = $pdo->query("SELECT * FROM extras ORDER BY name ASC")->fetchAll(PDO::F
     return;
     }
 
-    fetch("pay-balance-process.php", {
+    fetch("../api/pay-balance-process.php", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
