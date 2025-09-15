@@ -1,7 +1,7 @@
 <?php
 // pay-balance-process.php
 
-require_once 'core.php';
+require_once '../includes/core.php';
 require 'vendor/autoload.php'; // Square SDK
 
 use Square\SquareClient;

@@ -1,5 +1,5 @@
 <?php
-require_once 'core.php';
+require_once '../includes/core.php';
 require_once 'email-utils.php';
 
 $pdo = getPDO();

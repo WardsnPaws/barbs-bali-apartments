@@ -1,0 +1,1558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barb's Bali Apartments - Beachfront Accommodation in Legian</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+
+    :root {
+    --primary: #0ea5e9;
+    --primary-dark: #0284c7;
+    --secondary: #8b5cf6;
+    --accent: #f59e0b;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-light: #94a3b8;
+    --bg-primary: #ffff;
+    --bg-secondary: #f8fafc;
+    --shadow-soft: 0 4px 32px rgba(0, 0, 0, 0.08);
+    --shadow-medium: 0 8px 40px rgba(0, 0, 0, 0.12);
+    --shadow-strong: 0 16px 56px rgba(0, 0, 0, 0.16);
+    --gradient-primary: linear-gradient(135deg, #0ea5e9 0%, #3b82f6 100%);
+    --gradient-secondary: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
+    --gradient-accent: linear-gradient(135deg, #f59e0b 0%, #f97316 100%);
+    }
+
+    body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.6;
+    color: var(--text-primary);
+    overflow-x: hidden;
+    }
+
+    .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    }
+
+    /* Header */
+    .header {
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(20px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 16px 0;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .header.scrolled {
+    background: rgba(15, 23, 42, 0.98);
+    padding: 12px 0;
+    }
+
+    .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    }
+
+    .logo {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    }
+
+    .logo-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--gradient-primary);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: var(--shadow-medium);
+    transition: transform 0.3s ease;
+    }
+
+    .logo:hover .logo-icon {
+    transform: scale(1.1) rotate(5deg);
+    }
+
+    .logo-text h1 {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 2px;
+    letter-spacing: -0.5px;
+    }
+
+    .logo-text p {
+    color: var(--text-light);
+    font-size: 0.85rem;
+    }
+
+    .nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+    }
+
+    .nav-menu a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    transition: all 0.3s ease;
+    }
+
+    .nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gradient-primary);
+    transition: width 0.3s ease;
+    }
+
+    .nav-menu a:hover {
+    color: white;
+    transform: translateY(-1px);
+    }
+
+    .nav-menu a:hover::after {
+    width: 100%;
+    }
+
+    .book-now-header {
+    background: var(--gradient-primary);
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    box-shadow: var(--shadow-medium);
+    }
+
+    .book-now-header:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-strong);
+    }
+
+    /* Hero Section with Fallback */
+    .hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)),
+    url('images/resort-hero.jpg'),
+    var(--gradient-primary);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    }
+
+    /* Floating elements for visual interest */
+    .floating-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    overflow: hidden;
+    }
+
+    .floating-element {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite;
+    }
+
+    .floating-element:nth-child(1) { width: 80px; height: 80px; top: 20%; left: 10%; animation-delay: 0s; }
+    .floating-element:nth-child(2) { width: 120px; height: 120px; top: 60%; right: 15%; animation-delay: 2s; }
+    .floating-element:nth-child(3) { width: 60px; height: 60px; bottom: 30%; left: 70%; animation-delay: 4s; }
+
+    @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.3; }
+    50% { transform: translateY(-20px) rotate(180deg); opacity: 0.7; }
+    }
+
+    .hero-content {
+    color: white;
+    max-width: 800px;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    }
+
+    .hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -2px;
+    background: linear-gradient(135deg, #ffff 0%, #e2e8f0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    }
+
+    .hero-description {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    padding: 3rem;
+    border-radius: 24px;
+    margin-bottom: 2.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: var(--shadow-strong);
+    transition: transform 0.3s ease;
+    }
+
+    .hero-description:hover {
+    transform: translateY(-5px);
+    }
+
+    .hero-description p {
+    font-size: 1.3rem;
+    margin-bottom: 1.2rem;
+    line-height: 1.6;
+    }
+
+    .hero-description p:last-child {
+    margin-bottom: 0;
+    font-weight: 600;
+    color: #fbbf24;
+    }
+
+    .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    }
+
+    .btn-primary {
+    background: var(--gradient-primary);
+    color: white;
+    padding: 16px 24px;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: var(--shadow-medium);
+    }
+
+    .btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    padding: 14px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    backdrop-filter: blur(20px);
+    }
+
+    .btn-primary:hover, .btn-secondary:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-strong);
+    }
+
+    /* Why Choose Section */
+    .why-choose {
+    padding: 120px 0;
+    background: var(--bg-secondary);
+    }
+
+    .section-header {
+    text-align: center;
+    margin-bottom: 5rem;
+    }
+
+    .section-header h2 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    letter-spacing: -1.5px;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    }
+
+    .section-subtitle {
+    font-size: 1.3rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+    }
+
+    .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    }
+
+    .feature-card {
+    background: var(--bg-primary);
+    padding: 3rem 2rem;
+    border-radius: 24px;
+    box-shadow: var(--shadow-soft);
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+    }
+
+    .feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(14, 165, 233, 0.1), transparent);
+    transition: left 0.6s ease;
+    }
+
+    .feature-card:hover::before {
+    left: 100%;
+    }
+
+    .feature-card:hover {
+    transform: translateY(-15px);
+    box-shadow: var(--shadow-strong);
+    }
+
+    .feature-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    display: block;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+    }
+
+    .feature-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+    font-weight: 700;
+    }
+
+    .feature-card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 1.05rem;
+    }
+
+    /* Gallery with Smart Image Loading */
+    .gallery {
+    padding: 120px 0;
+    background: var(--bg-primary);
+    }
+
+    .photo-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 200px);
+    gap: 16px;
+    margin-bottom: 3rem;
+    }
+
+    .photo-item {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-medium);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    background: var(--gradient-primary);
+    }
+
+    .photo-item:nth-child(1) { grid-column: 1 / 3; grid-row: 1 / 3; }
+    .photo-item:nth-child(2) { grid-column: 3 / 5; grid-row: 1 / 2; }
+    .photo-item:nth-child(3) { grid-column: 3 / 4; grid-row: 2 / 4; }
+    .photo-item:nth-child(4) { grid-column: 4 / 5; grid-row: 2 / 4; }
+    .photo-item:nth-child(5) { grid-column: 1 / 2; grid-row: 3 / 4; }
+    .photo-item:nth-child(6) { grid-column: 2 / 3; grid-row: 3 / 4; }
+
+    .photo-item:hover {
+    transform: scale(1.05);
+    z-index: 10;
+    box-shadow: var(--shadow-strong);
+    }
+
+    .photo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+    }
+
+    .photo-placeholder {
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    text-align: center;
+    font-size: 1rem;
+    position: relative;
+    overflow: hidden;
+    }
+
+    .photo-placeholder::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.2) 50%, transparent 70%);
+    animation: shine 3s infinite;
+    }
+
+    @keyframes shine {
+    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+    }
+
+    /* Rates Section */
+    .rates {
+    padding: 120px 0;
+    background: var(--bg-secondary);
+    }
+
+    .rates-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    }
+
+    .rate-special {
+    background: var(--gradient-accent);
+    color: white;
+    padding: 3rem;
+    border-radius: 24px;
+    text-align: center;
+    transform: rotate(-1deg);
+    box-shadow: var(--shadow-strong);
+    margin-bottom: 2rem;
+    position: relative;
+    }
+
+    .rate-special::before {
+    content: '🔥';
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
+    }
+
+    .rate-special h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 800;
+    }
+
+    .rate-special p {
+    font-size: 1.3rem;
+    font-weight: 600;
+    }
+
+    .rates-list {
+    background: var(--bg-primary);
+    padding: 3rem;
+    border-radius: 24px;
+    box-shadow: var(--shadow-medium);
+    }
+
+    .rate-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 2px solid #f1f5f9;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    }
+
+    .rate-item:hover {
+    padding-left: 10px;
+    background: rgba(14, 165, 233, 0.05);
+    border-radius: 12px;
+    margin: 0 -10px;
+    }
+
+    .rate-item:last-child {
+    border-bottom: none;
+    }
+
+    .rate-price {
+    font-weight: 700;
+    color: var(--primary);
+    font-size: 1.4rem;
+    }
+
+    /* Reviews */
+    .reviews {
+    padding: 120px 0;
+    background: var(--bg-primary);
+    }
+
+    .reviews-summary {
+    text-align: center;
+    margin-bottom: 4rem;
+    }
+
+    .rating-display {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 4px 8px rgba(251, 191, 36, 0.3));
+    }
+
+    .rating-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    }
+
+    .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    }
+
+    .review-card {
+    background: var(--bg-secondary);
+    padding: 2.5rem;
+    border-radius: 20px;
+    border-left: 5px solid var(--primary);
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-soft);
+    position: relative;
+    overflow: hidden;
+    }
+
+    .review-card::before {
+    content: '"';
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 4rem;
+    color: rgba(14, 165, 233, 0.1);
+    font-family: serif;
+    }
+
+    .review-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-strong);
+    border-left-width: 8px;
+    }
+
+    .review-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.2rem;
+    }
+
+    .review-stars {
+    color: #fbbf24;
+    font-size: 1.2rem;
+    margin-right: 1rem;
+    }
+
+    .review-author {
+    font-weight: 700;
+    color: var(--text-primary);
+    }
+
+    .review-platform {
+    margin-left: auto;
+    color: var(--text-light);
+    font-size: 0.9rem;
+    }
+
+    .review-text {
+    font-style: italic;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    position: relative;
+    z-index: 2;
+    }
+
+    /* Footer */
+    .footer {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: white;
+    padding: 80px 0 40px 0;
+    position: relative;
+    }
+
+    .footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    }
+
+    .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 3rem;
+    margin-bottom: 3rem;
+    }
+
+    .footer-section h3 {
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    }
+
+    .footer-section p, .footer-section li {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    }
+
+    .footer-section ul {
+    list-style: none;
+    }
+
+    .footer-section a {
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    }
+
+    .footer-section a:hover {
+    color: var(--primary);
+    transform: translateX(5px);
+    }
+
+    .contact-protection {
+    background: rgba(14, 165, 233, 0.1);
+    border: 2px solid rgba(14, 165, 233, 0.2);
+    border-radius: 16px;
+    padding: 20px;
+    margin-top: 20px;
+    }
+
+    .contact-reveal-btn {
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block;
+    margin: 0 auto;
+    box-shadow: var(--shadow-medium);
+    }
+
+    .contact-reveal-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-strong);
+    }
+
+    .contact-reveal-btn.active {
+    background: var(--gradient-secondary);
+    }
+
+    .contact-details-protected {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    opacity: 0;
+    }
+
+    .contact-details-protected.revealed {
+    max-height: 240px;
+    opacity: 1;
+    margin-top: 15px;
+    }
+
+    .contact-info-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-weight: 500;
+    transition: all 0.3s ease;
+    }
+
+    .contact-info-item:hover {
+    background: white;
+    transform: translateX(5px);
+    }
+
+    .footer-bottom {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-light);
+    }
+
+    .visit-friends-btn {
+    background: var(--gradient-secondary);
+    color: white;
+    padding: 16px 32px;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 1rem;
+    box-shadow: var(--shadow-medium);
+    }
+
+    .visit-friends-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-strong);
+    }
+
+    /* Modal Styles */
+    .modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    }
+
+    .modal-content {
+    background: white;
+    margin: 5% auto;
+    padding: 40px;
+    border-radius: 24px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: var(--shadow-strong);
+    position: relative;
+    animation: modalSlideIn 0.3s ease;
+    }
+
+    @keyframes modalSlideIn {
+    from {
+    opacity: 0;
+    transform: translateY(-50px) scale(0.9);
+    }
+    to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    }
+    }
+
+    .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    }
+
+    .close:hover {
+    color: var(--primary);
+    }
+
+    .modal h2 {
+    color: var(--text-primary);
+    margin-bottom: 30px;
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    }
+
+    .form-group {
+    margin-bottom: 20px;
+    }
+
+    .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-primary);
+    }
+
+    .form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+    background: #f8fafc;
+    }
+
+    .form-group input:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: white;
+    }
+
+    .check-btn {
+    background: var(--gradient-primary);
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-medium);
+    }
+
+    .check-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-strong);
+    }
+
+    .availability-results {
+    margin-top: 25px;
+    padding: 20px;
+    background: #f8fafc;
+    border-radius: 12px;
+    border: 2px solid #e2e8f0;
+    }
+
+    /* Lightbox */
+    .lightbox {
+    display: none;
+    position: fixed;
+    z-index: 10001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    .lightbox-content {
+    position: relative;
+    margin: auto;
+    width: 90%;
+    max-width: 1000px;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+
+    .lightbox img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: var(--shadow-strong);
+    }
+
+    .lightbox-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px 20px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+    .header-content {
+    flex-direction: column;
+    gap: 16px;
+    }
+
+    .nav-menu {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    }
+
+    .hero-content h1 {
+    font-size: 2.5rem;
+    }
+
+    .hero-description {
+    padding: 2rem;
+    }
+
+    .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    }
+
+    .btn-primary, .btn-secondary {
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+    }
+
+    .section-header h2 {
+    font-size: 2.5rem;
+    }
+
+    .photo-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 250px);
+    }
+
+    .photo-item:nth-child(1),
+    .photo-item:nth-child(2),
+    .photo-item:nth-child(3),
+    .photo-item:nth-child(4),
+    .photo-item:nth-child(5),
+    .photo-item:nth-child(6) {
+    grid-column: 1;
+    grid-row: auto;
+    }
+
+    .rates-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    }
+
+    .features-grid {
+    grid-template-columns: 1fr;
+    }
+
+    .modal-content {
+    margin: 10% auto;
+    padding: 25px 20px;
+    width: 95%;
+    }
+    }
+    </style>
+</head>
+<body>
+    <!-- Fixed Header -->
+    <header class="header" id="header">
+    <div class="container">
+    <div class="header-content">
+    <div class="logo">
+    <div class="logo-icon">🌴</div>
+    <div class="logo-text">
+    <h1>Barb's Bali Apartments</h1>
+    <p>Jayakarta Resort, Legian Beach</p>
+    </div>
+    </div>
+    <nav class="nav-menu">
+    <a href="#home">Home</a>
+    <a href="#apartments">Apartments</a>
+    <a href="#rates">Rates</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#footer">Contact</a>
+    <button class="book-now-header" onclick="checkAvailability()">Book Now ✈️</button>
+    <button class="book-now-header" onclick="openCustomerPortalModal()" style="background: linear-gradient(135deg,#10b981 0%,#059669 100%); margin-left:8px;">Customer Portal 👤</button>
+    </nav>
+    </div>
+    </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+    <div class="floating-elements">
+    <div class="floating-element"></div>
+    <div class="floating-element"></div>
+    <div class="floating-element"></div>
+    </div>
+    <div class="container">
+    <div class="hero-content">
+    <h1>Barb's Bali<br>Apartments</h1>
+    <div class="hero-description">
+    <p>Barb's Bali Apartments are privately owned and located within the Jayakarta Hotel & Resort on the beach in Legian.</p>
+    <p>Providing spacious, quality, low cost family accommodation in an absolute prime location.</p>
+    </div>
+    <div class="hero-buttons">
+    <a href="#apartments" class="btn-primary">
+    View Apartments 🏠
+    </a>
+    <a href="#rates" class="btn-secondary">
+    Check Rates 💰
+    </a>
+    <button class="btn-primary" style="background: var(--gradient-accent);" onclick="checkAvailability()">
+    Check Availability 📅
+    </button>
+    </div>
+    </div>
+    </div>
+    </section>
+
+    <!-- Why Choose Section -->
+    <section class="why-choose">
+    <div class="container">
+    <div class="section-header">
+    <h2>Why Choose Barb's Bali Apartments?</h2>
+    <p class="section-subtitle">Experience the perfect blend of comfort, location, and value in the heart of Legian</p>
+    </div>
+
+    <div class="features-grid">
+    <div class="feature-card">
+    <div class="feature-icon">🏖️</div>
+    <h3>Beachfront Location</h3>
+    <p>Located within Jayakarta Resort, just steps away from beautiful Legian Beach. Wake up to ocean views and stunning sunset strolls.</p>
+    </div>
+    <div class="feature-card">
+    <div class="feature-icon">🏠</div>
+    <h3>Spacious Apartments</h3>
+    <p>Fully furnished apartments with kitchenettes, living areas, and private balconies. Perfect for families and extended stays.</p>
+    </div>
+    <div class="feature-card">
+    <div class="feature-icon">🏊‍♂️</div>
+    <h3>Resort Amenities</h3>
+    <p>Access to Jayakarta Resort facilities including swimming pools, restaurants, and direct beach access.</p>
+    </div>
+    <div class="feature-card">
+    <div class="feature-icon">💰</div>
+    <h3>Great Value</h3>
+    <p>Quality accommodation at affordable rates. Direct booking with no commission fees for the best prices.</p>
+    </div>
+    <div class="feature-card">
+    <div class="feature-icon">📍</div>
+    <h3>Prime Location</h3>
+    <p>Central Legian location with easy access to shopping, dining, nightlife, and cultural attractions.</p>
+    </div>
+    <div class="feature-card">
+    <div class="feature-icon">🛏️</div>
+    <h3>Comfortable Stay</h3>
+    <p>Air conditioning, WiFi, housekeeping, and all the comforts of home in a tropical paradise setting.</p>
+    </div>
+    </div>
+    </div>
+    </section>
+
+    <!-- Photo Gallery with Smart Loading -->
+    <section class="gallery" id="apartments">
+    <div class="container">
+    <div class="section-header">
+    <h2>Our Apartments & Resort</h2>
+    <p class="section-subtitle">Explore our beautiful apartments and the stunning Jayakarta Resort facilities</p>
+    </div>
+
+    <div class="photo-grid">
+    <div class="photo-item" onclick="openLightbox('images/resort-pool-evening.jpg', 'Resort Pool & Restaurant Area Evening View')">
+    <img src="images/resort-pool-evening.jpg" alt="Resort Pool & Restaurant Area Evening View"
+    onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;photo-placeholder&quot;>Resort Pool &amp; Restaurant<br>Evening View</div>';"
+    style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+    <div class="photo-item" onclick="openLightbox('images/balcony-garden-view.jpg', 'Balcony View Garden & Pool')">
+    <img src="images/balcony-garden-view.jpg" alt="Balcony View Garden & Pool"
+    onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;photo-placeholder&quot;>Balcony View<br>Garden &amp; Pool</div>';"
+    style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+    <div class="photo-item" onclick="openLightbox('images/kitchen-facilities.jpg', 'Kitchen Facilities Fully Equipped')">
+    <img src="images/kitchen-facilities.jpg" alt="Kitchen Facilities Fully Equipped"
+    onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;photo-placeholder&quot;>Kitchen Facilities<br>Fully Equipped</div>';"
+    style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+    <div class="photo-item" onclick="openLightbox('images/bedroom-comfortable.jpg', 'Bedroom Comfortable Beds')">
+    <img src="images/bedroom-comfortable.jpg" alt="Bedroom Comfortable Beds"
+    onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;photo-placeholder&quot;>Bedroom<br>Comfortable Beds</div>';"
+    style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+    <div class="photo-item" onclick="openLightbox('images/living-area-spacious.jpg', 'Living Area Spacious & Modern')">
+    <img src="images/living-area-spacious.jpg" alt="Living Area Spacious & Modern"
+    onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;photo-placeholder&quot;>Living Area<br>Spacious &amp; Modern</div>';"
+    style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+    <div class="photo-item" onclick="openLightbox('images/bathroom-clean.jpg', 'Bathroom Clean & Updated')">
+    <img src="images/bathroom-clean.jpg" alt="Bathroom Clean & Updated"
+    onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;photo-placeholder&quot;>Bathroom<br>Clean &amp; Updated</div>';"
+    style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+    </div>
+    </div>
+    </section>
+
+    <!-- Room Rates -->
+    <section class="rates" id="rates">
+    <div class="container">
+    <div class="section-header">
+    <h2>Room Rates</h2>
+    </div>
+    <div class="rates-content">
+    <div class="rates-info">
+    <div class="rate-special">
+    <h3>SPECIAL OFFER!</h3>
+    <p>$70.00 for 1 Bedroom or<br>$130.00 for 2 x 1 Bedroom Apartments</p>
+    </div>
+    <p style="color: var(--text-secondary); margin-bottom: 1rem; text-align: center; font-weight: 600;">Bookings require a 20% deposit to be confirmed</p>
+    <p style="color: var(--text-light); font-size: 0.9rem; text-align: center;">All amounts are in Australian Dollars</p>
+    <!-- </div>
+    <div class="rates-list">
+    <div class="rate-item">
+    <span>Studio Apartment</span>
+    <span class="rate-price">$75.00</span>
+    </div> 
+    <div class="rate-item">
+    <span>1 King Bedroom Apartment</span>
+    <span class="rate-price">$75.00</span>
+    </div> -->
+    <div class="rate-item">
+    <span>1 King Bedroom Apartment </span>
+    <span class="rate-price">$75.00</span>
+    </div>
+    <div class="rate-item">
+    <span>2 x 1 King Bedroom Apartments </span>
+    <span class="rate-price">$140.00</span>
+    </div>
+    <div style="margin-top: 2rem; text-align: center; padding: 20px; background: rgba(14, 165, 233, 0.05); border-radius: 12px;">
+    <p style="margin-bottom: 1rem; font-weight: 700; color: var(--primary);">Airport Transfers Available:</p>
+    <p style="color: var(--text-secondary);">Pick Up (4 People): $30.00 • Drop Off (4 People): $25.00</p>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+
+    <!-- Guest Reviews -->
+    <section class="reviews" id="reviews">
+    <div class="container">
+    <div class="section-header">
+    <h2>What Our Guests Say</h2>
+    </div>
+    <div class="reviews-summary">
+    <div class="rating-display">⭐⭐⭐⭐</div>
+    <div class="rating-text">4.8 out of 5</div>
+    <div style="color: var(--text-secondary); font-weight: 500;">Based on 150+ Google & Facebook reviews</div>
+    </div>
+    <div class="reviews-grid">
+    <div class="review-card">
+    <div class="review-header">
+    <div class="review-stars">⭐⭐⭐⭐</div>
+    <div class="review-author">Sarah M.</div>
+    <div class="review-platform">Google Review</div>
+    </div>
+    <div class="review-text">"Perfect location right on Legian Beach! The apartment was spacious and clean, with everything we needed for our family vacation. Barb was incredibly helpful with local recommendations."</div>
+    </div>
+    <div class="review-card">
+    <div class="review-header">
+    <div class="review-stars">⭐⭐⭐⭐</div>
+    <div class="review-author">David & Lisa K.</div>
+    <div class="review-platform">Facebook Review</div>
+    </div>
+    <div class="review-text">"Amazing value for money! The resort facilities are excellent and having beach access right outside was incredible. Will definitely be back!"</div>
+    </div>
+    <div class="review-card">
+    <div class="review-header">
+    <div class="review-stars">⭐⭐⭐⭐</div>
+    <div class="review-author">Michael T.</div>
+    <div class="review-platform">Google Review</div>
+    </div>
+    <div class="review-text">"The apartment was exactly as described - clean, comfortable, and perfectly located. Great communication from Barb throughout our stay. Highly recommend!"</div>
+    </div>
+    <div class="review-card">
+    <div class="review-header">
+    <div class="review-stars">⭐⭐⭐⭐</div>
+    <div class="review-author">Jennifer & Mark</div>
+    <div class="review-platform">Facebook Review</div>
+    </div>
+    <div class="review-text">"Fantastic stay! The kitchen facilities were great for preparing our own meals, and the kids loved the pool access. Perfect for families."</div>
+    </div>
+    </div>
+    <div style="text-align: center; margin-top: 3rem;">
+    <a href="https://www.facebook.com/BarbsBaliApartments" class="visit-friends-btn">
+    Visit Our Facebook Page 👥
+    </a>
+    </div>
+    </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+    <div class="container">
+    <div class="footer-content">
+    <div class="footer-section">
+    <h3>Contact Information</h3>
+    <p><strong>Barb & Dave Ward</strong><br>
+    Your trusted host for Barb's Bali Apartments </p>
+
+    <div class="contact-protection">
+    <button class="contact-reveal-btn" onclick="toggleContactDetails(this)">
+    🔒 Reveal Contact Details
+    </button>
+    <div class="contact-details-protected" id="contactDetails">
+    <div class="contact-info-item">
+    <span>📱</span>
+    <span>+61 (0) 415 805 575</span>
+    </div>
+    <div class="contact-info-item">
+    <span>📱</span>
+    <span>+61 (0) 475 422 459</span>
+    </div>
+    <div class="contact-info-item">
+    <span>✉️</span>
+    <span>relax@barbsbaliapartments.com</span>
+    </div>
+    <div class="contact-info-item">
+    <span>🕒</span>
+    <span>Response within 24 hours</span>
+    </div>
+    </div>
+    </div>
+    </div>
+
+
+    <div class="footer-section">
+    <h3>Location & Resort</h3>
+    <p>Located within the prestigious Jayakarta Hotel & Resort, Legian Beach, Bali.</p>
+    <p>Direct beach access with full resort amenities including pools, restaurants, and spa services.</p>
+    </div>
+
+    <div class="footer-section">
+    <h3>Booking Information</h3>
+    <ul>
+    <li>Direct booking - no commission fees</li>
+    <li>20% deposit required to confirm</li>
+    <li>Cancellation upto 90 days prior to arrival</li>
+    <li>Airport transfers available</li>
+    </ul>
+    </div>
+    </div>
+
+    <div class="footer-bottom">
+    <p>&copy; 2025 Barb's Bali Apartments. All rights reserved. | Legian Beach, Bali</p>
+    <div style="margin-top:12px;">
+    <a href="booking/admin/login.php" class="visit-friends-btn" style="background: linear-gradient(135deg,#111827 0%,#374151 100%); padding:10px 18px; border-radius:8px; display:inline-block; font-size:0.9rem;">Admin Login</a>
+    <a href="booking/index.php" id="customerPortalFooterBtn" class="visit-friends-btn" style="background: linear-gradient(135deg,#10b981 0%,#059669 100%); padding:10px 18px; border-radius:8px; display:inline-block; font-size:0.9rem; margin-left:8px;">Customer Portal 👤</a>
+    </div>
+    </div>
+    </div>
+    </footer>
+
+    <!-- Booking Form Modal -->
+    <div id="bookingModal" class="modal">
+    <div class="modal-content" style="max-width: 800px; height: 80vh; padding: 20px;">
+    <span class="close" onclick="closeBookingModal()">&times;</span>
+    <iframe id="bookingFrame" src="" style="width: 100%; height: 100%; border: none; border-radius: 12px;"></iframe>
+    </div>
+    </div>
+
+    <!-- Customer Portal Modal -->
+    <div id="customerPortalModal" class="modal">
+    <div class="modal-content">
+    <span class="close" onclick="closeCustomerPortalModal()">&times;</span>
+    <h2>Customer Portal Access</h2>
+    <p>Enter your reservation number and email to access your booking.</p>
+    <form id="customerPortalForm" method="GET" action="booking/my-booking.php">
+    <div class="form-group">
+    <label for="resNum">Reservation Number</label>
+    <input type="text" id="resNum" name="res" required />
+    </div>
+    <div class="form-group">
+    <label for="resEmail">Email</label>
+    <input type="email" id="resEmail" name="email" required />
+    </div>
+    <button type="submit" class="check-btn">Verify & Enter Portal</button>
+    <div id="portalMessage" style="margin-top:12px;color:#ef4444;"></div>
+    </form>
+    </div>
+    </div>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div id="lightboxModal" class="lightbox">
+    <div class="lightbox-content">
+    <span class="close" onclick="closeLightbox()">&times;</span>
+    <img id="lightboxImage" src="" alt="">
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+    </div>
+
+    <script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+    const headerHeight = document.querySelector('.header').offsetHeight;
+    const targetPosition = target.offsetTop - headerHeight;
+    window.scrollTo({
+    top: targetPosition,
+    behavior: 'smooth'
+    });
+    }
+    });
+    });
+
+    // Header scroll effect
+    window.addEventListener('scroll', function() {
+    const header = document.getElementById('header');
+    if (window.scrollY > 100) {
+    header.classList.add('scrolled');
+    } else {
+    header.classList.remove('scrolled');
+    }
+    });
+
+    // Contact details toggle
+    function toggleContactDetails(button) {
+    const details = document.getElementById('contactDetails');
+    const isRevealed = details.classList.contains('revealed');
+
+    if (isRevealed) {
+    details.classList.remove('revealed');
+    button.innerHTML = '🔒 Reveal Contact Details';
+    button.classList.remove('active');
+    } else {
+    details.classList.add('revealed');
+    button.innerHTML = '🔓 Hide Contact Details';
+    button.classList.add('active');
+    }
+    }
+
+    // Booking modal functions
+    function checkAvailability() {
+    openBookingForm();
+    }
+
+    function openBookingForm(apartmentId = '', checkin = '', checkout = '') {
+    const modal = document.getElementById('bookingModal');
+    const iframe = document.getElementById('bookingFrame');
+
+    // Build URL with parameters
+    let url = 'booking/booking-form-enhanced.html';
+    const params = new URLSearchParams();
+
+    if (apartmentId) params.append('apartment_id', apartmentId);
+    if (checkin) params.append('checkin', checkin);
+    if (checkout) params.append('checkout', checkout);
+
+    if (params.toString()) {
+    url += '?' + params.toString();
+    }
+
+    iframe.src = url;
+    modal.style.display = 'block';
+    }
+
+    function closeBookingModal() {
+    document.getElementById('bookingModal').style.display = 'none';
+    document.getElementById('bookingFrame').src = '';
+    }
+
+    // Book now function
+    function bookNow() {
+    openBookingForm();
+    }
+
+    // Lightbox functions
+    function openLightbox(imageSrc, caption) {
+    const lightbox = document.getElementById('lightboxModal');
+    const lightboxImage = document.getElementById('lightboxImage');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+
+    lightboxImage.src = imageSrc;
+    lightboxCaption.textContent = caption;
+    lightbox.style.display = 'block';
+
+    // Handle image load error in lightbox
+    lightboxImage.onerror = function() {
+    this.src = 'https://placehold.co/800x600/0ea5e9/ffff?text=' + encodeURIComponent(caption);
+    };
+    }
+
+    function closeLightbox() {
+    document.getElementById('lightboxModal').style.display = 'none';
+    }
+
+    // No form submission handler needed - handled by booking-form.html
+
+    // Close modals when clicking outside
+    window.addEventListener('click', function(event) {
+    const bookingModal = document.getElementById('bookingModal');
+    const lightboxModal = document.getElementById('lightboxModal');
+
+    if (event.target === bookingModal) {
+    closeBookingModal();
+    }
+    if (event.target === lightboxModal) {
+    closeLightbox();
+    }
+    });
+
+    // Add hover effects to cards
+    document.querySelectorAll('.feature-card, .review-card').forEach(card => {
+    card.addEventListener('mouseenter', function() {
+    this.style.transform = 'translateY(-10px)';
+    });
+
+    card.addEventListener('mouseleave', function() {
+    this.style.transform = 'translateY(0)';
+    });
+    });
+
+    // Customer portal modal functions (moved outside the loop to be globally accessible)
+    function openCustomerPortalModal() {
+    document.getElementById('customerPortalModal').style.display = 'block';
+    }
+
+    function closeCustomerPortalModal() {
+    document.getElementById('customerPortalModal').style.display = 'none';
+    }
+
+    // Validate portal form before submit
+    document.addEventListener('DOMContentLoaded', function() {
+    const portalForm = document.getElementById('customerPortalForm');
+    if (portalForm) {
+    portalForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const res = document.getElementById('resNum').value.trim();
+    const email = document.getElementById('resEmail').value.trim();
+
+    const msg = document.getElementById('portalMessage');
+    msg.textContent = '';
+
+    if (!res || !email) {
+    msg.textContent = 'Please enter both reservation number and email.';
+    return;
+    }
+
+    // Simple client-side validation: basic reservation pattern (alphanumeric) and email format
+    const resPattern = /^[A-Za-z0-9-]{3,20}$/;
+    const emailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+
+    if (!resPattern.test(res)) {
+    msg.textContent = 'Invalid reservation number format.';
+    return;
+    }
+    if (!emailPattern.test(email)) {
+    msg.textContent = 'Invalid email address.';
+    return;
+    }
+
+    // On success, submit the form to server to verify - server side will also check
+    portalForm.submit();
+    });
+    }
+    });
+
+    // Close customer portal when clicking outside
+    window.addEventListener('click', function(event) {
+    const customerModal = document.getElementById('customerPortalModal');
+    if (event.target === customerModal) {
+    closeCustomerPortalModal();
+    }
+    });
+
+    // Parallax effect for hero (subtle) - use background-position instead of transform to avoid overlapping content
+    (function(){
+    const parallax = document.querySelector('.hero');
+    if (!parallax) return;
+    const speedFactor = 0.25; // adjust for stronger/weaker effect
+    let ticking = false;
+
+    function updateParallax(){
+    const offset = window.pageYOffset;
+    // clear any transform-based movement
+    parallax.style.transform = '';
+    // move the background instead; negative value makes background appear to move slower
+    parallax.style.backgroundPosition = `center ${-Math.round(offset * speedFactor)}px`;
+    ticking = false;
+    }
+
+    window.addEventListener('scroll', function(){
+    if (!ticking) {
+    window.requestAnimationFrame(updateParallax);
+    ticking = true;
+    }
+    }, { passive: true });
+    })();
+
+    // Initialize page
+    document.addEventListener('DOMContentLoaded', function() {
+    console.log('Barb\'s Bali Apartments website loaded successfully!');
+
+    // Image fallback system - replace failed images with placeholders
+    document.querySelectorAll('img').forEach(img => {
+    img.addEventListener('error', function() {
+    if (!this.dataset.fallbackApplied) {
+    this.dataset.fallbackApplied = 'true';
+    const altText = this.alt || 'Image';
+    this.src = 'https://placehold.co/800x600/0ea5e9/ffff?text=' + encodeURIComponent(altText);
+    }
+    });
+    });
+    });
+    </script>
+</body>
+</html>

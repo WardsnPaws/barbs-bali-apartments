@@ -9,7 +9,7 @@ use PHPMailer\PHPMailer\Exception;
 require 'vendor/autoload.php';
 
 function loadTemplate($templateFile) {
-    $file = __DIR__ . "/email-templates/$templateFile.html";
+    $file = __DIR__ . "/../templates/email/$templateFile.html";
     return file_exists($file) ? file_get_contents($file) : '';
 }
 

@@ -1,6 +1,6 @@
 <?php
 header('Content-Type: application/json');
-require_once __DIR__ . '/core.php';
+require_once __DIR__ . '/../includes/core.php';
 
 try {
     $pdo = getPDO();

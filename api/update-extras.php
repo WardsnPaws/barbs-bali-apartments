@@ -1,7 +1,7 @@
 <?php
 // update-extras.php
 
-require_once 'core.php';
+require_once '../includes/core.php';
 require_once 'core/price-calc.php';
 
 $resNum = $_POST['reservation_number'] ?? '';

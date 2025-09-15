@@ -3,8 +3,8 @@
 
 session_start(); // must be at the top before any output
 
-require_once __DIR__ . '/core.php';
-require_once __DIR__ . '/core/price-calc.php';
+require_once __DIR__ . '/../includes/core.php';
+require_once __DIR__ . '/../includes/price-calc.php';
 
 // Ensure required fields are present
 $required = ['guest_first_name', 'guest_last_name', 'guest_email', 'apartment_id', 'checkin_date', 'checkout_date'];
@@ -133,5 +133,5 @@ error_log("Session booking data: " . json_encode($_SESSION['booking']));
 error_log("Session amount due: " . $_SESSION['amount_due']);
 
 // Redirect to secure payment page
-header("Location: secure-payment.php");
+header("Location: ../public/secure-payment.php");
 exit;

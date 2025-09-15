@@ -1,7 +1,7 @@
 <?php
 // my-booking.php
 
-require_once 'core.php';
+require_once '../includes/core.php';
 
 $resNum = $_GET['res'] ?? '';
 $pdo = getPDO();

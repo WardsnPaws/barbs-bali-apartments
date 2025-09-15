@@ -1,6 +1,6 @@
 <?php
 // square-payment.php - Corrected for actual database schema
-require_once 'core.php';
+require_once '../includes/core.php';
 require_once 'core/price-calc.php';
 require 'vendor/autoload.php';
 

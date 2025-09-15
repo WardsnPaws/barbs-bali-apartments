@@ -1,5 +1,5 @@
 <?php
-require_once 'config.php';
+require_once '../config/config.php';
 session_start();
 // CSRF token generation
 if (empty($_SESSION['csrf_token'])) {

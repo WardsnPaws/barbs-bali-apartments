@@ -1,6 +1,6 @@
 <?php
 // www/booking/check-availability.php
-require_once 'core.php';
+require_once '../includes/core.php';
 header('Content-Type: application/json');
 
 $response = [

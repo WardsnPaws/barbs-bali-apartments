@@ -1,8 +1,8 @@
 <?php
 // resend-confirmation.php
 
-require_once 'core.php';
-require_once 'email-utils.php';
+require_once '../includes/core.php';
+require_once '../includes/email-utils.php';
 
 $resNum = $_POST['reservation_number'] ?? '';
 
