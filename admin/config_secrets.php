@@ -2,9 +2,9 @@
 return [
   // Database
   'DB_HOST'    => 'localhost',
-  'DB_USER'    => 'root',
-  'DB_PASS'    => '',
-  'DB_NAME'    => 'barbs_bali_booking',
+  'DB_USER'    => 'barbs141_database',
+  'DB_PASS'    => 'T@kesMySQL2bH@ppy',
+  'DB_NAME'    => 'barbs141_bali_booking',
 
   // Square (sandbox by default)
   'SQUARE_APPLICATION_ID' => 'sandbox-sq0idb-_qiYzv__WUfvY8Zmxn-Srw',
@@ -13,7 +13,7 @@ return [
   'SQUARE_MCC'            => '7299',
 
   // PayPal
-  'PAYPAL_CLIENT_ID'      => 'ATGD6YEDIugvmDtsUAB77IMG-aalxulLt1awBPQ7Ry5fsYg-fLRtu5l8z8htyJD5ECrR8UPlArHdP0Ix',
+  'PAYPAL_CLIENT_ID'      => 'AUDk7U-lf5Mei8EMElZTIpXe-DOST939AKfddP8HG01p1FgJYSWX1ZLmqoBKO88G7XYbItw3lKFGju2R',
 
   // SMTP
   'SMTP_HOST'      => 'mail.barbsbaliapartments.com',
@@ -26,5 +26,5 @@ return [
   // Housekeeping / Admin
   'HOUSEKEEPING_EMAIL' => 'housekeeping@barbsbaliapartments.com',
   'ADMIN_USER'         => 'admin',
-  'ADMIN_PASS'         => 'letmein' // Replace in production
+  'ADMIN_PASS'         => 'T@kesbundy2bH@ppy' // Replace in production
 ];

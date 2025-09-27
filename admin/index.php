@@ -38,11 +38,17 @@ if (!$viewFile) {
   </style>
 </head>
 <body>
-
+      
   <header>
     <h1>Admin Console – Barbs Bali Apartments</h1>
     <nav>
-      <a href="../public/index.html">🏠 Home</a>
+    <a href="../public/index.html">🏠 Home</a>
+       <a href="views/email-templates.php" class="admin-menu-item">
+    <span class="icon">📧</span>
+    <span class="label">Email Templates</span>
+    <span class="badge"><?= $totalActiveTemplates ?? '' ?></span>
+</a> 
+
       <a href="?view=dashboard">Dashboard</a>
       <a href="?view=bookings">Bookings</a>
       <a href="?view=calendar">Calendar</a>

@@ -24,10 +24,15 @@ function env($key, $default = null) {
 }
 
 // Database Credentials
-define('DB_HOST',    env('DB_HOST', 'localhost'));
-define('DB_USER',    env('DB_USER', 'root'));
-define('DB_PASS',    env('DB_PASS', ''));
-define('DB_NAME',    env('DB_NAME', 'barbs_bali_booking'));
+
+// Database Configuration
+define('DB_HOST', 'localhost');
+define('DB_USER', 'barbs141_database');
+define('DB_PASS', 'T@kesMySQL2bH@ppy');
+define('DB_NAME', 'barbs141_bali_booking');
+
+// Alternative constant name (some systems use this)
+define('DB_PASSWORD', 'T@kesMySQL2bH@ppy');
 
 // Square API Configuration (sandbox keys - replace with live for production)
 define('SQUARE_APPLICATION_ID', env('SQUARE_APPLICATION_ID', 'sandbox-sq0idb-_qiYzv__WUfvY8Zmxn-Srw'));

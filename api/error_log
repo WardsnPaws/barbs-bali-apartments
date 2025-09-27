@@ -1,0 +1,1338 @@
+[16-Sep-2025 21:56:25 UTC] Booking Process - Raw POST data: {"apartment_id":"3","checkin_date":"2025-09-28","checkout_date":"2025-09-30","guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","sofa_bed":"1"}
+[16-Sep-2025 21:56:25 UTC] Booking Process - Processed sofa_bed: true
+[16-Sep-2025 21:56:25 UTC] Booking Process - Processed extras: []
+[16-Sep-2025 21:56:25 UTC] Price calc - Input booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":3,"checkin_date":"2025-09-28","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[16-Sep-2025 21:56:25 UTC] Price calc - Apartment 1 base rate: 70 * 2 nights = 140
+[16-Sep-2025 21:56:25 UTC] Price calc - Apartment 2 base rate: 70 * 2 nights = 140
+[16-Sep-2025 21:56:25 UTC] Price calc - Sofa bed: 5 * 2 nights = 10
+[16-Sep-2025 21:56:25 UTC] Price calc - No extras selected
+[16-Sep-2025 21:56:25 UTC] Price calc - Interconnecting discount: 5 * 2 apartments * 2 nights = 20
+[16-Sep-2025 21:56:25 UTC] Price calc - Final total: 270
+[16-Sep-2025 21:56:25 UTC] Single apartment booking - total: 270
+[16-Sep-2025 21:56:25 UTC] Session booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":3,"checkin_date":"2025-09-28","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[16-Sep-2025 21:56:25 UTC] Session amount due: 270
+[16-Sep-2025 21:56:28 UTC] Get session booking - Session data: {"booking":{"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":3,"checkin_date":"2025-09-28","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]},"amount_due":270,"price_breakdown":{"total":270,"nights":2,"breakdown":{"base_rate":280,"sofa_bed":10,"extras":0,"discount":20,"nights":2,"apartments":[1,2]}},"csrf_token":"34ba35f05289b3f847b263cb0db66968ab6f30978684ac7a859f864541d617e4"}
+[16-Sep-2025 21:56:28 UTC] Get session booking - Raw booking: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":3,"checkin_date":"2025-09-28","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[16-Sep-2025 21:56:28 UTC] Get session booking - Stored apartment ID: 3
+[16-Sep-2025 21:56:28 UTC] Get session booking - Calculating for apartment 1: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2025-09-28","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[16-Sep-2025 21:56:28 UTC] Get session booking - Calculating for apartment 2: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2025-09-28","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[16-Sep-2025 21:56:28 UTC] Price calc - Input booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2025-09-28","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[16-Sep-2025 21:56:28 UTC] Price calc - Apartment 1 base rate: 70 * 2 nights = 140
+[16-Sep-2025 21:56:28 UTC] Price calc - Sofa bed: 5 * 2 nights = 10
+[16-Sep-2025 21:56:28 UTC] Price calc - No extras selected
+[16-Sep-2025 21:56:28 UTC] Price calc - Final total: 150
+[16-Sep-2025 21:56:28 UTC] Price calc - Input booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2025-09-28","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[16-Sep-2025 21:56:28 UTC] Price calc - Apartment 2 base rate: 70 * 2 nights = 140
+[16-Sep-2025 21:56:28 UTC] Price calc - Sofa bed: 5 * 2 nights = 10
+[16-Sep-2025 21:56:28 UTC] Price calc - No extras selected
+[16-Sep-2025 21:56:28 UTC] Price calc - Final total: 150
+[16-Sep-2025 21:56:28 UTC] Get session booking - Combined total: 300 (6205: 150, 6207: 150)
+[16-Sep-2025 21:56:28 UTC] Get session booking - Final output: total=300, deposit=60, is_deposit=false, amount_due=300
+[16-Sep-2025 21:57:36 UTC] PHP Warning:  require_once(/home/barbs141/public_html/barbs-bali-apartments/api/complete-booking.php): Failed to open stream: No such file or directory in /home/barbs141/public_html/barbs-bali-apartments/api/mark-paid.php on line 6
+[16-Sep-2025 21:57:36 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/barbs141/public_html/barbs-bali-apartments/api/complete-booking.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/barbs141/public_html/barbs-bali-apartments/api/mark-paid.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/barbs141/public_html/barbs-bali-apartments/api/mark-paid.php on line 6
+[16-Sep-2025 23:20:10 UTC] Booking Process - Raw POST data: {"apartment_id":"1","checkin_date":"2025-09-28","checkout_date":"2025-09-29","guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street"}
+[16-Sep-2025 23:20:10 UTC] Booking Process - Processed sofa_bed: false
+[16-Sep-2025 23:20:10 UTC] Booking Process - Processed extras: []
+[16-Sep-2025 23:20:10 UTC] Price calc - Input booking data: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":1,"checkin_date":"2025-09-28","checkout_date":"2025-09-29","sofa_bed":false,"extras":[]}
+[16-Sep-2025 23:20:10 UTC] Price calc - Apartment 1 base rate: 70 * 1 nights = 70
+[16-Sep-2025 23:20:10 UTC] Price calc - No sofa bed selected (value was: false)
+[16-Sep-2025 23:20:10 UTC] Price calc - No extras selected
+[16-Sep-2025 23:20:10 UTC] Price calc - Final total: 70
+[16-Sep-2025 23:20:10 UTC] Single apartment booking - total: 70
+[16-Sep-2025 23:20:10 UTC] Session booking data: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":1,"checkin_date":"2025-09-28","checkout_date":"2025-09-29","sofa_bed":false,"extras":[]}
+[16-Sep-2025 23:20:10 UTC] Session amount due: 70
+[16-Sep-2025 23:20:11 UTC] Get session booking - Session data: {"booking":{"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":1,"checkin_date":"2025-09-28","checkout_date":"2025-09-29","sofa_bed":false,"extras":[]},"amount_due":70,"price_breakdown":{"total":70,"nights":1,"breakdown":{"base_rate":70,"sofa_bed":0,"extras":0,"discount":0,"nights":1,"apartments":[1]}},"csrf_token":"2a2321e5f52229db8ae2d75aed70e9068fac85b87403011893fe6b6814386c14"}
+[16-Sep-2025 23:20:11 UTC] Get session booking - Raw booking: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":1,"checkin_date":"2025-09-28","checkout_date":"2025-09-29","sofa_bed":false,"extras":[]}
+[16-Sep-2025 23:20:11 UTC] Get session booking - Stored apartment ID: 1
+[16-Sep-2025 23:20:11 UTC] Get session booking - Calculating for single apartment: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":1,"checkin_date":"2025-09-28","checkout_date":"2025-09-29","sofa_bed":false,"extras":[]}
+[16-Sep-2025 23:20:11 UTC] Price calc - Input booking data: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":1,"checkin_date":"2025-09-28","checkout_date":"2025-09-29","sofa_bed":false,"extras":[]}
+[16-Sep-2025 23:20:11 UTC] Price calc - Apartment 1 base rate: 70 * 1 nights = 70
+[16-Sep-2025 23:20:11 UTC] Price calc - No sofa bed selected (value was: false)
+[16-Sep-2025 23:20:11 UTC] Price calc - No extras selected
+[16-Sep-2025 23:20:11 UTC] Price calc - Final total: 70
+[16-Sep-2025 23:20:11 UTC] Get session booking - Single apartment total: 70
+[16-Sep-2025 23:20:11 UTC] Get session booking - Final output: total=70, deposit=14, is_deposit=false, amount_due=70
+[16-Sep-2025 23:20:26 UTC] PHP Warning:  require_once(/home/barbs141/public_html/barbs-bali-apartments/vendor/autoload.php): Failed to open stream: No such file or directory in /home/barbs141/public_html/barbs-bali-apartments/includes/email-utils.php on line 11
+[16-Sep-2025 23:20:26 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/barbs141/public_html/barbs-bali-apartments/vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/barbs141/public_html/barbs-bali-apartments/includes/email-utils.php:11
+Stack trace:
+#0 /home/barbs141/public_html/barbs-bali-apartments/api/square-payment.php(5): require_once()
+#1 {main}
+  thrown in /home/barbs141/public_html/barbs-bali-apartments/includes/email-utils.php on line 11
+[16-Sep-2025 23:20:34 UTC] PHP Warning:  require_once(/home/barbs141/public_html/barbs-bali-apartments/vendor/autoload.php): Failed to open stream: No such file or directory in /home/barbs141/public_html/barbs-bali-apartments/includes/email-utils.php on line 11
+[16-Sep-2025 23:20:34 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/barbs141/public_html/barbs-bali-apartments/vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/barbs141/public_html/barbs-bali-apartments/includes/email-utils.php:11
+Stack trace:
+#0 /home/barbs141/public_html/barbs-bali-apartments/api/square-payment.php(5): require_once()
+#1 {main}
+  thrown in /home/barbs141/public_html/barbs-bali-apartments/includes/email-utils.php on line 11
+[16-Sep-2025 23:21:13 UTC] PHP Warning:  require_once(/home/barbs141/public_html/barbs-bali-apartments/api/complete-booking.php): Failed to open stream: No such file or directory in /home/barbs141/public_html/barbs-bali-apartments/api/mark-paid.php on line 6
+[16-Sep-2025 23:21:13 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/barbs141/public_html/barbs-bali-apartments/api/complete-booking.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/barbs141/public_html/barbs-bali-apartments/api/mark-paid.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/barbs141/public_html/barbs-bali-apartments/api/mark-paid.php on line 6
+[18-Sep-2025 22:32:54 UTC] Booking Process - Raw POST data: {"apartment_id":"2","checkin_date":"2025-09-27","checkout_date":"2025-09-30","guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","sofa_bed":"1"}
+[18-Sep-2025 22:32:54 UTC] Booking Process - Processed sofa_bed: true
+[18-Sep-2025 22:32:54 UTC] Booking Process - Processed extras: []
+[18-Sep-2025 22:32:54 UTC] Price calc - Input booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[18-Sep-2025 22:32:54 UTC] Price calc - Apartment 2 base rate: 70 * 3 nights = 210
+[18-Sep-2025 22:32:54 UTC] Price calc - Sofa bed: 5 * 3 nights = 15
+[18-Sep-2025 22:32:54 UTC] Price calc - No extras selected
+[18-Sep-2025 22:32:54 UTC] Price calc - Final total: 225
+[18-Sep-2025 22:32:54 UTC] Single apartment booking - total: 225
+[18-Sep-2025 22:32:54 UTC] Session booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[18-Sep-2025 22:32:54 UTC] Session amount due: 225
+[18-Sep-2025 22:32:56 UTC] Get session booking - Session data: {"booking":{"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]},"amount_due":225,"price_breakdown":{"total":225,"nights":3,"breakdown":{"base_rate":210,"sofa_bed":15,"extras":0,"discount":0,"nights":3,"apartments":[2]}},"csrf_token":"8aa0c7a9aea4039fcd5b29c31606004ac4872b442df330797e969e4b02256365"}
+[18-Sep-2025 22:32:56 UTC] Get session booking - Raw booking: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[18-Sep-2025 22:32:56 UTC] Get session booking - Stored apartment ID: 2
+[18-Sep-2025 22:32:56 UTC] Get session booking - Calculating for single apartment: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[18-Sep-2025 22:32:56 UTC] Price calc - Input booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[18-Sep-2025 22:32:56 UTC] Price calc - Apartment 2 base rate: 70 * 3 nights = 210
+[18-Sep-2025 22:32:56 UTC] Price calc - Sofa bed: 5 * 3 nights = 15
+[18-Sep-2025 22:32:56 UTC] Price calc - No extras selected
+[18-Sep-2025 22:32:56 UTC] Price calc - Final total: 225
+[18-Sep-2025 22:32:56 UTC] Get session booking - Single apartment total: 225
+[18-Sep-2025 22:32:56 UTC] Get session booking - Final output: total=225, deposit=45, is_deposit=false, amount_due=225
+[18-Sep-2025 22:33:25 UTC] PHP Warning:  require_once(/home/barbs141/public_html/barbs-bali-apartments/api/complete-booking.php): Failed to open stream: No such file or directory in /home/barbs141/public_html/barbs-bali-apartments/api/mark-paid.php on line 6
+[18-Sep-2025 22:33:25 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/barbs141/public_html/barbs-bali-apartments/api/complete-booking.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/barbs141/public_html/barbs-bali-apartments/api/mark-paid.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/barbs141/public_html/barbs-bali-apartments/api/mark-paid.php on line 6
+[18-Sep-2025 22:33:47 UTC] Get session booking - Session data: {"booking":{"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]},"amount_due":225,"price_breakdown":{"total":225,"nights":3,"breakdown":{"base_rate":210,"sofa_bed":15,"extras":0,"discount":0,"nights":3,"apartments":[2]}},"csrf_token":"8aa0c7a9aea4039fcd5b29c31606004ac4872b442df330797e969e4b02256365"}
+[18-Sep-2025 22:33:47 UTC] Get session booking - Raw booking: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[18-Sep-2025 22:33:47 UTC] Get session booking - Stored apartment ID: 2
+[18-Sep-2025 22:33:47 UTC] Get session booking - Calculating for single apartment: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[18-Sep-2025 22:33:47 UTC] Price calc - Input booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[18-Sep-2025 22:33:47 UTC] Price calc - Apartment 2 base rate: 70 * 3 nights = 210
+[18-Sep-2025 22:33:47 UTC] Price calc - Sofa bed: 5 * 3 nights = 15
+[18-Sep-2025 22:33:47 UTC] Price calc - No extras selected
+[18-Sep-2025 22:33:47 UTC] Price calc - Final total: 225
+[18-Sep-2025 22:33:47 UTC] Get session booking - Single apartment total: 225
+[18-Sep-2025 22:33:47 UTC] Get session booking - Final output: total=225, deposit=45, is_deposit=false, amount_due=225
+[18-Sep-2025 22:34:16 UTC] PHP Warning:  require_once(/home/barbs141/public_html/barbs-bali-apartments/api/complete-booking.php): Failed to open stream: No such file or directory in /home/barbs141/public_html/barbs-bali-apartments/api/mark-paid.php on line 6
+[18-Sep-2025 22:34:16 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/barbs141/public_html/barbs-bali-apartments/api/complete-booking.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/barbs141/public_html/barbs-bali-apartments/api/mark-paid.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/barbs141/public_html/barbs-bali-apartments/api/mark-paid.php on line 6
+[18-Sep-2025 23:20:47 UTC] Booking Process - Raw POST data: {"apartment_id":"2","checkin_date":"2025-09-27","checkout_date":"2025-09-30","guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49"}
+[18-Sep-2025 23:20:47 UTC] Booking Process - Processed sofa_bed: false
+[18-Sep-2025 23:20:47 UTC] Booking Process - Processed extras: []
+[18-Sep-2025 23:20:47 UTC] Price calc - Input booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":false,"extras":[]}
+[18-Sep-2025 23:20:47 UTC] Price calc - Apartment 2 base rate: 70 * 3 nights = 210
+[18-Sep-2025 23:20:47 UTC] Price calc - No sofa bed selected (value was: false)
+[18-Sep-2025 23:20:47 UTC] Price calc - No extras selected
+[18-Sep-2025 23:20:47 UTC] Price calc - Final total: 210
+[18-Sep-2025 23:20:47 UTC] Single apartment booking - total: 210
+[18-Sep-2025 23:20:47 UTC] Session booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":false,"extras":[]}
+[18-Sep-2025 23:20:47 UTC] Session amount due: 210
+[18-Sep-2025 23:20:48 UTC] Get session booking - Session data: {"booking":{"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":false,"extras":[]},"amount_due":210,"price_breakdown":{"total":210,"nights":3,"breakdown":{"base_rate":210,"sofa_bed":0,"extras":0,"discount":0,"nights":3,"apartments":[2]}},"csrf_token":"b22b61bbd343e9dc0968cf64a5191df1e9d7771bfad690e8a4843677313689a9"}
+[18-Sep-2025 23:20:48 UTC] Get session booking - Raw booking: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":false,"extras":[]}
+[18-Sep-2025 23:20:48 UTC] Get session booking - Stored apartment ID: 2
+[18-Sep-2025 23:20:48 UTC] Get session booking - Calculating for single apartment: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":false,"extras":[]}
+[18-Sep-2025 23:20:48 UTC] Price calc - Input booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":false,"extras":[]}
+[18-Sep-2025 23:20:48 UTC] Price calc - Apartment 2 base rate: 70 * 3 nights = 210
+[18-Sep-2025 23:20:48 UTC] Price calc - No sofa bed selected (value was: false)
+[18-Sep-2025 23:20:48 UTC] Price calc - No extras selected
+[18-Sep-2025 23:20:48 UTC] Price calc - Final total: 210
+[18-Sep-2025 23:20:48 UTC] Get session booking - Single apartment total: 210
+[18-Sep-2025 23:20:48 UTC] Get session booking - Final output: total=210, deposit=42, is_deposit=false, amount_due=210
+[18-Sep-2025 23:21:13 UTC] PHP Warning:  require_once(/home/barbs141/public_html/barbs-bali-apartments/vendor/autoload.php): Failed to open stream: No such file or directory in /home/barbs141/public_html/barbs-bali-apartments/includes/email-utils.php on line 11
+[18-Sep-2025 23:21:13 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/barbs141/public_html/barbs-bali-apartments/vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/barbs141/public_html/barbs-bali-apartments/includes/email-utils.php:11
+Stack trace:
+#0 /home/barbs141/public_html/barbs-bali-apartments/api/complete-booking.php(5): require_once()
+#1 /home/barbs141/public_html/barbs-bali-apartments/api/mark-paid.php(6): require_once('/home/barbs141/...')
+#2 {main}
+  thrown in /home/barbs141/public_html/barbs-bali-apartments/includes/email-utils.php on line 11
+[18-Sep-2025 23:21:55 UTC] Get session booking - Session data: {"booking":{"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":false,"extras":[]},"amount_due":210,"price_breakdown":{"total":210,"nights":3,"breakdown":{"base_rate":210,"sofa_bed":0,"extras":0,"discount":0,"nights":3,"apartments":[2]}},"csrf_token":"b22b61bbd343e9dc0968cf64a5191df1e9d7771bfad690e8a4843677313689a9"}
+[18-Sep-2025 23:21:55 UTC] Get session booking - Raw booking: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":false,"extras":[]}
+[18-Sep-2025 23:21:55 UTC] Get session booking - Stored apartment ID: 2
+[18-Sep-2025 23:21:55 UTC] Get session booking - Calculating for single apartment: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":false,"extras":[]}
+[18-Sep-2025 23:21:55 UTC] Price calc - Input booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":false,"extras":[]}
+[18-Sep-2025 23:21:55 UTC] Price calc - Apartment 2 base rate: 70 * 3 nights = 210
+[18-Sep-2025 23:21:55 UTC] Price calc - No sofa bed selected (value was: false)
+[18-Sep-2025 23:21:55 UTC] Price calc - No extras selected
+[18-Sep-2025 23:21:55 UTC] Price calc - Final total: 210
+[18-Sep-2025 23:21:55 UTC] Get session booking - Single apartment total: 210
+[18-Sep-2025 23:21:55 UTC] Get session booking - Final output: total=210, deposit=42, is_deposit=false, amount_due=210
+[18-Sep-2025 23:22:35 UTC] PHP Warning:  require_once(/home/barbs141/public_html/barbs-bali-apartments/vendor/autoload.php): Failed to open stream: No such file or directory in /home/barbs141/public_html/barbs-bali-apartments/includes/email-utils.php on line 11
+[18-Sep-2025 23:22:35 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/barbs141/public_html/barbs-bali-apartments/vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/barbs141/public_html/barbs-bali-apartments/includes/email-utils.php:11
+Stack trace:
+#0 /home/barbs141/public_html/barbs-bali-apartments/api/complete-booking.php(5): require_once()
+#1 /home/barbs141/public_html/barbs-bali-apartments/api/mark-paid.php(6): require_once('/home/barbs141/...')
+#2 {main}
+  thrown in /home/barbs141/public_html/barbs-bali-apartments/includes/email-utils.php on line 11
+[19-Sep-2025 00:45:54 UTC] Booking Process - Raw POST data: {"apartment_id":"2","checkin_date":"2025-09-27","checkout_date":"2025-09-30","guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49"}
+[19-Sep-2025 00:45:54 UTC] Booking Process - Processed sofa_bed: false
+[19-Sep-2025 00:45:54 UTC] Booking Process - Processed extras: []
+[19-Sep-2025 00:45:54 UTC] Price calc - Input booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":false,"extras":[]}
+[19-Sep-2025 00:45:54 UTC] Price calc - Apartment 2 base rate: 70 * 3 nights = 210
+[19-Sep-2025 00:45:54 UTC] Price calc - No sofa bed selected (value was: false)
+[19-Sep-2025 00:45:54 UTC] Price calc - No extras selected
+[19-Sep-2025 00:45:54 UTC] Price calc - Final total: 210
+[19-Sep-2025 00:45:54 UTC] Single apartment booking - total: 210
+[19-Sep-2025 00:45:54 UTC] Session booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":false,"extras":[]}
+[19-Sep-2025 00:45:54 UTC] Session amount due: 210
+[19-Sep-2025 00:45:55 UTC] Get session booking - Session data: {"booking":{"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":false,"extras":[]},"amount_due":210,"price_breakdown":{"total":210,"nights":3,"breakdown":{"base_rate":210,"sofa_bed":0,"extras":0,"discount":0,"nights":3,"apartments":[2]}},"csrf_token":"6777f77c568740ec132d84af2cea1262ef2d57a85d01299a95fdcc9aa335294f"}
+[19-Sep-2025 00:45:55 UTC] Get session booking - Raw booking: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":false,"extras":[]}
+[19-Sep-2025 00:45:55 UTC] Get session booking - Stored apartment ID: 2
+[19-Sep-2025 00:45:55 UTC] Get session booking - Calculating for single apartment: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":false,"extras":[]}
+[19-Sep-2025 00:45:55 UTC] Price calc - Input booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":false,"extras":[]}
+[19-Sep-2025 00:45:55 UTC] Price calc - Apartment 2 base rate: 70 * 3 nights = 210
+[19-Sep-2025 00:45:55 UTC] Price calc - No sofa bed selected (value was: false)
+[19-Sep-2025 00:45:55 UTC] Price calc - No extras selected
+[19-Sep-2025 00:45:55 UTC] Price calc - Final total: 210
+[19-Sep-2025 00:45:55 UTC] Get session booking - Single apartment total: 210
+[19-Sep-2025 00:45:55 UTC] Get session booking - Final output: total=210, deposit=42, is_deposit=false, amount_due=210
+[19-Sep-2025 00:46:36 UTC] PHP Warning:  require_once(/home/barbs141/public_html/barbs-bali-apartments/vendor/autoload.php): Failed to open stream: No such file or directory in /home/barbs141/public_html/barbs-bali-apartments/includes/email-utils.php on line 11
+[19-Sep-2025 00:46:36 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/barbs141/public_html/barbs-bali-apartments/vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/barbs141/public_html/barbs-bali-apartments/includes/email-utils.php:11
+Stack trace:
+#0 /home/barbs141/public_html/barbs-bali-apartments/api/complete-booking.php(5): require_once()
+#1 /home/barbs141/public_html/barbs-bali-apartments/api/mark-paid.php(6): require_once('/home/barbs141/...')
+#2 {main}
+  thrown in /home/barbs141/public_html/barbs-bali-apartments/includes/email-utils.php on line 11
+[19-Sep-2025 00:48:43 UTC] Price calc - Input booking data: {"apartment_id":"2","checkin_date":"2025-09-16","checkout_date":"2025-09-17","sofa_bed":false,"extras":["4","3"]}
+[19-Sep-2025 00:48:43 UTC] Price calc - Apartment 2 base rate: 70 * 1 nights = 70
+[19-Sep-2025 00:48:43 UTC] Price calc - No sofa bed selected (value was: false)
+[19-Sep-2025 00:48:43 UTC] Price calc - Processing extras: ["4","3"]
+[19-Sep-2025 00:48:43 UTC] Price calc - One-time extra 'Airport Drop-off': 25 = 25
+[19-Sep-2025 00:48:43 UTC] Price calc - One-time extra 'Airport Pickup': 35 = 35
+[19-Sep-2025 00:48:43 UTC] Price calc - Final total: 130
+[19-Sep-2025 00:49:00 UTC] PHP Warning:  require(/home/barbs141/public_html/barbs-bali-apartments/api/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/barbs141/public_html/barbs-bali-apartments/api/process-extras-payment.php on line 5
+[19-Sep-2025 00:49:00 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/barbs141/public_html/barbs-bali-apartments/api/../vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/barbs141/public_html/barbs-bali-apartments/api/process-extras-payment.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/barbs141/public_html/barbs-bali-apartments/api/process-extras-payment.php on line 5
+[21-Sep-2025 17:10:32 UTC] Booking Process - Raw POST data: {"apartment_id":"2","checkin_date":"2025-09-27","checkout_date":"2025-09-30","guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","sofa_bed":"1"}
+[21-Sep-2025 17:10:32 UTC] Booking Process - Processed sofa_bed: true
+[21-Sep-2025 17:10:32 UTC] Booking Process - Processed extras: []
+[21-Sep-2025 17:10:32 UTC] Price calc - Input booking data: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[21-Sep-2025 17:10:32 UTC] Price calc - Apartment 2 base rate: 70 * 3 nights = 210
+[21-Sep-2025 17:10:32 UTC] Price calc - Sofa bed: 5 * 3 nights = 15
+[21-Sep-2025 17:10:32 UTC] Price calc - No extras selected
+[21-Sep-2025 17:10:32 UTC] Price calc - Final total: 225
+[21-Sep-2025 17:10:32 UTC] Single apartment booking - total: 225
+[21-Sep-2025 17:10:32 UTC] Session booking data: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[21-Sep-2025 17:10:32 UTC] Session amount due: 225
+[21-Sep-2025 17:10:34 UTC] Get session booking - Session data: {"booking":{"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]},"amount_due":225,"price_breakdown":{"total":225,"nights":3,"breakdown":{"base_rate":210,"sofa_bed":15,"extras":0,"discount":0,"nights":3,"apartments":[2]}},"csrf_token":"cc335701878909a3f43597f4727551d7020ba8b7bfe44e92cb773a4228dae011"}
+[21-Sep-2025 17:10:34 UTC] Get session booking - Raw booking: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[21-Sep-2025 17:10:34 UTC] Get session booking - Stored apartment ID: 2
+[21-Sep-2025 17:10:34 UTC] Get session booking - Calculating for single apartment: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[21-Sep-2025 17:10:34 UTC] Price calc - Input booking data: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[21-Sep-2025 17:10:34 UTC] Price calc - Apartment 2 base rate: 70 * 3 nights = 210
+[21-Sep-2025 17:10:34 UTC] Price calc - Sofa bed: 5 * 3 nights = 15
+[21-Sep-2025 17:10:34 UTC] Price calc - No extras selected
+[21-Sep-2025 17:10:34 UTC] Price calc - Final total: 225
+[21-Sep-2025 17:10:34 UTC] Get session booking - Single apartment total: 225
+[21-Sep-2025 17:10:34 UTC] Get session booking - Final output: total=225, deposit=45, is_deposit=false, amount_due=225
+[21-Sep-2025 17:10:57 UTC] PHP Warning:  require_once(/home/barbs141/public_html/barbs-bali-apartments/vendor/autoload.php): Failed to open stream: No such file or directory in /home/barbs141/public_html/barbs-bali-apartments/includes/email-utils.php on line 11
+[21-Sep-2025 17:10:57 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/barbs141/public_html/barbs-bali-apartments/vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/barbs141/public_html/barbs-bali-apartments/includes/email-utils.php:11
+Stack trace:
+#0 /home/barbs141/public_html/barbs-bali-apartments/api/square-payment.php(5): require_once()
+#1 {main}
+  thrown in /home/barbs141/public_html/barbs-bali-apartments/includes/email-utils.php on line 11
+[21-Sep-2025 17:15:30 UTC] Booking Process - Raw POST data: {"apartment_id":"2","checkin_date":"2025-09-27","checkout_date":"2025-09-30","guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","sofa_bed":"1"}
+[21-Sep-2025 17:15:30 UTC] Booking Process - Processed sofa_bed: true
+[21-Sep-2025 17:15:30 UTC] Booking Process - Processed extras: []
+[21-Sep-2025 17:15:30 UTC] Price calc - Input booking data: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[21-Sep-2025 17:15:30 UTC] Price calc - Apartment 2 base rate: 70 * 3 nights = 210
+[21-Sep-2025 17:15:30 UTC] Price calc - Sofa bed: 5 * 3 nights = 15
+[21-Sep-2025 17:15:30 UTC] Price calc - No extras selected
+[21-Sep-2025 17:15:30 UTC] Price calc - Final total: 225
+[21-Sep-2025 17:15:30 UTC] Single apartment booking - total: 225
+[21-Sep-2025 17:15:30 UTC] Session booking data: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[21-Sep-2025 17:15:30 UTC] Session amount due: 225
+[21-Sep-2025 17:15:31 UTC] Get session booking - Session data: {"booking":{"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]},"amount_due":225,"price_breakdown":{"total":225,"nights":3,"breakdown":{"base_rate":210,"sofa_bed":15,"extras":0,"discount":0,"nights":3,"apartments":[2]}},"csrf_token":"cc335701878909a3f43597f4727551d7020ba8b7bfe44e92cb773a4228dae011"}
+[21-Sep-2025 17:15:31 UTC] Get session booking - Raw booking: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[21-Sep-2025 17:15:31 UTC] Get session booking - Stored apartment ID: 2
+[21-Sep-2025 17:15:31 UTC] Get session booking - Calculating for single apartment: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[21-Sep-2025 17:15:31 UTC] Price calc - Input booking data: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[21-Sep-2025 17:15:31 UTC] Price calc - Apartment 2 base rate: 70 * 3 nights = 210
+[21-Sep-2025 17:15:31 UTC] Price calc - Sofa bed: 5 * 3 nights = 15
+[21-Sep-2025 17:15:31 UTC] Price calc - No extras selected
+[21-Sep-2025 17:15:31 UTC] Price calc - Final total: 225
+[21-Sep-2025 17:15:31 UTC] Get session booking - Single apartment total: 225
+[21-Sep-2025 17:15:31 UTC] Get session booking - Final output: total=225, deposit=45, is_deposit=false, amount_due=225
+[21-Sep-2025 17:16:58 UTC] PHP Warning:  require_once(/home/barbs141/public_html/barbs-bali-apartments/vendor/autoload.php): Failed to open stream: No such file or directory in /home/barbs141/public_html/barbs-bali-apartments/includes/email-utils.php on line 11
+[21-Sep-2025 17:16:58 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/barbs141/public_html/barbs-bali-apartments/vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/barbs141/public_html/barbs-bali-apartments/includes/email-utils.php:11
+Stack trace:
+#0 /home/barbs141/public_html/barbs-bali-apartments/api/square-payment.php(5): require_once()
+#1 {main}
+  thrown in /home/barbs141/public_html/barbs-bali-apartments/includes/email-utils.php on line 11
+[21-Sep-2025 17:44:21 UTC] Booking Process - Raw POST data: {"apartment_id":"2","checkin_date":"2025-09-27","checkout_date":"2025-09-30","guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street"}
+[21-Sep-2025 17:44:21 UTC] Booking Process - Processed sofa_bed: false
+[21-Sep-2025 17:44:21 UTC] Booking Process - Processed extras: []
+[21-Sep-2025 17:44:21 UTC] Price calc - Input booking data: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":false,"extras":[]}
+[21-Sep-2025 17:44:21 UTC] Price calc - Apartment 2 base rate: 70 * 3 nights = 210
+[21-Sep-2025 17:44:21 UTC] Price calc - No sofa bed selected (value was: false)
+[21-Sep-2025 17:44:21 UTC] Price calc - No extras selected
+[21-Sep-2025 17:44:21 UTC] Price calc - Final total: 210
+[21-Sep-2025 17:44:21 UTC] Single apartment booking - total: 210
+[21-Sep-2025 17:44:21 UTC] Session booking data: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":false,"extras":[]}
+[21-Sep-2025 17:44:21 UTC] Session amount due: 210
+[21-Sep-2025 17:44:22 UTC] Get session booking - Session data: {"booking":{"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":false,"extras":[]},"amount_due":210,"price_breakdown":{"total":210,"nights":3,"breakdown":{"base_rate":210,"sofa_bed":0,"extras":0,"discount":0,"nights":3,"apartments":[2]}},"csrf_token":"cc335701878909a3f43597f4727551d7020ba8b7bfe44e92cb773a4228dae011"}
+[21-Sep-2025 17:44:22 UTC] Get session booking - Raw booking: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":false,"extras":[]}
+[21-Sep-2025 17:44:22 UTC] Get session booking - Stored apartment ID: 2
+[21-Sep-2025 17:44:22 UTC] Get session booking - Calculating for single apartment: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":false,"extras":[]}
+[21-Sep-2025 17:44:22 UTC] Price calc - Input booking data: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":false,"extras":[]}
+[21-Sep-2025 17:44:22 UTC] Price calc - Apartment 2 base rate: 70 * 3 nights = 210
+[21-Sep-2025 17:44:22 UTC] Price calc - No sofa bed selected (value was: false)
+[21-Sep-2025 17:44:22 UTC] Price calc - No extras selected
+[21-Sep-2025 17:44:22 UTC] Price calc - Final total: 210
+[21-Sep-2025 17:44:22 UTC] Get session booking - Single apartment total: 210
+[21-Sep-2025 17:44:22 UTC] Get session booking - Final output: total=210, deposit=42, is_deposit=false, amount_due=210
+[21-Sep-2025 17:44:39 UTC] PHP Warning:  require_once(/home/barbs141/public_html/barbs-bali-apartments/vendor/autoload.php): Failed to open stream: No such file or directory in /home/barbs141/public_html/barbs-bali-apartments/includes/email-utils.php on line 11
+[21-Sep-2025 17:44:39 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/barbs141/public_html/barbs-bali-apartments/vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/barbs141/public_html/barbs-bali-apartments/includes/email-utils.php:11
+Stack trace:
+#0 /home/barbs141/public_html/barbs-bali-apartments/api/square-payment.php(5): require_once()
+#1 {main}
+  thrown in /home/barbs141/public_html/barbs-bali-apartments/includes/email-utils.php on line 11
+[21-Sep-2025 17:59:48 UTC] PHP Parse error:  syntax error, unexpected token "use" in /home/barbs141/public_html/barbs-bali-apartments/api/square-payment.php on line 39
+[21-Sep-2025 18:00:58 UTC] Booking Process - Raw POST data: {"apartment_id":"2","checkin_date":"2025-09-27","checkout_date":"2025-09-30","guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","sofa_bed":"1"}
+[21-Sep-2025 18:00:58 UTC] Booking Process - Processed sofa_bed: true
+[21-Sep-2025 18:00:58 UTC] Booking Process - Processed extras: []
+[21-Sep-2025 18:00:58 UTC] Price calc - Input booking data: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[21-Sep-2025 18:00:58 UTC] Price calc - Apartment 2 base rate: 70 * 3 nights = 210
+[21-Sep-2025 18:00:58 UTC] Price calc - Sofa bed: 5 * 3 nights = 15
+[21-Sep-2025 18:00:58 UTC] Price calc - No extras selected
+[21-Sep-2025 18:00:58 UTC] Price calc - Final total: 225
+[21-Sep-2025 18:00:58 UTC] Single apartment booking - total: 225
+[21-Sep-2025 18:00:58 UTC] Session booking data: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[21-Sep-2025 18:00:58 UTC] Session amount due: 225
+[21-Sep-2025 18:00:59 UTC] Get session booking - Session data: {"booking":{"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]},"amount_due":225,"price_breakdown":{"total":225,"nights":3,"breakdown":{"base_rate":210,"sofa_bed":15,"extras":0,"discount":0,"nights":3,"apartments":[2]}},"csrf_token":"cc335701878909a3f43597f4727551d7020ba8b7bfe44e92cb773a4228dae011"}
+[21-Sep-2025 18:00:59 UTC] Get session booking - Raw booking: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[21-Sep-2025 18:00:59 UTC] Get session booking - Stored apartment ID: 2
+[21-Sep-2025 18:00:59 UTC] Get session booking - Calculating for single apartment: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[21-Sep-2025 18:00:59 UTC] Price calc - Input booking data: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[21-Sep-2025 18:00:59 UTC] Price calc - Apartment 2 base rate: 70 * 3 nights = 210
+[21-Sep-2025 18:00:59 UTC] Price calc - Sofa bed: 5 * 3 nights = 15
+[21-Sep-2025 18:00:59 UTC] Price calc - No extras selected
+[21-Sep-2025 18:00:59 UTC] Price calc - Final total: 225
+[21-Sep-2025 18:00:59 UTC] Get session booking - Single apartment total: 225
+[21-Sep-2025 18:00:59 UTC] Get session booking - Final output: total=225, deposit=45, is_deposit=false, amount_due=225
+[21-Sep-2025 18:01:39 UTC] PHP Parse error:  syntax error, unexpected token "use" in /home/barbs141/public_html/barbs-bali-apartments/api/square-payment.php on line 39
+[21-Sep-2025 18:05:40 UTC] PHP Parse error:  syntax error, unexpected token "use" in /home/barbs141/public_html/barbs-bali-apartments/api/square-payment.php on line 39
+[21-Sep-2025 18:16:10 UTC] PHP Parse error:  syntax error, unexpected token "use" in /home/barbs141/public_html/barbs-bali-apartments/api/square-payment.php on line 39
+[21-Sep-2025 18:17:58 UTC] Booking Process - Raw POST data: {"apartment_id":"2","checkin_date":"2025-09-27","checkout_date":"2025-09-30","guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","sofa_bed":"1"}
+[21-Sep-2025 18:17:58 UTC] Booking Process - Processed sofa_bed: true
+[21-Sep-2025 18:17:58 UTC] Booking Process - Processed extras: []
+[21-Sep-2025 18:17:58 UTC] Price calc - Input booking data: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[21-Sep-2025 18:17:58 UTC] Price calc - Apartment 2 base rate: 70 * 3 nights = 210
+[21-Sep-2025 18:17:58 UTC] Price calc - Sofa bed: 5 * 3 nights = 15
+[21-Sep-2025 18:17:58 UTC] Price calc - No extras selected
+[21-Sep-2025 18:17:58 UTC] Price calc - Final total: 225
+[21-Sep-2025 18:17:58 UTC] Single apartment booking - total: 225
+[21-Sep-2025 18:17:58 UTC] Session booking data: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[21-Sep-2025 18:17:58 UTC] Session amount due: 225
+[21-Sep-2025 18:17:59 UTC] Get session booking - Session data: {"booking":{"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]},"amount_due":225,"price_breakdown":{"total":225,"nights":3,"breakdown":{"base_rate":210,"sofa_bed":15,"extras":0,"discount":0,"nights":3,"apartments":[2]}},"csrf_token":"cc335701878909a3f43597f4727551d7020ba8b7bfe44e92cb773a4228dae011"}
+[21-Sep-2025 18:17:59 UTC] Get session booking - Raw booking: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[21-Sep-2025 18:17:59 UTC] Get session booking - Stored apartment ID: 2
+[21-Sep-2025 18:17:59 UTC] Get session booking - Calculating for single apartment: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[21-Sep-2025 18:17:59 UTC] Price calc - Input booking data: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[21-Sep-2025 18:17:59 UTC] Price calc - Apartment 2 base rate: 70 * 3 nights = 210
+[21-Sep-2025 18:17:59 UTC] Price calc - Sofa bed: 5 * 3 nights = 15
+[21-Sep-2025 18:17:59 UTC] Price calc - No extras selected
+[21-Sep-2025 18:17:59 UTC] Price calc - Final total: 225
+[21-Sep-2025 18:17:59 UTC] Get session booking - Single apartment total: 225
+[21-Sep-2025 18:17:59 UTC] Get session booking - Final output: total=225, deposit=45, is_deposit=false, amount_due=225
+[21-Sep-2025 18:18:25 UTC] PHP Parse error:  syntax error, unexpected token "use" in /home/barbs141/public_html/barbs-bali-apartments/api/square-payment.php on line 39
+[21-Sep-2025 18:21:47 UTC] Square payment DEBUG - Initial session: {"booking":{"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]},"amount_due":225,"price_breakdown":{"total":225,"nights":3,"breakdown":{"base_rate":210,"sofa_bed":15,"extras":0,"discount":0,"nights":3,"apartments":[2]}},"csrf_token":"cc335701878909a3f43597f4727551d7020ba8b7bfe44e92cb773a4228dae011"}
+[21-Sep-2025 18:21:47 UTC] Square payment DEBUG - Booking data: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[21-Sep-2025 18:21:47 UTC] Square payment DEBUG - Apartment ID: 2
+[21-Sep-2025 18:21:47 UTC] Price calc - Input booking data: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[21-Sep-2025 18:21:47 UTC] Price calc - Apartment 2 base rate: 70 * 3 nights = 210
+[21-Sep-2025 18:21:47 UTC] Price calc - Sofa bed: 5 * 3 nights = 15
+[21-Sep-2025 18:21:47 UTC] Price calc - No extras selected
+[21-Sep-2025 18:21:47 UTC] Price calc - Final total: 225
+[21-Sep-2025 18:21:47 UTC] Square payment DEBUG - Single apartment total: 225
+[21-Sep-2025 18:21:47 UTC] Square payment DEBUG - Days until checkin: 5, deposit only: no
+[21-Sep-2025 18:21:47 UTC] Square payment DEBUG - Amount to charge: 225
+[21-Sep-2025 18:21:47 UTC] Square payment DEBUG - Amount in cents: 22500
+[21-Sep-2025 18:21:48 UTC] Square payment DEBUG - Payment successful
+[21-Sep-2025 18:21:48 UTC] Square payment DEBUG - Generated reservation number: BB68D0423CA8ABD
+[21-Sep-2025 18:21:48 UTC] Square payment DEBUG - Created booking ID: 55
+[21-Sep-2025 18:21:48 UTC] Square payment DEBUG - Database error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'transaction_id' in 'field list'
+[21-Sep-2025 18:21:48 UTC] Square payment DEBUG - Stack trace: #0 /home/barbs141/public_html/barbs-bali-apartments/api/square-payment.php(172): PDOStatement->execute()
+#1 {main}
+[21-Sep-2025 18:22:29 UTC] Booking Process - Raw POST data: {"apartment_id":"2","checkin_date":"2025-09-27","checkout_date":"2025-09-30","guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","sofa_bed":"1"}
+[21-Sep-2025 18:22:29 UTC] Booking Process - Processed sofa_bed: true
+[21-Sep-2025 18:22:29 UTC] Booking Process - Processed extras: []
+[21-Sep-2025 18:22:29 UTC] Price calc - Input booking data: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[21-Sep-2025 18:22:29 UTC] Price calc - Apartment 2 base rate: 70 * 3 nights = 210
+[21-Sep-2025 18:22:29 UTC] Price calc - Sofa bed: 5 * 3 nights = 15
+[21-Sep-2025 18:22:29 UTC] Price calc - No extras selected
+[21-Sep-2025 18:22:29 UTC] Price calc - Final total: 225
+[21-Sep-2025 18:22:29 UTC] Single apartment booking - total: 225
+[21-Sep-2025 18:22:29 UTC] Session booking data: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[21-Sep-2025 18:22:29 UTC] Session amount due: 225
+[21-Sep-2025 18:22:30 UTC] Get session booking - Session data: {"booking":{"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]},"amount_due":225,"price_breakdown":{"total":225,"nights":3,"breakdown":{"base_rate":210,"sofa_bed":15,"extras":0,"discount":0,"nights":3,"apartments":[2]}},"csrf_token":"cc335701878909a3f43597f4727551d7020ba8b7bfe44e92cb773a4228dae011"}
+[21-Sep-2025 18:22:30 UTC] Get session booking - Raw booking: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[21-Sep-2025 18:22:30 UTC] Get session booking - Stored apartment ID: 2
+[21-Sep-2025 18:22:30 UTC] Get session booking - Calculating for single apartment: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[21-Sep-2025 18:22:30 UTC] Price calc - Input booking data: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[21-Sep-2025 18:22:30 UTC] Price calc - Apartment 2 base rate: 70 * 3 nights = 210
+[21-Sep-2025 18:22:30 UTC] Price calc - Sofa bed: 5 * 3 nights = 15
+[21-Sep-2025 18:22:30 UTC] Price calc - No extras selected
+[21-Sep-2025 18:22:30 UTC] Price calc - Final total: 225
+[21-Sep-2025 18:22:30 UTC] Get session booking - Single apartment total: 225
+[21-Sep-2025 18:22:30 UTC] Get session booking - Final output: total=225, deposit=45, is_deposit=false, amount_due=225
+[21-Sep-2025 18:22:50 UTC] Square payment DEBUG - Initial session: {"booking":{"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]},"amount_due":225,"price_breakdown":{"total":225,"nights":3,"breakdown":{"base_rate":210,"sofa_bed":15,"extras":0,"discount":0,"nights":3,"apartments":[2]}},"csrf_token":"cc335701878909a3f43597f4727551d7020ba8b7bfe44e92cb773a4228dae011"}
+[21-Sep-2025 18:22:50 UTC] Square payment DEBUG - Booking data: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[21-Sep-2025 18:22:50 UTC] Square payment DEBUG - Apartment ID: 2
+[21-Sep-2025 18:22:50 UTC] Price calc - Input booking data: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[21-Sep-2025 18:22:50 UTC] Price calc - Apartment 2 base rate: 70 * 3 nights = 210
+[21-Sep-2025 18:22:50 UTC] Price calc - Sofa bed: 5 * 3 nights = 15
+[21-Sep-2025 18:22:50 UTC] Price calc - No extras selected
+[21-Sep-2025 18:22:50 UTC] Price calc - Final total: 225
+[21-Sep-2025 18:22:50 UTC] Square payment DEBUG - Single apartment total: 225
+[21-Sep-2025 18:22:50 UTC] Square payment DEBUG - Days until checkin: 5, deposit only: no
+[21-Sep-2025 18:22:50 UTC] Square payment DEBUG - Amount to charge: 225
+[21-Sep-2025 18:22:50 UTC] Square payment DEBUG - Amount in cents: 22500
+[21-Sep-2025 18:22:51 UTC] Square payment DEBUG - Payment successful
+[21-Sep-2025 18:22:51 UTC] Square payment DEBUG - Generated reservation number: BB68D0427B30FDE
+[21-Sep-2025 18:22:51 UTC] Square payment DEBUG - Created booking ID: 56
+[21-Sep-2025 18:22:51 UTC] Square payment DEBUG - Database error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'transaction_id' in 'field list'
+[21-Sep-2025 18:22:51 UTC] Square payment DEBUG - Stack trace: #0 /home/barbs141/public_html/barbs-bali-apartments/api/square-payment.php(172): PDOStatement->execute()
+#1 {main}
+[21-Sep-2025 18:49:16 UTC] PHP Parse error:  syntax error, unexpected token "use" in /home/barbs141/public_html/barbs-bali-apartments/api/square-payment.php on line 39
+[21-Sep-2025 18:50:33 UTC] Booking Process - Raw POST data: {"apartment_id":"2","checkin_date":"2025-09-27","checkout_date":"2025-09-30","guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street"}
+[21-Sep-2025 18:50:33 UTC] Booking Process - Processed sofa_bed: false
+[21-Sep-2025 18:50:33 UTC] Booking Process - Processed extras: []
+[21-Sep-2025 18:50:33 UTC] Price calc - Input booking data: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":false,"extras":[]}
+[21-Sep-2025 18:50:33 UTC] Price calc - Apartment 2 base rate: 70 * 3 nights = 210
+[21-Sep-2025 18:50:33 UTC] Price calc - No sofa bed selected (value was: false)
+[21-Sep-2025 18:50:33 UTC] Price calc - No extras selected
+[21-Sep-2025 18:50:33 UTC] Price calc - Final total: 210
+[21-Sep-2025 18:50:33 UTC] Single apartment booking - total: 210
+[21-Sep-2025 18:50:33 UTC] Session booking data: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":false,"extras":[]}
+[21-Sep-2025 18:50:33 UTC] Session amount due: 210
+[21-Sep-2025 18:50:34 UTC] Get session booking - Session data: {"booking":{"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":false,"extras":[]},"amount_due":210,"price_breakdown":{"total":210,"nights":3,"breakdown":{"base_rate":210,"sofa_bed":0,"extras":0,"discount":0,"nights":3,"apartments":[2]}},"csrf_token":"cc335701878909a3f43597f4727551d7020ba8b7bfe44e92cb773a4228dae011"}
+[21-Sep-2025 18:50:34 UTC] Get session booking - Raw booking: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":false,"extras":[]}
+[21-Sep-2025 18:50:34 UTC] Get session booking - Stored apartment ID: 2
+[21-Sep-2025 18:50:34 UTC] Get session booking - Calculating for single apartment: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":false,"extras":[]}
+[21-Sep-2025 18:50:34 UTC] Price calc - Input booking data: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":false,"extras":[]}
+[21-Sep-2025 18:50:34 UTC] Price calc - Apartment 2 base rate: 70 * 3 nights = 210
+[21-Sep-2025 18:50:34 UTC] Price calc - No sofa bed selected (value was: false)
+[21-Sep-2025 18:50:34 UTC] Price calc - No extras selected
+[21-Sep-2025 18:50:34 UTC] Price calc - Final total: 210
+[21-Sep-2025 18:50:34 UTC] Get session booking - Single apartment total: 210
+[21-Sep-2025 18:50:34 UTC] Get session booking - Final output: total=210, deposit=42, is_deposit=false, amount_due=210
+[21-Sep-2025 18:51:01 UTC] PHP Parse error:  syntax error, unexpected token "use" in /home/barbs141/public_html/barbs-bali-apartments/api/square-payment.php on line 39
+[21-Sep-2025 18:59:05 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function completeBookingWithEmail() in /home/barbs141/public_html/barbs-bali-apartments/api/mark-paid.php:38
+Stack trace:
+#0 {main}
+  thrown in /home/barbs141/public_html/barbs-bali-apartments/api/mark-paid.php on line 38
+[21-Sep-2025 19:26:26 UTC] Booking Process - Processed data:
+[21-Sep-2025 19:26:26 UTC] - Name: Barbara Ward
+[21-Sep-2025 19:26:26 UTC] - Email: wardy@bigpond.com
+[21-Sep-2025 19:26:26 UTC] - Phone: +61475422459
+[21-Sep-2025 19:26:26 UTC] - Address: 53 Long Street
+[21-Sep-2025 19:26:26 UTC] - Apartment: 2
+[21-Sep-2025 19:26:26 UTC] - Sofa bed: false
+[21-Sep-2025 19:26:26 UTC] - Extras: []
+[21-Sep-2025 19:26:26 UTC] Price calc - Input booking data: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":false,"extras":[]}
+[21-Sep-2025 19:26:26 UTC] Price calc - Apartment 2 base rate: 70 * 3 nights = 210
+[21-Sep-2025 19:26:26 UTC] Price calc - No sofa bed selected (value was: false)
+[21-Sep-2025 19:26:26 UTC] Price calc - No extras selected
+[21-Sep-2025 19:26:26 UTC] Price calc - Final total: 210
+[21-Sep-2025 19:26:26 UTC] Single apartment booking - Total: 210
+[21-Sep-2025 19:26:26 UTC] Session booking data: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":false,"extras":[]}
+[21-Sep-2025 19:26:26 UTC] Session amount due: 210
+[21-Sep-2025 19:26:26 UTC] Get session booking - Session data: {"booking":{"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":false,"extras":[]},"amount_due":210,"price_breakdown":{"total":210,"nights":3,"breakdown":{"base_rate":210,"sofa_bed":0,"extras":0,"discount":0,"nights":3,"apartments":[2]}},"csrf_token":"cc335701878909a3f43597f4727551d7020ba8b7bfe44e92cb773a4228dae011"}
+[21-Sep-2025 19:26:26 UTC] Get session booking - Raw booking: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":false,"extras":[]}
+[21-Sep-2025 19:26:26 UTC] Get session booking - Stored apartment ID: 2
+[21-Sep-2025 19:26:26 UTC] Get session booking - Calculating for single apartment: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":false,"extras":[]}
+[21-Sep-2025 19:26:26 UTC] Price calc - Input booking data: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":false,"extras":[]}
+[21-Sep-2025 19:26:26 UTC] Price calc - Apartment 2 base rate: 70 * 3 nights = 210
+[21-Sep-2025 19:26:26 UTC] Price calc - No sofa bed selected (value was: false)
+[21-Sep-2025 19:26:26 UTC] Price calc - No extras selected
+[21-Sep-2025 19:26:26 UTC] Price calc - Final total: 210
+[21-Sep-2025 19:26:26 UTC] Get session booking - Single apartment total: 210
+[21-Sep-2025 19:26:26 UTC] Get session booking - Final output: total=210, deposit=42, is_deposit=false, amount_due=210
+[21-Sep-2025 19:26:47 UTC] Square payment - Initial session: {"booking":{"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":false,"extras":[]},"amount_due":210,"price_breakdown":{"total":210,"nights":3,"breakdown":{"base_rate":210,"sofa_bed":0,"extras":0,"discount":0,"nights":3,"apartments":[2]}},"csrf_token":"cc335701878909a3f43597f4727551d7020ba8b7bfe44e92cb773a4228dae011"}
+[21-Sep-2025 19:26:47 UTC] Square payment - Booking data: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":false,"extras":[]}
+[21-Sep-2025 19:26:47 UTC] Square payment - Apartment ID: 2
+[21-Sep-2025 19:26:47 UTC] Price calc - Input booking data: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":false,"extras":[]}
+[21-Sep-2025 19:26:47 UTC] Price calc - Apartment 2 base rate: 70 * 3 nights = 210
+[21-Sep-2025 19:26:47 UTC] Price calc - No sofa bed selected (value was: false)
+[21-Sep-2025 19:26:47 UTC] Price calc - No extras selected
+[21-Sep-2025 19:26:47 UTC] Price calc - Final total: 210
+[21-Sep-2025 19:26:47 UTC] Square payment - Single apartment total: 210
+[21-Sep-2025 19:26:47 UTC] Square payment - Amount to charge: 210
+[21-Sep-2025 19:26:47 UTC] Square payment - Amount in cents: 21000
+[21-Sep-2025 19:26:48 UTC] Square payment - Payment successful
+[21-Sep-2025 19:26:48 UTC] Square payment - Created booking ID: 57
+[21-Sep-2025 19:26:48 UTC] Square payment - Database error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'transaction_id' in 'field list'
+[21-Sep-2025 19:27:08 UTC] Get session booking - Session data: {"booking":{"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":false,"extras":[]},"amount_due":210,"price_breakdown":{"total":210,"nights":3,"breakdown":{"base_rate":210,"sofa_bed":0,"extras":0,"discount":0,"nights":3,"apartments":[2]}},"csrf_token":"cc335701878909a3f43597f4727551d7020ba8b7bfe44e92cb773a4228dae011"}
+[21-Sep-2025 19:27:08 UTC] Get session booking - Raw booking: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":false,"extras":[]}
+[21-Sep-2025 19:27:08 UTC] Get session booking - Stored apartment ID: 2
+[21-Sep-2025 19:27:08 UTC] Get session booking - Calculating for single apartment: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":false,"extras":[]}
+[21-Sep-2025 19:27:08 UTC] Price calc - Input booking data: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":false,"extras":[]}
+[21-Sep-2025 19:27:08 UTC] Price calc - Apartment 2 base rate: 70 * 3 nights = 210
+[21-Sep-2025 19:27:08 UTC] Price calc - No sofa bed selected (value was: false)
+[21-Sep-2025 19:27:08 UTC] Price calc - No extras selected
+[21-Sep-2025 19:27:08 UTC] Price calc - Final total: 210
+[21-Sep-2025 19:27:08 UTC] Get session booking - Single apartment total: 210
+[21-Sep-2025 19:27:08 UTC] Get session booking - Final output: total=210, deposit=42, is_deposit=false, amount_due=210
+[21-Sep-2025 19:32:22 UTC] Booking Process - Raw POST data: {"apartment_id":"2","checkin_date":"2025-09-27","checkout_date":"2025-09-30","guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street"}
+[21-Sep-2025 19:32:22 UTC] Booking Process - Processed sofa_bed: false
+[21-Sep-2025 19:32:22 UTC] Booking Process - Processed extras: []
+[21-Sep-2025 19:32:22 UTC] Price calc - Input booking data: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":false,"extras":[]}
+[21-Sep-2025 19:32:22 UTC] Price calc - Apartment 2 base rate: 70 * 3 nights = 210
+[21-Sep-2025 19:32:22 UTC] Price calc - No sofa bed selected (value was: false)
+[21-Sep-2025 19:32:22 UTC] Price calc - No extras selected
+[21-Sep-2025 19:32:22 UTC] Price calc - Final total: 210
+[21-Sep-2025 19:32:22 UTC] Single apartment booking - total: 210
+[21-Sep-2025 19:32:22 UTC] Session booking data: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":false,"extras":[]}
+[21-Sep-2025 19:32:22 UTC] Session amount due: 210
+[21-Sep-2025 19:32:23 UTC] Get session booking - Session data: {"booking":{"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":false,"extras":[]},"amount_due":210,"price_breakdown":{"total":210,"nights":3,"breakdown":{"base_rate":210,"sofa_bed":0,"extras":0,"discount":0,"nights":3,"apartments":[2]}},"csrf_token":"cc335701878909a3f43597f4727551d7020ba8b7bfe44e92cb773a4228dae011"}
+[21-Sep-2025 19:32:23 UTC] Get session booking - Raw booking: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":false,"extras":[]}
+[21-Sep-2025 19:32:23 UTC] Get session booking - Stored apartment ID: 2
+[21-Sep-2025 19:32:23 UTC] Get session booking - Calculating for single apartment: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":false,"extras":[]}
+[21-Sep-2025 19:32:23 UTC] Price calc - Input booking data: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":false,"extras":[]}
+[21-Sep-2025 19:32:23 UTC] Price calc - Apartment 2 base rate: 70 * 3 nights = 210
+[21-Sep-2025 19:32:23 UTC] Price calc - No sofa bed selected (value was: false)
+[21-Sep-2025 19:32:23 UTC] Price calc - No extras selected
+[21-Sep-2025 19:32:23 UTC] Price calc - Final total: 210
+[21-Sep-2025 19:32:23 UTC] Get session booking - Single apartment total: 210
+[21-Sep-2025 19:32:23 UTC] Get session booking - Final output: total=210, deposit=42, is_deposit=false, amount_due=210
+[21-Sep-2025 19:32:47 UTC] PHP Parse error:  syntax error, unexpected token "use" in /home/barbs141/public_html/barbs-bali-apartments/api/square-payment.php on line 39
+[21-Sep-2025 19:58:12 UTC] PHP Parse error:  syntax error, unexpected token "use" in /home/barbs141/public_html/barbs-bali-apartments/api/square-payment.php on line 39
+[21-Sep-2025 20:03:16 UTC] Booking Process - Raw POST data: {"apartment_id":"2","checkin_date":"2025-09-27","checkout_date":"2025-09-30","guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","sofa_bed":"1"}
+[21-Sep-2025 20:03:16 UTC] Booking Process - Processed sofa_bed: true
+[21-Sep-2025 20:03:16 UTC] Booking Process - Processed extras: []
+[21-Sep-2025 20:03:16 UTC] Price calc - Input booking data: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[21-Sep-2025 20:03:16 UTC] Price calc - Apartment 2 base rate: 70 * 3 nights = 210
+[21-Sep-2025 20:03:16 UTC] Price calc - Sofa bed: 5 * 3 nights = 15
+[21-Sep-2025 20:03:16 UTC] Price calc - No extras selected
+[21-Sep-2025 20:03:16 UTC] Price calc - Final total: 225
+[21-Sep-2025 20:03:16 UTC] Single apartment booking - total: 225
+[21-Sep-2025 20:03:16 UTC] Session booking data: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[21-Sep-2025 20:03:16 UTC] Session amount due: 225
+[21-Sep-2025 20:03:17 UTC] Get session booking - Session data: {"booking":{"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]},"amount_due":225,"price_breakdown":{"total":225,"nights":3,"breakdown":{"base_rate":210,"sofa_bed":15,"extras":0,"discount":0,"nights":3,"apartments":[2]}},"csrf_token":"254294d92c101b0b8dcda7f907b1476065b9a08eb9b1284729bc8ad7df3a43d0"}
+[21-Sep-2025 20:03:17 UTC] Get session booking - Raw booking: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[21-Sep-2025 20:03:17 UTC] Get session booking - Stored apartment ID: 2
+[21-Sep-2025 20:03:17 UTC] Get session booking - Calculating for single apartment: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[21-Sep-2025 20:03:17 UTC] Price calc - Input booking data: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[21-Sep-2025 20:03:17 UTC] Price calc - Apartment 2 base rate: 70 * 3 nights = 210
+[21-Sep-2025 20:03:17 UTC] Price calc - Sofa bed: 5 * 3 nights = 15
+[21-Sep-2025 20:03:17 UTC] Price calc - No extras selected
+[21-Sep-2025 20:03:17 UTC] Price calc - Final total: 225
+[21-Sep-2025 20:03:17 UTC] Get session booking - Single apartment total: 225
+[21-Sep-2025 20:03:17 UTC] Get session booking - Final output: total=225, deposit=45, is_deposit=false, amount_due=225
+[21-Sep-2025 20:03:35 UTC] PHP Parse error:  syntax error, unexpected token "use" in /home/barbs141/public_html/barbs-bali-apartments/api/square-payment.php on line 39
+[21-Sep-2025 20:05:34 UTC] PHP Parse error:  syntax error, unexpected token "use" in /home/barbs141/public_html/barbs-bali-apartments/api/square-payment.php on line 39
+[21-Sep-2025 20:05:40 UTC] PHP Parse error:  syntax error, unexpected token "use" in /home/barbs141/public_html/barbs-bali-apartments/api/square-payment.php on line 39
+[21-Sep-2025 20:08:16 UTC] Booking Process - Raw POST data: {"apartment_id":"2","checkin_date":"2025-09-27","checkout_date":"2025-09-30","guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","sofa_bed":"1"}
+[21-Sep-2025 20:08:16 UTC] Booking Process - Processed sofa_bed: true
+[21-Sep-2025 20:08:16 UTC] Booking Process - Processed extras: []
+[21-Sep-2025 20:08:16 UTC] Price calc - Input booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[21-Sep-2025 20:08:16 UTC] Price calc - Apartment 2 base rate: 70 * 3 nights = 210
+[21-Sep-2025 20:08:16 UTC] Price calc - Sofa bed: 5 * 3 nights = 15
+[21-Sep-2025 20:08:16 UTC] Price calc - No extras selected
+[21-Sep-2025 20:08:16 UTC] Price calc - Final total: 225
+[21-Sep-2025 20:08:16 UTC] Single apartment booking - total: 225
+[21-Sep-2025 20:08:16 UTC] Session booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[21-Sep-2025 20:08:16 UTC] Session amount due: 225
+[21-Sep-2025 20:08:17 UTC] Get session booking - Session data: {"booking":{"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]},"amount_due":225,"price_breakdown":{"total":225,"nights":3,"breakdown":{"base_rate":210,"sofa_bed":15,"extras":0,"discount":0,"nights":3,"apartments":[2]}},"csrf_token":"254294d92c101b0b8dcda7f907b1476065b9a08eb9b1284729bc8ad7df3a43d0"}
+[21-Sep-2025 20:08:17 UTC] Get session booking - Raw booking: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[21-Sep-2025 20:08:17 UTC] Get session booking - Stored apartment ID: 2
+[21-Sep-2025 20:08:17 UTC] Get session booking - Calculating for single apartment: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[21-Sep-2025 20:08:17 UTC] Price calc - Input booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[21-Sep-2025 20:08:17 UTC] Price calc - Apartment 2 base rate: 70 * 3 nights = 210
+[21-Sep-2025 20:08:17 UTC] Price calc - Sofa bed: 5 * 3 nights = 15
+[21-Sep-2025 20:08:17 UTC] Price calc - No extras selected
+[21-Sep-2025 20:08:17 UTC] Price calc - Final total: 225
+[21-Sep-2025 20:08:17 UTC] Get session booking - Single apartment total: 225
+[21-Sep-2025 20:08:17 UTC] Get session booking - Final output: total=225, deposit=45, is_deposit=false, amount_due=225
+[21-Sep-2025 20:08:37 UTC] PHP Parse error:  syntax error, unexpected token "use" in /home/barbs141/public_html/barbs-bali-apartments/api/square-payment.php on line 39
+[21-Sep-2025 20:36:03 UTC] Booking Process - Raw POST data: {"apartment_id":"2","checkin_date":"2025-09-27","checkout_date":"2025-09-30","guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","sofa_bed":"1"}
+[21-Sep-2025 20:36:03 UTC] Booking Process - Processed sofa_bed: true
+[21-Sep-2025 20:36:03 UTC] Booking Process - Processed extras: []
+[21-Sep-2025 20:36:03 UTC] Price calc - Input booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[21-Sep-2025 20:36:03 UTC] Price calc - Apartment 2 base rate: 70 * 3 nights = 210
+[21-Sep-2025 20:36:03 UTC] Price calc - Sofa bed: 5 * 3 nights = 15
+[21-Sep-2025 20:36:03 UTC] Price calc - No extras selected
+[21-Sep-2025 20:36:03 UTC] Price calc - Final total: 225
+[21-Sep-2025 20:36:03 UTC] Single apartment booking - total: 225
+[21-Sep-2025 20:36:03 UTC] Session booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[21-Sep-2025 20:36:03 UTC] Session amount due: 225
+[21-Sep-2025 20:36:05 UTC] Get session booking - Session data: {"booking":{"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]},"amount_due":225,"price_breakdown":{"total":225,"nights":3,"breakdown":{"base_rate":210,"sofa_bed":15,"extras":0,"discount":0,"nights":3,"apartments":[2]}},"csrf_token":"254294d92c101b0b8dcda7f907b1476065b9a08eb9b1284729bc8ad7df3a43d0"}
+[21-Sep-2025 20:36:05 UTC] Get session booking - Raw booking: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[21-Sep-2025 20:36:05 UTC] Get session booking - Stored apartment ID: 2
+[21-Sep-2025 20:36:05 UTC] Get session booking - Calculating for single apartment: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[21-Sep-2025 20:36:05 UTC] Price calc - Input booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[21-Sep-2025 20:36:05 UTC] Price calc - Apartment 2 base rate: 70 * 3 nights = 210
+[21-Sep-2025 20:36:05 UTC] Price calc - Sofa bed: 5 * 3 nights = 15
+[21-Sep-2025 20:36:05 UTC] Price calc - No extras selected
+[21-Sep-2025 20:36:05 UTC] Price calc - Final total: 225
+[21-Sep-2025 20:36:05 UTC] Get session booking - Single apartment total: 225
+[21-Sep-2025 20:36:05 UTC] Get session booking - Final output: total=225, deposit=45, is_deposit=false, amount_due=225
+[21-Sep-2025 20:36:24 UTC] Square payment - Initial session: {"booking":{"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]},"amount_due":225,"price_breakdown":{"total":225,"nights":3,"breakdown":{"base_rate":210,"sofa_bed":15,"extras":0,"discount":0,"nights":3,"apartments":[2]}},"csrf_token":"254294d92c101b0b8dcda7f907b1476065b9a08eb9b1284729bc8ad7df3a43d0"}
+[21-Sep-2025 20:36:24 UTC] Square payment - Booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[21-Sep-2025 20:36:24 UTC] Square payment - Apartment ID: 2
+[21-Sep-2025 20:36:24 UTC] Price calc - Input booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[21-Sep-2025 20:36:24 UTC] Price calc - Apartment 2 base rate: 70 * 3 nights = 210
+[21-Sep-2025 20:36:24 UTC] Price calc - Sofa bed: 5 * 3 nights = 15
+[21-Sep-2025 20:36:24 UTC] Price calc - No extras selected
+[21-Sep-2025 20:36:24 UTC] Price calc - Final total: 225
+[21-Sep-2025 20:36:24 UTC] Square payment - Total calculated: 225
+[21-Sep-2025 20:36:24 UTC] Square payment - Days until checkin: 5, deposit only: no
+[21-Sep-2025 20:36:24 UTC] Square payment - Amount to charge: 225
+[21-Sep-2025 20:36:24 UTC] Square payment - Amount in cents: 22500
+[21-Sep-2025 20:36:25 UTC] Square payment - Payment successful
+[21-Sep-2025 20:36:25 UTC] Square payment - Generated reservation number: BB68D061C903364
+[21-Sep-2025 20:36:25 UTC] Square payment - Created booking ID: 58
+[21-Sep-2025 20:36:25 UTC] Square payment - Error: Database error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'transaction_id' in 'field list'
+[21-Sep-2025 20:36:25 UTC] Square payment - Stack trace: #0 {main}
+[21-Sep-2025 20:53:20 UTC] Booking Process - Raw POST data: {"apartment_id":"2","checkin_date":"2025-09-27","checkout_date":"2025-09-30","guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","sofa_bed":"1"}
+[21-Sep-2025 20:53:20 UTC] Booking Process - Processed sofa_bed: true
+[21-Sep-2025 20:53:20 UTC] Booking Process - Processed extras: []
+[21-Sep-2025 20:53:20 UTC] Price calc - Input booking data: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[21-Sep-2025 20:53:20 UTC] Price calc - Apartment 2 base rate: 70 * 3 nights = 210
+[21-Sep-2025 20:53:20 UTC] Price calc - Sofa bed: 5 * 3 nights = 15
+[21-Sep-2025 20:53:20 UTC] Price calc - No extras selected
+[21-Sep-2025 20:53:20 UTC] Price calc - Final total: 225
+[21-Sep-2025 20:53:20 UTC] Single apartment booking - total: 225
+[21-Sep-2025 20:53:20 UTC] Session booking data: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[21-Sep-2025 20:53:20 UTC] Session amount due: 225
+[21-Sep-2025 20:53:21 UTC] Get session booking - Session data: {"booking":{"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]},"amount_due":225,"price_breakdown":{"total":225,"nights":3,"breakdown":{"base_rate":210,"sofa_bed":15,"extras":0,"discount":0,"nights":3,"apartments":[2]}},"csrf_token":"254294d92c101b0b8dcda7f907b1476065b9a08eb9b1284729bc8ad7df3a43d0"}
+[21-Sep-2025 20:53:21 UTC] Get session booking - Raw booking: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[21-Sep-2025 20:53:21 UTC] Get session booking - Stored apartment ID: 2
+[21-Sep-2025 20:53:21 UTC] Get session booking - Calculating for single apartment: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[21-Sep-2025 20:53:21 UTC] Price calc - Input booking data: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[21-Sep-2025 20:53:21 UTC] Price calc - Apartment 2 base rate: 70 * 3 nights = 210
+[21-Sep-2025 20:53:21 UTC] Price calc - Sofa bed: 5 * 3 nights = 15
+[21-Sep-2025 20:53:21 UTC] Price calc - No extras selected
+[21-Sep-2025 20:53:21 UTC] Price calc - Final total: 225
+[21-Sep-2025 20:53:21 UTC] Get session booking - Single apartment total: 225
+[21-Sep-2025 20:53:21 UTC] Get session booking - Final output: total=225, deposit=45, is_deposit=false, amount_due=225
+[21-Sep-2025 20:53:36 UTC] Square payment - Initial session: {"booking":{"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]},"amount_due":225,"price_breakdown":{"total":225,"nights":3,"breakdown":{"base_rate":210,"sofa_bed":15,"extras":0,"discount":0,"nights":3,"apartments":[2]}},"csrf_token":"254294d92c101b0b8dcda7f907b1476065b9a08eb9b1284729bc8ad7df3a43d0"}
+[21-Sep-2025 20:53:36 UTC] Square payment - Booking data: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[21-Sep-2025 20:53:36 UTC] Square payment - Apartment ID: 2
+[21-Sep-2025 20:53:36 UTC] Price calc - Input booking data: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":2,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[21-Sep-2025 20:53:36 UTC] Price calc - Apartment 2 base rate: 70 * 3 nights = 210
+[21-Sep-2025 20:53:36 UTC] Price calc - Sofa bed: 5 * 3 nights = 15
+[21-Sep-2025 20:53:36 UTC] Price calc - No extras selected
+[21-Sep-2025 20:53:36 UTC] Price calc - Final total: 225
+[21-Sep-2025 20:53:36 UTC] Square payment - Total calculated: 225
+[21-Sep-2025 20:53:36 UTC] Square payment - Days until checkin: 5, deposit only: no
+[21-Sep-2025 20:53:36 UTC] Square payment - Amount to charge: 225
+[21-Sep-2025 20:53:36 UTC] Square payment - Amount in cents: 22500
+[21-Sep-2025 20:53:37 UTC] Square payment - Payment successful
+[21-Sep-2025 20:53:37 UTC] Square payment - Generated reservation number: BB68D065D1A3F21
+[21-Sep-2025 20:53:37 UTC] Square payment - Created booking ID: 59
+[21-Sep-2025 20:53:37 UTC] Square payment - Payment record inserted
+[21-Sep-2025 20:53:37 UTC] Square payment - Confirmation email scheduled
+[21-Sep-2025 20:53:37 UTC] Square payment - Check-in reminder scheduled for: 2025-09-26
+[21-Sep-2025 20:53:37 UTC] Square payment - Housekeeping notice scheduled for: 2025-09-27
+[21-Sep-2025 20:53:37 UTC] Square payment - Database transaction committed
+[21-Sep-2025 20:53:37 UTC] Email sent successfully to: wardy@bigpond.com
+[21-Sep-2025 20:53:37 UTC] Confirmation email sent successfully to: wardy@bigpond.com for reservation: BB68D065D1A3F21
+[21-Sep-2025 20:53:37 UTC] Square payment - Confirmation email sent: SUCCESS
+[21-Sep-2025 20:54:30 UTC] Booking Process - Raw POST data: {"apartment_id":"1","checkin_date":"2025-09-27","checkout_date":"2025-09-30","guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49"}
+[21-Sep-2025 20:54:30 UTC] Booking Process - Processed sofa_bed: false
+[21-Sep-2025 20:54:30 UTC] Booking Process - Processed extras: []
+[21-Sep-2025 20:54:30 UTC] Price calc - Input booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":false,"extras":[]}
+[21-Sep-2025 20:54:30 UTC] Price calc - Apartment 1 base rate: 70 * 3 nights = 210
+[21-Sep-2025 20:54:30 UTC] Price calc - No sofa bed selected (value was: false)
+[21-Sep-2025 20:54:30 UTC] Price calc - No extras selected
+[21-Sep-2025 20:54:30 UTC] Price calc - Final total: 210
+[21-Sep-2025 20:54:30 UTC] Single apartment booking - total: 210
+[21-Sep-2025 20:54:30 UTC] Session booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":false,"extras":[]}
+[21-Sep-2025 20:54:30 UTC] Session amount due: 210
+[21-Sep-2025 20:54:31 UTC] Get session booking - Session data: {"csrf_token":"254294d92c101b0b8dcda7f907b1476065b9a08eb9b1284729bc8ad7df3a43d0","booking":{"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":false,"extras":[]},"amount_due":210,"price_breakdown":{"total":210,"nights":3,"breakdown":{"base_rate":210,"sofa_bed":0,"extras":0,"discount":0,"nights":3,"apartments":[1]}}}
+[21-Sep-2025 20:54:31 UTC] Get session booking - Raw booking: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":false,"extras":[]}
+[21-Sep-2025 20:54:31 UTC] Get session booking - Stored apartment ID: 1
+[21-Sep-2025 20:54:31 UTC] Get session booking - Calculating for single apartment: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":false,"extras":[]}
+[21-Sep-2025 20:54:31 UTC] Price calc - Input booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":false,"extras":[]}
+[21-Sep-2025 20:54:31 UTC] Price calc - Apartment 1 base rate: 70 * 3 nights = 210
+[21-Sep-2025 20:54:31 UTC] Price calc - No sofa bed selected (value was: false)
+[21-Sep-2025 20:54:31 UTC] Price calc - No extras selected
+[21-Sep-2025 20:54:31 UTC] Price calc - Final total: 210
+[21-Sep-2025 20:54:31 UTC] Get session booking - Single apartment total: 210
+[21-Sep-2025 20:54:31 UTC] Get session booking - Final output: total=210, deposit=42, is_deposit=false, amount_due=210
+[21-Sep-2025 20:55:20 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function completeBookingWithEmail() in /home/barbs141/public_html/barbs-bali-apartments/api/mark-paid.php:38
+Stack trace:
+#0 {main}
+  thrown in /home/barbs141/public_html/barbs-bali-apartments/api/mark-paid.php on line 38
+[21-Sep-2025 21:26:39 UTC] Booking Process - Raw POST data: {"apartment_id":"1","checkin_date":"2025-09-27","checkout_date":"2025-09-30","guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49"}
+[21-Sep-2025 21:26:39 UTC] Booking Process - Processed sofa_bed: false
+[21-Sep-2025 21:26:39 UTC] Booking Process - Processed extras: []
+[21-Sep-2025 21:26:39 UTC] Price calc - Input booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":false,"extras":[]}
+[21-Sep-2025 21:26:39 UTC] Price calc - Apartment 1 base rate: 70 * 3 nights = 210
+[21-Sep-2025 21:26:39 UTC] Price calc - No sofa bed selected (value was: false)
+[21-Sep-2025 21:26:39 UTC] Price calc - No extras selected
+[21-Sep-2025 21:26:39 UTC] Price calc - Final total: 210
+[21-Sep-2025 21:26:39 UTC] Single apartment booking - total: 210
+[21-Sep-2025 21:26:39 UTC] Session booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":false,"extras":[]}
+[21-Sep-2025 21:26:39 UTC] Session amount due: 210
+[21-Sep-2025 21:26:40 UTC] Get session booking - Session data: {"csrf_token":"254294d92c101b0b8dcda7f907b1476065b9a08eb9b1284729bc8ad7df3a43d0","booking":{"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":false,"extras":[]},"amount_due":210,"price_breakdown":{"total":210,"nights":3,"breakdown":{"base_rate":210,"sofa_bed":0,"extras":0,"discount":0,"nights":3,"apartments":[1]}}}
+[21-Sep-2025 21:26:40 UTC] Get session booking - Raw booking: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":false,"extras":[]}
+[21-Sep-2025 21:26:40 UTC] Get session booking - Stored apartment ID: 1
+[21-Sep-2025 21:26:40 UTC] Get session booking - Calculating for single apartment: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":false,"extras":[]}
+[21-Sep-2025 21:26:40 UTC] Price calc - Input booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":false,"extras":[]}
+[21-Sep-2025 21:26:40 UTC] Price calc - Apartment 1 base rate: 70 * 3 nights = 210
+[21-Sep-2025 21:26:40 UTC] Price calc - No sofa bed selected (value was: false)
+[21-Sep-2025 21:26:40 UTC] Price calc - No extras selected
+[21-Sep-2025 21:26:40 UTC] Price calc - Final total: 210
+[21-Sep-2025 21:26:40 UTC] Get session booking - Single apartment total: 210
+[21-Sep-2025 21:26:40 UTC] Get session booking - Final output: total=210, deposit=42, is_deposit=false, amount_due=210
+[21-Sep-2025 21:27:30 UTC] PHP Warning:  require_once(/home/barbs141/public_html/barbs-bali-apartments/api/../complete-booking.php): Failed to open stream: No such file or directory in /home/barbs141/public_html/barbs-bali-apartments/api/mark-paid.php on line 8
+[21-Sep-2025 21:27:30 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/barbs141/public_html/barbs-bali-apartments/api/../complete-booking.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/barbs141/public_html/barbs-bali-apartments/api/mark-paid.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/barbs141/public_html/barbs-bali-apartments/api/mark-paid.php on line 8
+[21-Sep-2025 21:28:25 UTC] Booking Process - Raw POST data: {"apartment_id":"1","checkin_date":"2025-09-27","checkout_date":"2025-09-30","guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","sofa_bed":"1"}
+[21-Sep-2025 21:28:25 UTC] Booking Process - Processed sofa_bed: true
+[21-Sep-2025 21:28:25 UTC] Booking Process - Processed extras: []
+[21-Sep-2025 21:28:25 UTC] Price calc - Input booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[21-Sep-2025 21:28:25 UTC] Price calc - Apartment 1 base rate: 70 * 3 nights = 210
+[21-Sep-2025 21:28:25 UTC] Price calc - Sofa bed: 5 * 3 nights = 15
+[21-Sep-2025 21:28:25 UTC] Price calc - No extras selected
+[21-Sep-2025 21:28:25 UTC] Price calc - Final total: 225
+[21-Sep-2025 21:28:25 UTC] Single apartment booking - total: 225
+[21-Sep-2025 21:28:25 UTC] Session booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[21-Sep-2025 21:28:25 UTC] Session amount due: 225
+[21-Sep-2025 21:28:26 UTC] Get session booking - Session data: {"csrf_token":"254294d92c101b0b8dcda7f907b1476065b9a08eb9b1284729bc8ad7df3a43d0","booking":{"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]},"amount_due":225,"price_breakdown":{"total":225,"nights":3,"breakdown":{"base_rate":210,"sofa_bed":15,"extras":0,"discount":0,"nights":3,"apartments":[1]}}}
+[21-Sep-2025 21:28:26 UTC] Get session booking - Raw booking: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[21-Sep-2025 21:28:26 UTC] Get session booking - Stored apartment ID: 1
+[21-Sep-2025 21:28:26 UTC] Get session booking - Calculating for single apartment: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[21-Sep-2025 21:28:26 UTC] Price calc - Input booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[21-Sep-2025 21:28:26 UTC] Price calc - Apartment 1 base rate: 70 * 3 nights = 210
+[21-Sep-2025 21:28:26 UTC] Price calc - Sofa bed: 5 * 3 nights = 15
+[21-Sep-2025 21:28:26 UTC] Price calc - No extras selected
+[21-Sep-2025 21:28:26 UTC] Price calc - Final total: 225
+[21-Sep-2025 21:28:26 UTC] Get session booking - Single apartment total: 225
+[21-Sep-2025 21:28:26 UTC] Get session booking - Final output: total=225, deposit=45, is_deposit=false, amount_due=225
+[21-Sep-2025 21:28:49 UTC] PHP Warning:  require_once(/home/barbs141/public_html/barbs-bali-apartments/api/../complete-booking.php): Failed to open stream: No such file or directory in /home/barbs141/public_html/barbs-bali-apartments/api/mark-paid.php on line 8
+[21-Sep-2025 21:28:49 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/barbs141/public_html/barbs-bali-apartments/api/../complete-booking.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/barbs141/public_html/barbs-bali-apartments/api/mark-paid.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/barbs141/public_html/barbs-bali-apartments/api/mark-paid.php on line 8
+[21-Sep-2025 21:36:00 UTC] Mark paid - Processing paypal payment
+[21-Sep-2025 21:36:00 UTC] Mark paid - Booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[21-Sep-2025 21:36:00 UTC] Price calc - Input booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":[]}
+[21-Sep-2025 21:36:00 UTC] Price calc - Apartment 1 base rate: 70 * 3 nights = 210
+[21-Sep-2025 21:36:00 UTC] Price calc - Sofa bed: 5 * 3 nights = 15
+[21-Sep-2025 21:36:00 UTC] Price calc - No extras selected
+[21-Sep-2025 21:36:00 UTC] Price calc - Final total: 225
+[21-Sep-2025 21:36:00 UTC] Mark paid - Total: 225, Amount paid: 225, Deposit only: no
+[21-Sep-2025 21:36:00 UTC] Mark paid - PayPal transaction ID: 5GB38187JT861674E
+[21-Sep-2025 21:36:00 UTC] Mark paid - Generated reservation number: BB68D06FC048046
+[21-Sep-2025 21:36:00 UTC] Mark paid - Created booking ID: 60
+[21-Sep-2025 21:36:00 UTC] Mark paid - Payment record inserted
+[21-Sep-2025 21:36:00 UTC] Mark paid - Confirmation email scheduled
+[21-Sep-2025 21:36:00 UTC] Mark paid - Check-in reminder scheduled for: 2025-09-26
+[21-Sep-2025 21:36:00 UTC] Mark paid - Housekeeping notice scheduled for: 2025-09-27
+[21-Sep-2025 21:36:00 UTC] Mark paid - Database transaction committed
+[21-Sep-2025 21:36:00 UTC] Email sent successfully to: wardy@bigpond.com
+[21-Sep-2025 21:36:00 UTC] Confirmation email sent successfully to: wardy@bigpond.com for reservation: BB68D06FC048046
+[21-Sep-2025 21:36:00 UTC] Mark paid - Confirmation email sent: SUCCESS
+[21-Sep-2025 21:40:17 UTC] Price calc - Input booking data: {"apartment_id":"1","checkin_date":"2025-09-27","checkout_date":"2025-09-30","sofa_bed":true,"extras":["5"]}
+[21-Sep-2025 21:40:17 UTC] Price calc - Apartment 1 base rate: 70 * 3 nights = 210
+[21-Sep-2025 21:40:17 UTC] Price calc - Sofa bed: 5 * 3 nights = 15
+[21-Sep-2025 21:40:17 UTC] Price calc - Processing extras: ["5"]
+[21-Sep-2025 21:40:17 UTC] Price calc - One-time extra 'Late Checkout': 40 = 40
+[21-Sep-2025 21:40:17 UTC] Price calc - Final total: 265
+[22-Sep-2025 19:17:48 UTC] Booking Process - Raw POST data: {"apartment_id":"3","checkin_date":"2025-09-30","checkout_date":"2025-10-02","guest_first_name":"David 1","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","sofa_bed":"1"}
+[22-Sep-2025 19:17:48 UTC] Booking Process - Processed sofa_bed: true
+[22-Sep-2025 19:17:48 UTC] Booking Process - Processed extras: []
+[22-Sep-2025 19:17:48 UTC] Price calc - Input booking data: {"guest_first_name":"David 1","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":3,"checkin_date":"2025-09-30","checkout_date":"2025-10-02","sofa_bed":true,"extras":[]}
+[22-Sep-2025 19:17:48 UTC] Price calc - Apartment 1 base rate: 70 * 2 nights = 140
+[22-Sep-2025 19:17:48 UTC] Price calc - Apartment 2 base rate: 70 * 2 nights = 140
+[22-Sep-2025 19:17:48 UTC] Price calc - Sofa bed: 5 * 2 nights = 10
+[22-Sep-2025 19:17:48 UTC] Price calc - No extras selected
+[22-Sep-2025 19:17:48 UTC] Price calc - Interconnecting discount: 5 * 2 apartments * 2 nights = 20
+[22-Sep-2025 19:17:48 UTC] Price calc - Final total: 270
+[22-Sep-2025 19:17:48 UTC] Single apartment booking - total: 270
+[22-Sep-2025 19:17:48 UTC] Session booking data: {"guest_first_name":"David 1","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":3,"checkin_date":"2025-09-30","checkout_date":"2025-10-02","sofa_bed":true,"extras":[]}
+[22-Sep-2025 19:17:48 UTC] Session amount due: 270
+[22-Sep-2025 19:17:50 UTC] Get session booking - Session data: {"admin_logged_in":true,"booking":{"guest_first_name":"David 1","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":3,"checkin_date":"2025-09-30","checkout_date":"2025-10-02","sofa_bed":true,"extras":[]},"amount_due":270,"price_breakdown":{"total":270,"nights":2,"breakdown":{"base_rate":280,"sofa_bed":10,"extras":0,"discount":20,"nights":2,"apartments":[1,2]}},"csrf_token":"7217a4ea42c07d77c4ae6c52a6de450a726b0d9ba42265b6dc6751815dee9fd5"}
+[22-Sep-2025 19:17:50 UTC] Get session booking - Raw booking: {"guest_first_name":"David 1","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":3,"checkin_date":"2025-09-30","checkout_date":"2025-10-02","sofa_bed":true,"extras":[]}
+[22-Sep-2025 19:17:50 UTC] Get session booking - Stored apartment ID: 3
+[22-Sep-2025 19:17:50 UTC] Get session booking - Calculating for apartment 1: {"guest_first_name":"David 1","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2025-09-30","checkout_date":"2025-10-02","sofa_bed":true,"extras":[]}
+[22-Sep-2025 19:17:50 UTC] Get session booking - Calculating for apartment 2: {"guest_first_name":"David 1","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2025-09-30","checkout_date":"2025-10-02","sofa_bed":true,"extras":[]}
+[22-Sep-2025 19:17:50 UTC] Price calc - Input booking data: {"guest_first_name":"David 1","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2025-09-30","checkout_date":"2025-10-02","sofa_bed":true,"extras":[]}
+[22-Sep-2025 19:17:50 UTC] Price calc - Apartment 1 base rate: 70 * 2 nights = 140
+[22-Sep-2025 19:17:50 UTC] Price calc - Sofa bed: 5 * 2 nights = 10
+[22-Sep-2025 19:17:50 UTC] Price calc - No extras selected
+[22-Sep-2025 19:17:50 UTC] Price calc - Final total: 150
+[22-Sep-2025 19:17:50 UTC] Price calc - Input booking data: {"guest_first_name":"David 1","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2025-09-30","checkout_date":"2025-10-02","sofa_bed":true,"extras":[]}
+[22-Sep-2025 19:17:50 UTC] Price calc - Apartment 2 base rate: 70 * 2 nights = 140
+[22-Sep-2025 19:17:50 UTC] Price calc - Sofa bed: 5 * 2 nights = 10
+[22-Sep-2025 19:17:50 UTC] Price calc - No extras selected
+[22-Sep-2025 19:17:50 UTC] Price calc - Final total: 150
+[22-Sep-2025 19:17:50 UTC] Get session booking - Combined total: 300 (6205: 150, 6207: 150)
+[22-Sep-2025 19:17:50 UTC] Get session booking - Final output: total=300, deposit=60, is_deposit=false, amount_due=300
+[22-Sep-2025 19:18:09 UTC] Square payment - Initial session: {"admin_logged_in":true,"booking":{"guest_first_name":"David 1","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":3,"checkin_date":"2025-09-30","checkout_date":"2025-10-02","sofa_bed":true,"extras":[]},"amount_due":270,"price_breakdown":{"total":270,"nights":2,"breakdown":{"base_rate":280,"sofa_bed":10,"extras":0,"discount":20,"nights":2,"apartments":[1,2]}},"csrf_token":"7217a4ea42c07d77c4ae6c52a6de450a726b0d9ba42265b6dc6751815dee9fd5"}
+[22-Sep-2025 19:18:09 UTC] Square payment - Booking data: {"guest_first_name":"David 1","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":3,"checkin_date":"2025-09-30","checkout_date":"2025-10-02","sofa_bed":true,"extras":[]}
+[22-Sep-2025 19:18:09 UTC] Square payment - Apartment ID: 3
+[22-Sep-2025 19:18:09 UTC] Price calc - Input booking data: {"guest_first_name":"David 1","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2025-09-30","checkout_date":"2025-10-02","sofa_bed":true,"extras":[]}
+[22-Sep-2025 19:18:09 UTC] Price calc - Apartment 1 base rate: 70 * 2 nights = 140
+[22-Sep-2025 19:18:09 UTC] Price calc - Sofa bed: 5 * 2 nights = 10
+[22-Sep-2025 19:18:09 UTC] Price calc - No extras selected
+[22-Sep-2025 19:18:09 UTC] Price calc - Final total: 150
+[22-Sep-2025 19:18:09 UTC] Price calc - Input booking data: {"guest_first_name":"David 1","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2025-09-30","checkout_date":"2025-10-02","sofa_bed":true,"extras":[]}
+[22-Sep-2025 19:18:09 UTC] Price calc - Apartment 2 base rate: 70 * 2 nights = 140
+[22-Sep-2025 19:18:09 UTC] Price calc - Sofa bed: 5 * 2 nights = 10
+[22-Sep-2025 19:18:09 UTC] Price calc - No extras selected
+[22-Sep-2025 19:18:09 UTC] Price calc - Final total: 150
+[22-Sep-2025 19:18:09 UTC] Square payment - Total calculated: 300
+[22-Sep-2025 19:18:09 UTC] Square payment - Days until checkin: 7, deposit only: no
+[22-Sep-2025 19:18:09 UTC] Square payment - Amount to charge: 300
+[22-Sep-2025 19:18:09 UTC] Square payment - Amount in cents: 30000
+[22-Sep-2025 19:18:10 UTC] Square payment - Payment successful
+[22-Sep-2025 19:18:10 UTC] Square payment - Generated reservation number: BB68D1A0F2C0319
+[22-Sep-2025 19:18:10 UTC] Square payment - Created booking ID: 61
+[22-Sep-2025 19:18:10 UTC] Square payment - Payment record inserted
+[22-Sep-2025 19:18:10 UTC] Square payment - Confirmation email scheduled
+[22-Sep-2025 19:18:10 UTC] Square payment - Check-in reminder scheduled for: 2025-09-29
+[22-Sep-2025 19:18:10 UTC] Square payment - Housekeeping notice scheduled for: 2025-09-30
+[22-Sep-2025 19:18:10 UTC] Square payment - Database transaction committed
+[22-Sep-2025 19:18:11 UTC] Confirmation email sent successfully to: wardy@bigpond.com
+[22-Sep-2025 19:18:11 UTC] Email schedule ID 7 marked as sent
+[22-Sep-2025 19:18:11 UTC] Square payment - Confirmation email sent and marked as sent
+[23-Sep-2025 00:18:02 UTC] Booking Process - Raw POST data: {"apartment_id":"1","checkin_date":"2025-11-01","checkout_date":"2025-11-02","guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49"}
+[23-Sep-2025 00:18:02 UTC] Booking Process - Processed sofa_bed: false
+[23-Sep-2025 00:18:02 UTC] Booking Process - Processed extras: []
+[23-Sep-2025 00:18:02 UTC] Price calc - Input booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2025-11-01","checkout_date":"2025-11-02","sofa_bed":false,"extras":[]}
+[23-Sep-2025 00:18:02 UTC] Price calc - Apartment 1 base rate: 70 * 1 nights = 70
+[23-Sep-2025 00:18:02 UTC] Price calc - No sofa bed selected (value was: false)
+[23-Sep-2025 00:18:02 UTC] Price calc - No extras selected
+[23-Sep-2025 00:18:02 UTC] Price calc - Final total: 70
+[23-Sep-2025 00:18:02 UTC] Single apartment booking - total: 70
+[23-Sep-2025 00:18:02 UTC] Session booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2025-11-01","checkout_date":"2025-11-02","sofa_bed":false,"extras":[]}
+[23-Sep-2025 00:18:02 UTC] Session amount due: 70
+[23-Sep-2025 00:18:05 UTC] Get session booking - Session data: {"booking":{"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2025-11-01","checkout_date":"2025-11-02","sofa_bed":false,"extras":[]},"amount_due":70,"price_breakdown":{"total":70,"nights":1,"breakdown":{"base_rate":70,"sofa_bed":0,"extras":0,"discount":0,"nights":1,"apartments":[1]}},"csrf_token":"26c23f941930d559c4747dd70548b8c861fada7a6be2b310a6ba7811e4668e5c"}
+[23-Sep-2025 00:18:05 UTC] Get session booking - Raw booking: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2025-11-01","checkout_date":"2025-11-02","sofa_bed":false,"extras":[]}
+[23-Sep-2025 00:18:05 UTC] Get session booking - Stored apartment ID: 1
+[23-Sep-2025 00:18:05 UTC] Get session booking - Calculating for single apartment: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2025-11-01","checkout_date":"2025-11-02","sofa_bed":false,"extras":[]}
+[23-Sep-2025 00:18:05 UTC] Price calc - Input booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2025-11-01","checkout_date":"2025-11-02","sofa_bed":false,"extras":[]}
+[23-Sep-2025 00:18:05 UTC] Price calc - Apartment 1 base rate: 70 * 1 nights = 70
+[23-Sep-2025 00:18:05 UTC] Price calc - No sofa bed selected (value was: false)
+[23-Sep-2025 00:18:05 UTC] Price calc - No extras selected
+[23-Sep-2025 00:18:05 UTC] Price calc - Final total: 70
+[23-Sep-2025 00:18:05 UTC] Get session booking - Single apartment total: 70
+[23-Sep-2025 00:18:05 UTC] Get session booking - Final output: total=70, deposit=14, is_deposit=false, amount_due=70
+[23-Sep-2025 00:18:19 UTC] Square payment - Initial session: {"booking":{"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2025-11-01","checkout_date":"2025-11-02","sofa_bed":false,"extras":[]},"amount_due":70,"price_breakdown":{"total":70,"nights":1,"breakdown":{"base_rate":70,"sofa_bed":0,"extras":0,"discount":0,"nights":1,"apartments":[1]}},"csrf_token":"26c23f941930d559c4747dd70548b8c861fada7a6be2b310a6ba7811e4668e5c"}
+[23-Sep-2025 00:18:19 UTC] Square payment - Booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2025-11-01","checkout_date":"2025-11-02","sofa_bed":false,"extras":[]}
+[23-Sep-2025 00:18:19 UTC] Square payment - Apartment ID: 1
+[23-Sep-2025 00:18:19 UTC] Price calc - Input booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2025-11-01","checkout_date":"2025-11-02","sofa_bed":false,"extras":[]}
+[23-Sep-2025 00:18:19 UTC] Price calc - Apartment 1 base rate: 70 * 1 nights = 70
+[23-Sep-2025 00:18:19 UTC] Price calc - No sofa bed selected (value was: false)
+[23-Sep-2025 00:18:19 UTC] Price calc - No extras selected
+[23-Sep-2025 00:18:19 UTC] Price calc - Final total: 70
+[23-Sep-2025 00:18:19 UTC] Square payment - Total calculated: 70
+[23-Sep-2025 00:18:19 UTC] Square payment - Days until checkin: 38, deposit only: no
+[23-Sep-2025 00:18:19 UTC] Square payment - Amount to charge: 70
+[23-Sep-2025 00:18:19 UTC] Square payment - Amount in cents: 7000
+[23-Sep-2025 00:18:20 UTC] Square payment - Payment successful
+[23-Sep-2025 00:18:20 UTC] Square payment - Generated reservation number: BB68D1E74CB6F12
+[23-Sep-2025 00:18:20 UTC] Square payment - Created booking ID: 62
+[23-Sep-2025 00:18:20 UTC] Square payment - Payment record inserted
+[23-Sep-2025 00:18:20 UTC] Square payment - Confirmation email scheduled
+[23-Sep-2025 00:18:20 UTC] Square payment - Check-in reminder scheduled for: 2025-10-31
+[23-Sep-2025 00:18:20 UTC] Square payment - Housekeeping notice scheduled for: 2025-11-01
+[23-Sep-2025 00:18:20 UTC] Square payment - Database transaction committed
+[23-Sep-2025 00:18:20 UTC] Confirmation email sent successfully to: wardy@bigpond.com
+[23-Sep-2025 00:18:20 UTC] Email schedule ID 10 marked as sent
+[23-Sep-2025 00:18:20 UTC] Square payment - Confirmation email sent and marked as sent
+[23-Sep-2025 00:27:04 UTC] Booking Process - Raw POST data: {"apartment_id":"2","checkin_date":"2026-01-01","checkout_date":"2026-01-03","guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49"}
+[23-Sep-2025 00:27:04 UTC] Booking Process - Processed sofa_bed: false
+[23-Sep-2025 00:27:04 UTC] Booking Process - Processed extras: []
+[23-Sep-2025 00:27:04 UTC] Price calc - Input booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2026-01-01","checkout_date":"2026-01-03","sofa_bed":false,"extras":[]}
+[23-Sep-2025 00:27:04 UTC] Price calc - Apartment 2 base rate: 70 * 2 nights = 140
+[23-Sep-2025 00:27:04 UTC] Price calc - No sofa bed selected (value was: false)
+[23-Sep-2025 00:27:04 UTC] Price calc - No extras selected
+[23-Sep-2025 00:27:04 UTC] Price calc - Final total: 140
+[23-Sep-2025 00:27:04 UTC] Single apartment booking - total: 140
+[23-Sep-2025 00:27:04 UTC] Session booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2026-01-01","checkout_date":"2026-01-03","sofa_bed":false,"extras":[]}
+[23-Sep-2025 00:27:04 UTC] Session amount due: 140
+[23-Sep-2025 00:27:05 UTC] Get session booking - Session data: {"csrf_token":"26c23f941930d559c4747dd70548b8c861fada7a6be2b310a6ba7811e4668e5c","booking":{"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2026-01-01","checkout_date":"2026-01-03","sofa_bed":false,"extras":[]},"amount_due":140,"price_breakdown":{"total":140,"nights":2,"breakdown":{"base_rate":140,"sofa_bed":0,"extras":0,"discount":0,"nights":2,"apartments":[2]}}}
+[23-Sep-2025 00:27:05 UTC] Get session booking - Raw booking: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2026-01-01","checkout_date":"2026-01-03","sofa_bed":false,"extras":[]}
+[23-Sep-2025 00:27:05 UTC] Get session booking - Stored apartment ID: 2
+[23-Sep-2025 00:27:05 UTC] Get session booking - Calculating for single apartment: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2026-01-01","checkout_date":"2026-01-03","sofa_bed":false,"extras":[]}
+[23-Sep-2025 00:27:05 UTC] Price calc - Input booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2026-01-01","checkout_date":"2026-01-03","sofa_bed":false,"extras":[]}
+[23-Sep-2025 00:27:05 UTC] Price calc - Apartment 2 base rate: 70 * 2 nights = 140
+[23-Sep-2025 00:27:05 UTC] Price calc - No sofa bed selected (value was: false)
+[23-Sep-2025 00:27:05 UTC] Price calc - No extras selected
+[23-Sep-2025 00:27:05 UTC] Price calc - Final total: 140
+[23-Sep-2025 00:27:05 UTC] Get session booking - Single apartment total: 140
+[23-Sep-2025 00:27:05 UTC] Get session booking - Final output: total=140, deposit=28, is_deposit=true, amount_due=28
+[23-Sep-2025 00:27:37 UTC] Mark paid - Processing paypal payment
+[23-Sep-2025 00:27:37 UTC] Mark paid - Booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2026-01-01","checkout_date":"2026-01-03","sofa_bed":false,"extras":[]}
+[23-Sep-2025 00:27:37 UTC] Price calc - Input booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2026-01-01","checkout_date":"2026-01-03","sofa_bed":false,"extras":[]}
+[23-Sep-2025 00:27:37 UTC] Price calc - Apartment 2 base rate: 70 * 2 nights = 140
+[23-Sep-2025 00:27:37 UTC] Price calc - No sofa bed selected (value was: false)
+[23-Sep-2025 00:27:37 UTC] Price calc - No extras selected
+[23-Sep-2025 00:27:37 UTC] Price calc - Final total: 140
+[23-Sep-2025 00:27:37 UTC] Mark paid - Total: 140, Amount paid: 28, Deposit only: yes
+[23-Sep-2025 00:27:37 UTC] Mark paid - PayPal transaction ID: 4EP909471P3043127
+[23-Sep-2025 00:27:37 UTC] Mark paid - Generated reservation number: BB68D1E979C569D
+[23-Sep-2025 00:27:37 UTC] Mark paid - Created booking ID: 63
+[23-Sep-2025 00:27:37 UTC] Mark paid - Payment record inserted
+[23-Sep-2025 00:27:37 UTC] Mark paid - Confirmation email scheduled
+[23-Sep-2025 00:27:37 UTC] Mark paid - Balance reminder scheduled for: 2025-12-25
+[23-Sep-2025 00:27:37 UTC] Mark paid - Check-in reminder scheduled for: 2025-12-31
+[23-Sep-2025 00:27:37 UTC] Mark paid - Housekeeping notice scheduled for: 2026-01-01
+[23-Sep-2025 00:27:37 UTC] Mark paid - Database transaction committed
+[23-Sep-2025 00:27:38 UTC] Confirmation email sent successfully to: wardy@bigpond.com
+[23-Sep-2025 00:27:38 UTC] Email schedule ID 13 marked as sent
+[23-Sep-2025 00:27:38 UTC] Mark paid - Confirmation email sent and marked as sent
+[23-Sep-2025 00:32:29 UTC] Price calc - Input booking data: {"apartment_id":"2","checkin_date":"2026-01-01","checkout_date":"2026-01-03","sofa_bed":false,"extras":["4","3"]}
+[23-Sep-2025 00:32:29 UTC] Price calc - Apartment 2 base rate: 70 * 2 nights = 140
+[23-Sep-2025 00:32:29 UTC] Price calc - No sofa bed selected (value was: false)
+[23-Sep-2025 00:32:29 UTC] Price calc - Processing extras: ["4","3"]
+[23-Sep-2025 00:32:29 UTC] Price calc - One-time extra 'Airport Drop-off': 25 = 25
+[23-Sep-2025 00:32:29 UTC] Price calc - One-time extra 'Airport Pickup': 35 = 35
+[23-Sep-2025 00:32:29 UTC] Price calc - Final total: 200
+[23-Sep-2025 01:08:07 UTC] Booking Process - Raw POST data: {"apartment_id":"1","checkin_date":"2026-01-01","checkout_date":"2026-01-03","guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","sofa_bed":"1"}
+[23-Sep-2025 01:08:07 UTC] Booking Process - Processed sofa_bed: true
+[23-Sep-2025 01:08:07 UTC] Booking Process - Processed extras: []
+[23-Sep-2025 01:08:07 UTC] Price calc - Input booking data: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":1,"checkin_date":"2026-01-01","checkout_date":"2026-01-03","sofa_bed":true,"extras":[]}
+[23-Sep-2025 01:08:07 UTC] Price calc - Apartment 1 base rate: 70 * 2 nights = 140
+[23-Sep-2025 01:08:07 UTC] Price calc - Sofa bed: 5 * 2 nights = 10
+[23-Sep-2025 01:08:07 UTC] Price calc - No extras selected
+[23-Sep-2025 01:08:07 UTC] Price calc - Final total: 150
+[23-Sep-2025 01:08:07 UTC] Single apartment booking - total: 150
+[23-Sep-2025 01:08:07 UTC] Session booking data: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":1,"checkin_date":"2026-01-01","checkout_date":"2026-01-03","sofa_bed":true,"extras":[]}
+[23-Sep-2025 01:08:07 UTC] Session amount due: 150
+[23-Sep-2025 01:08:08 UTC] Get session booking - Session data: {"booking":{"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":1,"checkin_date":"2026-01-01","checkout_date":"2026-01-03","sofa_bed":true,"extras":[]},"amount_due":150,"price_breakdown":{"total":150,"nights":2,"breakdown":{"base_rate":140,"sofa_bed":10,"extras":0,"discount":0,"nights":2,"apartments":[1]}},"csrf_token":"14d05f72ab53edae817389edcdf431863804b49b65ab7f0607c4c5929a3417a7"}
+[23-Sep-2025 01:08:08 UTC] Get session booking - Raw booking: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":1,"checkin_date":"2026-01-01","checkout_date":"2026-01-03","sofa_bed":true,"extras":[]}
+[23-Sep-2025 01:08:08 UTC] Get session booking - Stored apartment ID: 1
+[23-Sep-2025 01:08:08 UTC] Get session booking - Calculating for single apartment: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":1,"checkin_date":"2026-01-01","checkout_date":"2026-01-03","sofa_bed":true,"extras":[]}
+[23-Sep-2025 01:08:08 UTC] Price calc - Input booking data: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":1,"checkin_date":"2026-01-01","checkout_date":"2026-01-03","sofa_bed":true,"extras":[]}
+[23-Sep-2025 01:08:08 UTC] Price calc - Apartment 1 base rate: 70 * 2 nights = 140
+[23-Sep-2025 01:08:08 UTC] Price calc - Sofa bed: 5 * 2 nights = 10
+[23-Sep-2025 01:08:08 UTC] Price calc - No extras selected
+[23-Sep-2025 01:08:08 UTC] Price calc - Final total: 150
+[23-Sep-2025 01:08:08 UTC] Get session booking - Single apartment total: 150
+[23-Sep-2025 01:08:08 UTC] Get session booking - Final output: total=150, deposit=30, is_deposit=true, amount_due=30
+[23-Sep-2025 01:08:49 UTC] Mark paid - Processing paypal payment
+[23-Sep-2025 01:08:49 UTC] Mark paid - Booking data: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":1,"checkin_date":"2026-01-01","checkout_date":"2026-01-03","sofa_bed":true,"extras":[]}
+[23-Sep-2025 01:08:49 UTC] Price calc - Input booking data: {"guest_first_name":"Barbara","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"+61475422459","guest_address":"53 Long Street","apartment_id":1,"checkin_date":"2026-01-01","checkout_date":"2026-01-03","sofa_bed":true,"extras":[]}
+[23-Sep-2025 01:08:49 UTC] Price calc - Apartment 1 base rate: 70 * 2 nights = 140
+[23-Sep-2025 01:08:49 UTC] Price calc - Sofa bed: 5 * 2 nights = 10
+[23-Sep-2025 01:08:49 UTC] Price calc - No extras selected
+[23-Sep-2025 01:08:49 UTC] Price calc - Final total: 150
+[23-Sep-2025 01:08:49 UTC] Mark paid - Total: 150, Amount paid: 30, Deposit only: yes
+[23-Sep-2025 01:08:49 UTC] Mark paid - PayPal transaction ID: 47477883MP3153454
+[23-Sep-2025 01:08:49 UTC] Mark paid - Generated reservation number: BB68D1F321D795A
+[23-Sep-2025 01:08:49 UTC] Mark paid - Created booking ID: 64
+[23-Sep-2025 01:08:49 UTC] Mark paid - Payment record inserted
+[23-Sep-2025 01:08:49 UTC] Mark paid - Confirmation email scheduled
+[23-Sep-2025 01:08:49 UTC] Mark paid - Balance reminder scheduled for: 2025-12-25
+[23-Sep-2025 01:08:49 UTC] Mark paid - Check-in reminder scheduled for: 2025-12-31
+[23-Sep-2025 01:08:49 UTC] Mark paid - Housekeeping notice scheduled for: 2026-01-01
+[23-Sep-2025 01:08:49 UTC] Mark paid - Database transaction committed
+[23-Sep-2025 01:08:50 UTC] Confirmation email sent successfully to: wardy@bigpond.com
+[23-Sep-2025 01:08:50 UTC] Email schedule ID 17 marked as sent
+[23-Sep-2025 01:08:50 UTC] Mark paid - Confirmation email sent and marked as sent
+[23-Sep-2025 01:20:54 UTC] PayPal balance payment successful: 120 AUD for reservation BB68D1F321D795A
+[23-Sep-2025 01:21:41 UTC] Booking Process - Raw POST data: {"apartment_id":"1","checkin_date":"2026-01-03","checkout_date":"2026-01-04","guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","sofa_bed":"1"}
+[23-Sep-2025 01:21:41 UTC] Booking Process - Processed sofa_bed: true
+[23-Sep-2025 01:21:41 UTC] Booking Process - Processed extras: []
+[23-Sep-2025 01:21:41 UTC] Price calc - Input booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2026-01-03","checkout_date":"2026-01-04","sofa_bed":true,"extras":[]}
+[23-Sep-2025 01:21:41 UTC] Price calc - Apartment 1 base rate: 70 * 1 nights = 70
+[23-Sep-2025 01:21:41 UTC] Price calc - Sofa bed: 5 * 1 nights = 5
+[23-Sep-2025 01:21:41 UTC] Price calc - No extras selected
+[23-Sep-2025 01:21:41 UTC] Price calc - Final total: 75
+[23-Sep-2025 01:21:41 UTC] Single apartment booking - total: 75
+[23-Sep-2025 01:21:41 UTC] Session booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2026-01-03","checkout_date":"2026-01-04","sofa_bed":true,"extras":[]}
+[23-Sep-2025 01:21:41 UTC] Session amount due: 75
+[23-Sep-2025 01:21:42 UTC] Get session booking - Session data: {"csrf_token":"14d05f72ab53edae817389edcdf431863804b49b65ab7f0607c4c5929a3417a7","admin_logged_in":true,"booking":{"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2026-01-03","checkout_date":"2026-01-04","sofa_bed":true,"extras":[]},"amount_due":75,"price_breakdown":{"total":75,"nights":1,"breakdown":{"base_rate":70,"sofa_bed":5,"extras":0,"discount":0,"nights":1,"apartments":[1]}}}
+[23-Sep-2025 01:21:42 UTC] Get session booking - Raw booking: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2026-01-03","checkout_date":"2026-01-04","sofa_bed":true,"extras":[]}
+[23-Sep-2025 01:21:42 UTC] Get session booking - Stored apartment ID: 1
+[23-Sep-2025 01:21:42 UTC] Get session booking - Calculating for single apartment: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2026-01-03","checkout_date":"2026-01-04","sofa_bed":true,"extras":[]}
+[23-Sep-2025 01:21:42 UTC] Price calc - Input booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2026-01-03","checkout_date":"2026-01-04","sofa_bed":true,"extras":[]}
+[23-Sep-2025 01:21:42 UTC] Price calc - Apartment 1 base rate: 70 * 1 nights = 70
+[23-Sep-2025 01:21:42 UTC] Price calc - Sofa bed: 5 * 1 nights = 5
+[23-Sep-2025 01:21:42 UTC] Price calc - No extras selected
+[23-Sep-2025 01:21:42 UTC] Price calc - Final total: 75
+[23-Sep-2025 01:21:42 UTC] Get session booking - Single apartment total: 75
+[23-Sep-2025 01:21:42 UTC] Get session booking - Final output: total=75, deposit=15, is_deposit=true, amount_due=15
+[23-Sep-2025 01:22:00 UTC] Square payment - Initial session: {"csrf_token":"14d05f72ab53edae817389edcdf431863804b49b65ab7f0607c4c5929a3417a7","admin_logged_in":true,"booking":{"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2026-01-03","checkout_date":"2026-01-04","sofa_bed":true,"extras":[]},"amount_due":75,"price_breakdown":{"total":75,"nights":1,"breakdown":{"base_rate":70,"sofa_bed":5,"extras":0,"discount":0,"nights":1,"apartments":[1]}}}
+[23-Sep-2025 01:22:00 UTC] Square payment - Booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2026-01-03","checkout_date":"2026-01-04","sofa_bed":true,"extras":[]}
+[23-Sep-2025 01:22:00 UTC] Square payment - Apartment ID: 1
+[23-Sep-2025 01:22:00 UTC] Price calc - Input booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2026-01-03","checkout_date":"2026-01-04","sofa_bed":true,"extras":[]}
+[23-Sep-2025 01:22:00 UTC] Price calc - Apartment 1 base rate: 70 * 1 nights = 70
+[23-Sep-2025 01:22:00 UTC] Price calc - Sofa bed: 5 * 1 nights = 5
+[23-Sep-2025 01:22:00 UTC] Price calc - No extras selected
+[23-Sep-2025 01:22:00 UTC] Price calc - Final total: 75
+[23-Sep-2025 01:22:00 UTC] Square payment - Total calculated: 75
+[23-Sep-2025 01:22:00 UTC] Square payment - Days until checkin: 101, deposit only: yes
+[23-Sep-2025 01:22:00 UTC] Square payment - Amount to charge: 15
+[23-Sep-2025 01:22:00 UTC] Square payment - Amount in cents: 1500
+[23-Sep-2025 01:22:02 UTC] Square payment - Payment successful
+[23-Sep-2025 01:22:02 UTC] Square payment - Generated reservation number: BB68D1F63A61280
+[23-Sep-2025 01:22:02 UTC] Square payment - Created booking ID: 65
+[23-Sep-2025 01:22:02 UTC] Square payment - Payment record inserted
+[23-Sep-2025 01:22:02 UTC] Square payment - Confirmation email scheduled
+[23-Sep-2025 01:22:02 UTC] Square payment - Balance reminder scheduled for: 2025-12-27
+[23-Sep-2025 01:22:02 UTC] Square payment - Check-in reminder scheduled for: 2026-01-02
+[23-Sep-2025 01:22:02 UTC] Square payment - Housekeeping notice scheduled for: 2026-01-03
+[23-Sep-2025 01:22:02 UTC] Square payment - Database transaction committed
+[23-Sep-2025 01:22:02 UTC] Confirmation email sent successfully to: wardy@bigpond.com
+[23-Sep-2025 01:22:02 UTC] Email schedule ID 21 marked as sent
+[23-Sep-2025 01:22:02 UTC] Square payment - Confirmation email sent and marked as sent
+[23-Sep-2025 01:36:32 UTC] Price calc - Input booking data: {"apartment_id":"1","checkin_date":"2026-01-03","checkout_date":"2026-01-04","sofa_bed":true,"extras":["4","3"]}
+[23-Sep-2025 01:36:32 UTC] Price calc - Apartment 1 base rate: 70 * 1 nights = 70
+[23-Sep-2025 01:36:32 UTC] Price calc - Sofa bed: 5 * 1 nights = 5
+[23-Sep-2025 01:36:32 UTC] Price calc - Processing extras: ["4","3"]
+[23-Sep-2025 01:36:32 UTC] Price calc - One-time extra 'Airport Drop-off': 25 = 25
+[23-Sep-2025 01:36:32 UTC] Price calc - One-time extra 'Airport Pickup': 35 = 35
+[23-Sep-2025 01:36:32 UTC] Price calc - Final total: 135
+[23-Sep-2025 01:37:19 UTC] PayPal balance payment successful: 60 AUD for reservation BB68D1F63A61280
+[24-Sep-2025 16:00:41 UTC] Booking Process - Raw POST data: {"apartment_id":"2","checkin_date":"2025-10-02","checkout_date":"2025-10-04","guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","sofa_bed":"1","extras":["3","4"]}
+[24-Sep-2025 16:00:41 UTC] Booking Process - Processed sofa_bed: true
+[24-Sep-2025 16:00:41 UTC] Booking Process - Processed extras: [3,4]
+[24-Sep-2025 16:00:41 UTC] Price calc - Input booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2025-10-02","checkout_date":"2025-10-04","sofa_bed":true,"extras":[3,4]}
+[24-Sep-2025 16:00:41 UTC] Price calc - Apartment 2 base rate: 70 * 2 nights = 140
+[24-Sep-2025 16:00:41 UTC] Price calc - Sofa bed: 5 * 2 nights = 10
+[24-Sep-2025 16:00:41 UTC] Price calc - Processing extras: [3,4]
+[24-Sep-2025 16:00:41 UTC] Price calc - One-time extra 'Airport Pickup': 35 = 35
+[24-Sep-2025 16:00:41 UTC] Price calc - One-time extra 'Airport Drop-off': 25 = 25
+[24-Sep-2025 16:00:41 UTC] Price calc - Final total: 210
+[24-Sep-2025 16:00:41 UTC] Single apartment booking - total: 210
+[24-Sep-2025 16:00:41 UTC] Session booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2025-10-02","checkout_date":"2025-10-04","sofa_bed":true,"extras":[3,4]}
+[24-Sep-2025 16:00:41 UTC] Session amount due: 210
+[24-Sep-2025 16:00:44 UTC] Get session booking - Session data: {"booking":{"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2025-10-02","checkout_date":"2025-10-04","sofa_bed":true,"extras":[3,4]},"amount_due":210,"price_breakdown":{"total":210,"nights":2,"breakdown":{"base_rate":140,"sofa_bed":10,"extras":60,"discount":0,"nights":2,"apartments":[2]}},"csrf_token":"a3938ba63c9c6bf23a5e1d4e560251bcb8c6adbe3c6d1a1654a86e47ecc2e1f0"}
+[24-Sep-2025 16:00:44 UTC] Get session booking - Raw booking: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2025-10-02","checkout_date":"2025-10-04","sofa_bed":true,"extras":[3,4]}
+[24-Sep-2025 16:00:44 UTC] Get session booking - Stored apartment ID: 2
+[24-Sep-2025 16:00:44 UTC] Get session booking - Calculating for single apartment: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2025-10-02","checkout_date":"2025-10-04","sofa_bed":true,"extras":[3,4]}
+[24-Sep-2025 16:00:44 UTC] Price calc - Input booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2025-10-02","checkout_date":"2025-10-04","sofa_bed":true,"extras":[3,4]}
+[24-Sep-2025 16:00:44 UTC] Price calc - Apartment 2 base rate: 70 * 2 nights = 140
+[24-Sep-2025 16:00:44 UTC] Price calc - Sofa bed: 5 * 2 nights = 10
+[24-Sep-2025 16:00:44 UTC] Price calc - Processing extras: [3,4]
+[24-Sep-2025 16:00:44 UTC] Price calc - One-time extra 'Airport Pickup': 35 = 35
+[24-Sep-2025 16:00:44 UTC] Price calc - One-time extra 'Airport Drop-off': 25 = 25
+[24-Sep-2025 16:00:44 UTC] Price calc - Final total: 210
+[24-Sep-2025 16:00:44 UTC] Get session booking - Single apartment total: 210
+[24-Sep-2025 16:00:44 UTC] Get session booking - Final output: total=210, deposit=42, is_deposit=false, amount_due=210
+[24-Sep-2025 16:01:23 UTC] Mark paid - Processing paypal payment
+[24-Sep-2025 16:01:23 UTC] Mark paid - Booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2025-10-02","checkout_date":"2025-10-04","sofa_bed":true,"extras":[3,4]}
+[24-Sep-2025 16:01:23 UTC] Price calc - Input booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2025-10-02","checkout_date":"2025-10-04","sofa_bed":true,"extras":[3,4]}
+[24-Sep-2025 16:01:23 UTC] Price calc - Apartment 2 base rate: 70 * 2 nights = 140
+[24-Sep-2025 16:01:23 UTC] Price calc - Sofa bed: 5 * 2 nights = 10
+[24-Sep-2025 16:01:23 UTC] Price calc - Processing extras: [3,4]
+[24-Sep-2025 16:01:23 UTC] Price calc - One-time extra 'Airport Pickup': 35 = 35
+[24-Sep-2025 16:01:23 UTC] Price calc - One-time extra 'Airport Drop-off': 25 = 25
+[24-Sep-2025 16:01:23 UTC] Price calc - Final total: 210
+[24-Sep-2025 16:01:23 UTC] Mark paid - Total: 210, Amount paid: 210, Deposit only: no
+[24-Sep-2025 16:01:23 UTC] Mark paid - PayPal transaction ID: 25D25456UL914963L
+[24-Sep-2025 16:01:23 UTC] Mark paid - Generated reservation number: BB68D415D396E5D
+[24-Sep-2025 16:01:23 UTC] Mark paid - Created booking ID: 66
+[24-Sep-2025 16:01:23 UTC] Mark paid - Added extra 3
+[24-Sep-2025 16:01:23 UTC] Mark paid - Added extra 4
+[24-Sep-2025 16:01:23 UTC] Mark paid - Payment record inserted
+[24-Sep-2025 16:01:23 UTC] Mark paid - Confirmation email scheduled
+[24-Sep-2025 16:01:23 UTC] Mark paid - Check-in reminder scheduled for: 2025-10-01
+[24-Sep-2025 16:01:23 UTC] Mark paid - Housekeeping notice scheduled for: 2025-10-02
+[24-Sep-2025 16:01:23 UTC] Mark paid - Database transaction committed
+[24-Sep-2025 16:01:23 UTC] Confirmation email sent successfully to: wardy@bigpond.com
+[24-Sep-2025 16:01:23 UTC] Email schedule ID 25 marked as sent
+[24-Sep-2025 16:01:23 UTC] Mark paid - Confirmation email sent and marked as sent
+[24-Sep-2025 16:03:59 UTC] Price calc - Input booking data: {"apartment_id":"2","checkin_date":"2025-10-02","checkout_date":"2025-10-04","sofa_bed":true,"extras":["3","4","5"]}
+[24-Sep-2025 16:03:59 UTC] Price calc - Apartment 2 base rate: 70 * 2 nights = 140
+[24-Sep-2025 16:03:59 UTC] Price calc - Sofa bed: 5 * 2 nights = 10
+[24-Sep-2025 16:03:59 UTC] Price calc - Processing extras: ["3","4","5"]
+[24-Sep-2025 16:03:59 UTC] Price calc - One-time extra 'Airport Pickup': 35 = 35
+[24-Sep-2025 16:03:59 UTC] Price calc - One-time extra 'Airport Drop-off': 25 = 25
+[24-Sep-2025 16:03:59 UTC] Price calc - One-time extra 'Late Checkout': 40 = 40
+[24-Sep-2025 16:03:59 UTC] Price calc - Final total: 250
+[24-Sep-2025 16:04:35 UTC] PayPal balance payment successful: 40 AUD for reservation BB68D415D396E5D
+[25-Sep-2025 22:10:33 UTC] Booking Process - Raw POST data: {"apartment_id":"2","checkin_date":"2026-05-07","checkout_date":"2026-05-16","guest_first_name":"Shannon","guest_last_name":"Ward","guest_email":"war0028@outlook.com","guest_phone":"+61402677806","guest_address":"40 Sonia Crescent","sofa_bed":"1","extras":["3","4"]}
+[25-Sep-2025 22:10:33 UTC] Booking Process - Processed sofa_bed: true
+[25-Sep-2025 22:10:33 UTC] Booking Process - Processed extras: [3,4]
+[25-Sep-2025 22:10:33 UTC] Price calc - Input booking data: {"guest_first_name":"Shannon","guest_last_name":"Ward","guest_email":"war0028@outlook.com","guest_phone":"+61402677806","guest_address":"40 Sonia Crescent","apartment_id":2,"checkin_date":"2026-05-07","checkout_date":"2026-05-16","sofa_bed":true,"extras":[3,4]}
+[25-Sep-2025 22:10:33 UTC] Price calc - Apartment 2 base rate: 70 * 9 nights = 630
+[25-Sep-2025 22:10:33 UTC] Price calc - Sofa bed: 5 * 9 nights = 45
+[25-Sep-2025 22:10:33 UTC] Price calc - Processing extras: [3,4]
+[25-Sep-2025 22:10:33 UTC] Price calc - One-time extra 'Airport Pickup': 35 = 35
+[25-Sep-2025 22:10:33 UTC] Price calc - One-time extra 'Airport Drop-off': 25 = 25
+[25-Sep-2025 22:10:33 UTC] Price calc - Final total: 735
+[25-Sep-2025 22:10:33 UTC] Single apartment booking - total: 735
+[25-Sep-2025 22:10:33 UTC] Session booking data: {"guest_first_name":"Shannon","guest_last_name":"Ward","guest_email":"war0028@outlook.com","guest_phone":"+61402677806","guest_address":"40 Sonia Crescent","apartment_id":2,"checkin_date":"2026-05-07","checkout_date":"2026-05-16","sofa_bed":true,"extras":[3,4]}
+[25-Sep-2025 22:10:33 UTC] Session amount due: 735
+[25-Sep-2025 22:10:36 UTC] Get session booking - Session data: {"booking":{"guest_first_name":"Shannon","guest_last_name":"Ward","guest_email":"war0028@outlook.com","guest_phone":"+61402677806","guest_address":"40 Sonia Crescent","apartment_id":2,"checkin_date":"2026-05-07","checkout_date":"2026-05-16","sofa_bed":true,"extras":[3,4]},"amount_due":735,"price_breakdown":{"total":735,"nights":9,"breakdown":{"base_rate":630,"sofa_bed":45,"extras":60,"discount":0,"nights":9,"apartments":[2]}},"csrf_token":"29e4a4bb88bfd0c874887d645363433261a22c14b5eeaadcb37013efce9e323a"}
+[25-Sep-2025 22:10:36 UTC] Get session booking - Raw booking: {"guest_first_name":"Shannon","guest_last_name":"Ward","guest_email":"war0028@outlook.com","guest_phone":"+61402677806","guest_address":"40 Sonia Crescent","apartment_id":2,"checkin_date":"2026-05-07","checkout_date":"2026-05-16","sofa_bed":true,"extras":[3,4]}
+[25-Sep-2025 22:10:36 UTC] Get session booking - Stored apartment ID: 2
+[25-Sep-2025 22:10:36 UTC] Get session booking - Calculating for single apartment: {"guest_first_name":"Shannon","guest_last_name":"Ward","guest_email":"war0028@outlook.com","guest_phone":"+61402677806","guest_address":"40 Sonia Crescent","apartment_id":2,"checkin_date":"2026-05-07","checkout_date":"2026-05-16","sofa_bed":true,"extras":[3,4]}
+[25-Sep-2025 22:10:36 UTC] Price calc - Input booking data: {"guest_first_name":"Shannon","guest_last_name":"Ward","guest_email":"war0028@outlook.com","guest_phone":"+61402677806","guest_address":"40 Sonia Crescent","apartment_id":2,"checkin_date":"2026-05-07","checkout_date":"2026-05-16","sofa_bed":true,"extras":[3,4]}
+[25-Sep-2025 22:10:36 UTC] Price calc - Apartment 2 base rate: 70 * 9 nights = 630
+[25-Sep-2025 22:10:36 UTC] Price calc - Sofa bed: 5 * 9 nights = 45
+[25-Sep-2025 22:10:36 UTC] Price calc - Processing extras: [3,4]
+[25-Sep-2025 22:10:36 UTC] Price calc - One-time extra 'Airport Pickup': 35 = 35
+[25-Sep-2025 22:10:36 UTC] Price calc - One-time extra 'Airport Drop-off': 25 = 25
+[25-Sep-2025 22:10:36 UTC] Price calc - Final total: 735
+[25-Sep-2025 22:10:36 UTC] Get session booking - Single apartment total: 735
+[25-Sep-2025 22:10:36 UTC] Get session booking - Final output: total=735, deposit=147, is_deposit=true, amount_due=147
+[25-Sep-2025 22:11:24 UTC] Square payment - Initial session: {"booking":{"guest_first_name":"Shannon","guest_last_name":"Ward","guest_email":"war0028@outlook.com","guest_phone":"+61402677806","guest_address":"40 Sonia Crescent","apartment_id":2,"checkin_date":"2026-05-07","checkout_date":"2026-05-16","sofa_bed":true,"extras":[3,4]},"amount_due":735,"price_breakdown":{"total":735,"nights":9,"breakdown":{"base_rate":630,"sofa_bed":45,"extras":60,"discount":0,"nights":9,"apartments":[2]}},"csrf_token":"29e4a4bb88bfd0c874887d645363433261a22c14b5eeaadcb37013efce9e323a"}
+[25-Sep-2025 22:11:24 UTC] Square payment - Booking data: {"guest_first_name":"Shannon","guest_last_name":"Ward","guest_email":"war0028@outlook.com","guest_phone":"+61402677806","guest_address":"40 Sonia Crescent","apartment_id":2,"checkin_date":"2026-05-07","checkout_date":"2026-05-16","sofa_bed":true,"extras":[3,4]}
+[25-Sep-2025 22:11:24 UTC] Square payment - Apartment ID: 2
+[25-Sep-2025 22:11:24 UTC] Price calc - Input booking data: {"guest_first_name":"Shannon","guest_last_name":"Ward","guest_email":"war0028@outlook.com","guest_phone":"+61402677806","guest_address":"40 Sonia Crescent","apartment_id":2,"checkin_date":"2026-05-07","checkout_date":"2026-05-16","sofa_bed":true,"extras":[3,4]}
+[25-Sep-2025 22:11:24 UTC] Price calc - Apartment 2 base rate: 70 * 9 nights = 630
+[25-Sep-2025 22:11:24 UTC] Price calc - Sofa bed: 5 * 9 nights = 45
+[25-Sep-2025 22:11:24 UTC] Price calc - Processing extras: [3,4]
+[25-Sep-2025 22:11:24 UTC] Price calc - One-time extra 'Airport Pickup': 35 = 35
+[25-Sep-2025 22:11:24 UTC] Price calc - One-time extra 'Airport Drop-off': 25 = 25
+[25-Sep-2025 22:11:24 UTC] Price calc - Final total: 735
+[25-Sep-2025 22:11:24 UTC] Square payment - Total calculated: 735
+[25-Sep-2025 22:11:24 UTC] Square payment - Days until checkin: 223, deposit only: yes
+[25-Sep-2025 22:11:24 UTC] Square payment - Amount to charge: 147
+[25-Sep-2025 22:11:24 UTC] Square payment - Amount in cents: 14700
+[25-Sep-2025 22:11:26 UTC] Square payment - Payment successful
+[25-Sep-2025 22:11:26 UTC] Square payment - Generated reservation number: BB68D5BE0E6CED9
+[25-Sep-2025 22:11:26 UTC] Square payment - Created booking ID: 67
+[25-Sep-2025 22:11:26 UTC] Square payment - Added extra 3: success
+[25-Sep-2025 22:11:26 UTC] Square payment - Added extra 4: success
+[25-Sep-2025 22:11:26 UTC] Square payment - Payment record inserted
+[25-Sep-2025 22:11:26 UTC] Square payment - Confirmation email scheduled
+[25-Sep-2025 22:11:26 UTC] Square payment - Balance reminder scheduled for: 2026-04-30
+[25-Sep-2025 22:11:26 UTC] Square payment - Check-in reminder scheduled for: 2026-05-06
+[25-Sep-2025 22:11:26 UTC] Square payment - Housekeeping notice scheduled for: 2026-05-07
+[25-Sep-2025 22:11:26 UTC] Square payment - Database transaction committed
+[25-Sep-2025 22:11:26 UTC] Confirmation email sent successfully to: war0028@outlook.com
+[25-Sep-2025 22:11:26 UTC] Email schedule ID 28 marked as sent
+[25-Sep-2025 22:11:26 UTC] Square payment - Confirmation email sent and marked as sent
+[25-Sep-2025 22:13:17 UTC] Booking Process - Raw POST data: {"apartment_id":"1","checkin_date":"2026-05-08","checkout_date":"2026-05-15","guest_first_name":"Shannon","guest_last_name":"Ward","guest_email":"war0028@outlook.com","guest_phone":"+61402677806","guest_address":"40 Sonia Crescent"}
+[25-Sep-2025 22:13:17 UTC] Booking Process - Processed sofa_bed: false
+[25-Sep-2025 22:13:17 UTC] Booking Process - Processed extras: []
+[25-Sep-2025 22:13:17 UTC] Price calc - Input booking data: {"guest_first_name":"Shannon","guest_last_name":"Ward","guest_email":"war0028@outlook.com","guest_phone":"+61402677806","guest_address":"40 Sonia Crescent","apartment_id":1,"checkin_date":"2026-05-08","checkout_date":"2026-05-15","sofa_bed":false,"extras":[]}
+[25-Sep-2025 22:13:17 UTC] Price calc - Apartment 1 base rate: 70 * 7 nights = 490
+[25-Sep-2025 22:13:17 UTC] Price calc - No sofa bed selected (value was: false)
+[25-Sep-2025 22:13:17 UTC] Price calc - No extras selected
+[25-Sep-2025 22:13:17 UTC] Price calc - Final total: 490
+[25-Sep-2025 22:13:17 UTC] Single apartment booking - total: 490
+[25-Sep-2025 22:13:17 UTC] Session booking data: {"guest_first_name":"Shannon","guest_last_name":"Ward","guest_email":"war0028@outlook.com","guest_phone":"+61402677806","guest_address":"40 Sonia Crescent","apartment_id":1,"checkin_date":"2026-05-08","checkout_date":"2026-05-15","sofa_bed":false,"extras":[]}
+[25-Sep-2025 22:13:17 UTC] Session amount due: 490
+[25-Sep-2025 22:13:18 UTC] Get session booking - Session data: {"csrf_token":"29e4a4bb88bfd0c874887d645363433261a22c14b5eeaadcb37013efce9e323a","booking":{"guest_first_name":"Shannon","guest_last_name":"Ward","guest_email":"war0028@outlook.com","guest_phone":"+61402677806","guest_address":"40 Sonia Crescent","apartment_id":1,"checkin_date":"2026-05-08","checkout_date":"2026-05-15","sofa_bed":false,"extras":[]},"amount_due":490,"price_breakdown":{"total":490,"nights":7,"breakdown":{"base_rate":490,"sofa_bed":0,"extras":0,"discount":0,"nights":7,"apartments":[1]}}}
+[25-Sep-2025 22:13:18 UTC] Get session booking - Raw booking: {"guest_first_name":"Shannon","guest_last_name":"Ward","guest_email":"war0028@outlook.com","guest_phone":"+61402677806","guest_address":"40 Sonia Crescent","apartment_id":1,"checkin_date":"2026-05-08","checkout_date":"2026-05-15","sofa_bed":false,"extras":[]}
+[25-Sep-2025 22:13:18 UTC] Get session booking - Stored apartment ID: 1
+[25-Sep-2025 22:13:18 UTC] Get session booking - Calculating for single apartment: {"guest_first_name":"Shannon","guest_last_name":"Ward","guest_email":"war0028@outlook.com","guest_phone":"+61402677806","guest_address":"40 Sonia Crescent","apartment_id":1,"checkin_date":"2026-05-08","checkout_date":"2026-05-15","sofa_bed":false,"extras":[]}
+[25-Sep-2025 22:13:18 UTC] Price calc - Input booking data: {"guest_first_name":"Shannon","guest_last_name":"Ward","guest_email":"war0028@outlook.com","guest_phone":"+61402677806","guest_address":"40 Sonia Crescent","apartment_id":1,"checkin_date":"2026-05-08","checkout_date":"2026-05-15","sofa_bed":false,"extras":[]}
+[25-Sep-2025 22:13:18 UTC] Price calc - Apartment 1 base rate: 70 * 7 nights = 490
+[25-Sep-2025 22:13:18 UTC] Price calc - No sofa bed selected (value was: false)
+[25-Sep-2025 22:13:18 UTC] Price calc - No extras selected
+[25-Sep-2025 22:13:18 UTC] Price calc - Final total: 490
+[25-Sep-2025 22:13:18 UTC] Get session booking - Single apartment total: 490
+[25-Sep-2025 22:13:18 UTC] Get session booking - Final output: total=490, deposit=98, is_deposit=true, amount_due=98
+[25-Sep-2025 22:14:46 UTC] Booking Process - Raw POST data: {"apartment_id":"1","checkin_date":"2026-05-08","checkout_date":"2026-05-15","guest_first_name":"Shannon","guest_last_name":"Ward","guest_email":"war0028@outlook.com","guest_phone":"+61402677806","guest_address":"40 Sonia Crescent","sofa_bed":"1"}
+[25-Sep-2025 22:14:46 UTC] Booking Process - Processed sofa_bed: true
+[25-Sep-2025 22:14:46 UTC] Booking Process - Processed extras: []
+[25-Sep-2025 22:14:46 UTC] Price calc - Input booking data: {"guest_first_name":"Shannon","guest_last_name":"Ward","guest_email":"war0028@outlook.com","guest_phone":"+61402677806","guest_address":"40 Sonia Crescent","apartment_id":1,"checkin_date":"2026-05-08","checkout_date":"2026-05-15","sofa_bed":true,"extras":[]}
+[25-Sep-2025 22:14:46 UTC] Price calc - Apartment 1 base rate: 70 * 7 nights = 490
+[25-Sep-2025 22:14:46 UTC] Price calc - Sofa bed: 5 * 7 nights = 35
+[25-Sep-2025 22:14:46 UTC] Price calc - No extras selected
+[25-Sep-2025 22:14:46 UTC] Price calc - Final total: 525
+[25-Sep-2025 22:14:46 UTC] Single apartment booking - total: 525
+[25-Sep-2025 22:14:46 UTC] Session booking data: {"guest_first_name":"Shannon","guest_last_name":"Ward","guest_email":"war0028@outlook.com","guest_phone":"+61402677806","guest_address":"40 Sonia Crescent","apartment_id":1,"checkin_date":"2026-05-08","checkout_date":"2026-05-15","sofa_bed":true,"extras":[]}
+[25-Sep-2025 22:14:46 UTC] Session amount due: 525
+[25-Sep-2025 22:14:46 UTC] Get session booking - Session data: {"csrf_token":"29e4a4bb88bfd0c874887d645363433261a22c14b5eeaadcb37013efce9e323a","booking":{"guest_first_name":"Shannon","guest_last_name":"Ward","guest_email":"war0028@outlook.com","guest_phone":"+61402677806","guest_address":"40 Sonia Crescent","apartment_id":1,"checkin_date":"2026-05-08","checkout_date":"2026-05-15","sofa_bed":true,"extras":[]},"amount_due":525,"price_breakdown":{"total":525,"nights":7,"breakdown":{"base_rate":490,"sofa_bed":35,"extras":0,"discount":0,"nights":7,"apartments":[1]}}}
+[25-Sep-2025 22:14:46 UTC] Get session booking - Raw booking: {"guest_first_name":"Shannon","guest_last_name":"Ward","guest_email":"war0028@outlook.com","guest_phone":"+61402677806","guest_address":"40 Sonia Crescent","apartment_id":1,"checkin_date":"2026-05-08","checkout_date":"2026-05-15","sofa_bed":true,"extras":[]}
+[25-Sep-2025 22:14:46 UTC] Get session booking - Stored apartment ID: 1
+[25-Sep-2025 22:14:46 UTC] Get session booking - Calculating for single apartment: {"guest_first_name":"Shannon","guest_last_name":"Ward","guest_email":"war0028@outlook.com","guest_phone":"+61402677806","guest_address":"40 Sonia Crescent","apartment_id":1,"checkin_date":"2026-05-08","checkout_date":"2026-05-15","sofa_bed":true,"extras":[]}
+[25-Sep-2025 22:14:46 UTC] Price calc - Input booking data: {"guest_first_name":"Shannon","guest_last_name":"Ward","guest_email":"war0028@outlook.com","guest_phone":"+61402677806","guest_address":"40 Sonia Crescent","apartment_id":1,"checkin_date":"2026-05-08","checkout_date":"2026-05-15","sofa_bed":true,"extras":[]}
+[25-Sep-2025 22:14:46 UTC] Price calc - Apartment 1 base rate: 70 * 7 nights = 490
+[25-Sep-2025 22:14:46 UTC] Price calc - Sofa bed: 5 * 7 nights = 35
+[25-Sep-2025 22:14:46 UTC] Price calc - No extras selected
+[25-Sep-2025 22:14:46 UTC] Price calc - Final total: 525
+[25-Sep-2025 22:14:46 UTC] Get session booking - Single apartment total: 525
+[25-Sep-2025 22:14:46 UTC] Get session booking - Final output: total=525, deposit=105, is_deposit=true, amount_due=105
+[25-Sep-2025 22:15:17 UTC] Square payment - Initial session: {"csrf_token":"29e4a4bb88bfd0c874887d645363433261a22c14b5eeaadcb37013efce9e323a","booking":{"guest_first_name":"Shannon","guest_last_name":"Ward","guest_email":"war0028@outlook.com","guest_phone":"+61402677806","guest_address":"40 Sonia Crescent","apartment_id":1,"checkin_date":"2026-05-08","checkout_date":"2026-05-15","sofa_bed":true,"extras":[]},"amount_due":525,"price_breakdown":{"total":525,"nights":7,"breakdown":{"base_rate":490,"sofa_bed":35,"extras":0,"discount":0,"nights":7,"apartments":[1]}}}
+[25-Sep-2025 22:15:17 UTC] Square payment - Booking data: {"guest_first_name":"Shannon","guest_last_name":"Ward","guest_email":"war0028@outlook.com","guest_phone":"+61402677806","guest_address":"40 Sonia Crescent","apartment_id":1,"checkin_date":"2026-05-08","checkout_date":"2026-05-15","sofa_bed":true,"extras":[]}
+[25-Sep-2025 22:15:17 UTC] Square payment - Apartment ID: 1
+[25-Sep-2025 22:15:17 UTC] Price calc - Input booking data: {"guest_first_name":"Shannon","guest_last_name":"Ward","guest_email":"war0028@outlook.com","guest_phone":"+61402677806","guest_address":"40 Sonia Crescent","apartment_id":1,"checkin_date":"2026-05-08","checkout_date":"2026-05-15","sofa_bed":true,"extras":[]}
+[25-Sep-2025 22:15:17 UTC] Price calc - Apartment 1 base rate: 70 * 7 nights = 490
+[25-Sep-2025 22:15:17 UTC] Price calc - Sofa bed: 5 * 7 nights = 35
+[25-Sep-2025 22:15:17 UTC] Price calc - No extras selected
+[25-Sep-2025 22:15:17 UTC] Price calc - Final total: 525
+[25-Sep-2025 22:15:17 UTC] Square payment - Total calculated: 525
+[25-Sep-2025 22:15:17 UTC] Square payment - Days until checkin: 224, deposit only: yes
+[25-Sep-2025 22:15:17 UTC] Square payment - Amount to charge: 105
+[25-Sep-2025 22:15:17 UTC] Square payment - Amount in cents: 10500
+[25-Sep-2025 22:15:18 UTC] Square payment - Payment successful
+[25-Sep-2025 22:15:18 UTC] Square payment - Generated reservation number: BB68D5BEF6877C8
+[25-Sep-2025 22:15:18 UTC] Square payment - Created booking ID: 68
+[25-Sep-2025 22:15:18 UTC] Square payment - Payment record inserted
+[25-Sep-2025 22:15:18 UTC] Square payment - Confirmation email scheduled
+[25-Sep-2025 22:15:18 UTC] Square payment - Balance reminder scheduled for: 2026-05-01
+[25-Sep-2025 22:15:18 UTC] Square payment - Check-in reminder scheduled for: 2026-05-07
+[25-Sep-2025 22:15:18 UTC] Square payment - Housekeeping notice scheduled for: 2026-05-08
+[25-Sep-2025 22:15:18 UTC] Square payment - Database transaction committed
+[25-Sep-2025 22:15:18 UTC] Confirmation email sent successfully to: war0028@outlook.com
+[25-Sep-2025 22:15:18 UTC] Email schedule ID 32 marked as sent
+[25-Sep-2025 22:15:18 UTC] Square payment - Confirmation email sent and marked as sent
+[25-Sep-2025 22:18:03 UTC] Price calc - Input booking data: {"apartment_id":"2","checkin_date":"2026-04-18","checkout_date":"2026-05-07","sofa_bed":false,"extras":["4","3","5"]}
+[25-Sep-2025 22:18:03 UTC] Price calc - Apartment 2 base rate: 70 * 19 nights = 1330
+[25-Sep-2025 22:18:03 UTC] Price calc - No sofa bed selected (value was: false)
+[25-Sep-2025 22:18:03 UTC] Price calc - Processing extras: ["4","3","5"]
+[25-Sep-2025 22:18:03 UTC] Price calc - One-time extra 'Airport Drop-off': 25 = 25
+[25-Sep-2025 22:18:03 UTC] Price calc - One-time extra 'Airport Pickup': 35 = 35
+[25-Sep-2025 22:18:03 UTC] Price calc - One-time extra 'Late Checkout': 40 = 40
+[25-Sep-2025 22:18:03 UTC] Price calc - Final total: 1430
+[25-Sep-2025 22:18:03 UTC] Extras updated for booking BB68C4D646E476F: Old total: 1430.00, New total: 1430, Balance owed: 1144
+[27-Sep-2025 00:53:51 UTC] Price calc - Input booking data: {"apartment_id":"1","checkin_date":"2026-05-08","checkout_date":"2026-05-15","sofa_bed":true,"extras":["4"]}
+[27-Sep-2025 00:53:51 UTC] Price calc - Apartment 1 base rate: 70 * 7 nights = 490
+[27-Sep-2025 00:53:51 UTC] Price calc - Sofa bed: 5 * 7 nights = 35
+[27-Sep-2025 00:53:51 UTC] Price calc - Processing extras: ["4"]
+[27-Sep-2025 00:53:51 UTC] Price calc - One-time extra 'Airport Drop-off': 25 = 25
+[27-Sep-2025 00:53:51 UTC] Price calc - Final total: 550
+[27-Sep-2025 16:59:37 UTC] Booking Process - Raw POST data: {"apartment_id":"1","checkin_date":"2025-10-02","checkout_date":"2025-10-04","guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49"}
+[27-Sep-2025 16:59:37 UTC] Booking Process - Processed sofa_bed: false
+[27-Sep-2025 16:59:37 UTC] Booking Process - Processed extras: []
+[27-Sep-2025 16:59:37 UTC] Price calc - Input booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2025-10-02","checkout_date":"2025-10-04","sofa_bed":false,"extras":[]}
+[27-Sep-2025 16:59:37 UTC] Price calc - Apartment 1 base rate: 70 * 2 nights = 140
+[27-Sep-2025 16:59:37 UTC] Price calc - No sofa bed selected (value was: false)
+[27-Sep-2025 16:59:37 UTC] Price calc - No extras selected
+[27-Sep-2025 16:59:37 UTC] Price calc - Final total: 140
+[27-Sep-2025 16:59:37 UTC] Single apartment booking - total: 140
+[27-Sep-2025 16:59:37 UTC] Session booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2025-10-02","checkout_date":"2025-10-04","sofa_bed":false,"extras":[]}
+[27-Sep-2025 16:59:37 UTC] Session amount due: 140
+[27-Sep-2025 16:59:40 UTC] Get session booking - Session data: {"admin_logged_in":true,"booking":{"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2025-10-02","checkout_date":"2025-10-04","sofa_bed":false,"extras":[]},"amount_due":140,"price_breakdown":{"total":140,"nights":2,"breakdown":{"base_rate":140,"sofa_bed":0,"extras":0,"discount":0,"nights":2,"apartments":[1]}},"csrf_token":"647ed50ef9c8f8c70d11d99ab3cde1727ef187cd1c2e4fc24e20da6a6c8f85dc"}
+[27-Sep-2025 16:59:40 UTC] Get session booking - Raw booking: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2025-10-02","checkout_date":"2025-10-04","sofa_bed":false,"extras":[]}
+[27-Sep-2025 16:59:40 UTC] Get session booking - Stored apartment ID: 1
+[27-Sep-2025 16:59:40 UTC] Get session booking - Calculating for single apartment: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2025-10-02","checkout_date":"2025-10-04","sofa_bed":false,"extras":[]}
+[27-Sep-2025 16:59:40 UTC] Price calc - Input booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2025-10-02","checkout_date":"2025-10-04","sofa_bed":false,"extras":[]}
+[27-Sep-2025 16:59:40 UTC] Price calc - Apartment 1 base rate: 70 * 2 nights = 140
+[27-Sep-2025 16:59:40 UTC] Price calc - No sofa bed selected (value was: false)
+[27-Sep-2025 16:59:40 UTC] Price calc - No extras selected
+[27-Sep-2025 16:59:40 UTC] Price calc - Final total: 140
+[27-Sep-2025 16:59:40 UTC] Get session booking - Single apartment total: 140
+[27-Sep-2025 16:59:40 UTC] Get session booking - Final output: total=140, deposit=28, is_deposit=false, amount_due=140
+[27-Sep-2025 17:03:05 UTC] Booking Process - Raw POST data: {"apartment_id":"2","checkin_date":"2025-10-08","checkout_date":"2025-10-10","guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","sofa_bed":"1"}
+[27-Sep-2025 17:03:05 UTC] Booking Process - Processed sofa_bed: true
+[27-Sep-2025 17:03:05 UTC] Booking Process - Processed extras: []
+[27-Sep-2025 17:03:05 UTC] Price calc - Input booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2025-10-08","checkout_date":"2025-10-10","sofa_bed":true,"extras":[]}
+[27-Sep-2025 17:03:05 UTC] Price calc - Apartment 2 base rate: 70 * 2 nights = 140
+[27-Sep-2025 17:03:05 UTC] Price calc - Sofa bed: 5 * 2 nights = 10
+[27-Sep-2025 17:03:05 UTC] Price calc - No extras selected
+[27-Sep-2025 17:03:05 UTC] Price calc - Final total: 150
+[27-Sep-2025 17:03:05 UTC] Single apartment booking - total: 150
+[27-Sep-2025 17:03:05 UTC] Session booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2025-10-08","checkout_date":"2025-10-10","sofa_bed":true,"extras":[]}
+[27-Sep-2025 17:03:05 UTC] Session amount due: 150
+[27-Sep-2025 17:03:06 UTC] Get session booking - Session data: {"admin_logged_in":true,"booking":{"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2025-10-08","checkout_date":"2025-10-10","sofa_bed":true,"extras":[]},"amount_due":150,"price_breakdown":{"total":150,"nights":2,"breakdown":{"base_rate":140,"sofa_bed":10,"extras":0,"discount":0,"nights":2,"apartments":[2]}},"csrf_token":"647ed50ef9c8f8c70d11d99ab3cde1727ef187cd1c2e4fc24e20da6a6c8f85dc"}
+[27-Sep-2025 17:03:06 UTC] Get session booking - Raw booking: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2025-10-08","checkout_date":"2025-10-10","sofa_bed":true,"extras":[]}
+[27-Sep-2025 17:03:06 UTC] Get session booking - Stored apartment ID: 2
+[27-Sep-2025 17:03:06 UTC] Get session booking - Calculating for single apartment: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2025-10-08","checkout_date":"2025-10-10","sofa_bed":true,"extras":[]}
+[27-Sep-2025 17:03:06 UTC] Price calc - Input booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":2,"checkin_date":"2025-10-08","checkout_date":"2025-10-10","sofa_bed":true,"extras":[]}
+[27-Sep-2025 17:03:06 UTC] Price calc - Apartment 2 base rate: 70 * 2 nights = 140
+[27-Sep-2025 17:03:06 UTC] Price calc - Sofa bed: 5 * 2 nights = 10
+[27-Sep-2025 17:03:06 UTC] Price calc - No extras selected
+[27-Sep-2025 17:03:06 UTC] Price calc - Final total: 150
+[27-Sep-2025 17:03:06 UTC] Get session booking - Single apartment total: 150
+[27-Sep-2025 17:03:06 UTC] Get session booking - Final output: total=150, deposit=30, is_deposit=false, amount_due=150
+[27-Sep-2025 17:08:01 UTC] Booking Process - Raw POST data: {"apartment_id":"1","checkin_date":"2025-10-02","checkout_date":"2025-10-04","guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","sofa_bed":"1"}
+[27-Sep-2025 17:08:01 UTC] Booking Process - Processed sofa_bed: true
+[27-Sep-2025 17:08:01 UTC] Booking Process - Processed extras: []
+[27-Sep-2025 17:08:01 UTC] Price calc - Input booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2025-10-02","checkout_date":"2025-10-04","sofa_bed":true,"extras":[]}
+[27-Sep-2025 17:08:01 UTC] Price calc - Apartment 1 base rate: 70 * 2 nights = 140
+[27-Sep-2025 17:08:01 UTC] Price calc - Sofa bed: 5 * 2 nights = 10
+[27-Sep-2025 17:08:01 UTC] Price calc - No extras selected
+[27-Sep-2025 17:08:01 UTC] Price calc - Final total: 150
+[27-Sep-2025 17:08:01 UTC] Single apartment booking - total: 150
+[27-Sep-2025 17:08:01 UTC] Session booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2025-10-02","checkout_date":"2025-10-04","sofa_bed":true,"extras":[]}
+[27-Sep-2025 17:08:01 UTC] Session amount due: 150
+[27-Sep-2025 17:08:02 UTC] Get session booking - Session data: {"admin_logged_in":true,"booking":{"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2025-10-02","checkout_date":"2025-10-04","sofa_bed":true,"extras":[]},"amount_due":150,"price_breakdown":{"total":150,"nights":2,"breakdown":{"base_rate":140,"sofa_bed":10,"extras":0,"discount":0,"nights":2,"apartments":[1]}},"csrf_token":"647ed50ef9c8f8c70d11d99ab3cde1727ef187cd1c2e4fc24e20da6a6c8f85dc"}
+[27-Sep-2025 17:08:02 UTC] Get session booking - Raw booking: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2025-10-02","checkout_date":"2025-10-04","sofa_bed":true,"extras":[]}
+[27-Sep-2025 17:08:02 UTC] Get session booking - Stored apartment ID: 1
+[27-Sep-2025 17:08:02 UTC] Get session booking - Calculating for single apartment: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2025-10-02","checkout_date":"2025-10-04","sofa_bed":true,"extras":[]}
+[27-Sep-2025 17:08:02 UTC] Price calc - Input booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2025-10-02","checkout_date":"2025-10-04","sofa_bed":true,"extras":[]}
+[27-Sep-2025 17:08:02 UTC] Price calc - Apartment 1 base rate: 70 * 2 nights = 140
+[27-Sep-2025 17:08:02 UTC] Price calc - Sofa bed: 5 * 2 nights = 10
+[27-Sep-2025 17:08:02 UTC] Price calc - No extras selected
+[27-Sep-2025 17:08:02 UTC] Price calc - Final total: 150
+[27-Sep-2025 17:08:02 UTC] Get session booking - Single apartment total: 150
+[27-Sep-2025 17:08:02 UTC] Get session booking - Final output: total=150, deposit=30, is_deposit=false, amount_due=150
+[27-Sep-2025 17:20:26 UTC] Booking Process - Raw POST data: {"apartment_id":"1","checkin_date":"2025-10-02","checkout_date":"2025-10-04","guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","sofa_bed":"1"}
+[27-Sep-2025 17:20:26 UTC] Booking Process - Processed sofa_bed: true
+[27-Sep-2025 17:20:26 UTC] Booking Process - Processed extras: []
+[27-Sep-2025 17:20:26 UTC] Price calc - Input booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2025-10-02","checkout_date":"2025-10-04","sofa_bed":true,"extras":[]}
+[27-Sep-2025 17:20:26 UTC] Price calc - Apartment 1 base rate: 70 * 2 nights = 140
+[27-Sep-2025 17:20:26 UTC] Price calc - Sofa bed: 5 * 2 nights = 10
+[27-Sep-2025 17:20:26 UTC] Price calc - No extras selected
+[27-Sep-2025 17:20:26 UTC] Price calc - Final total: 150
+[27-Sep-2025 17:20:26 UTC] Single apartment booking - total: 150
+[27-Sep-2025 17:20:26 UTC] Session booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2025-10-02","checkout_date":"2025-10-04","sofa_bed":true,"extras":[]}
+[27-Sep-2025 17:20:26 UTC] Session amount due: 150
+[27-Sep-2025 17:20:27 UTC] Get session booking - Session data: {"admin_logged_in":true,"booking":{"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2025-10-02","checkout_date":"2025-10-04","sofa_bed":true,"extras":[]},"amount_due":150,"price_breakdown":{"total":150,"nights":2,"breakdown":{"base_rate":140,"sofa_bed":10,"extras":0,"discount":0,"nights":2,"apartments":[1]}},"csrf_token":"647ed50ef9c8f8c70d11d99ab3cde1727ef187cd1c2e4fc24e20da6a6c8f85dc"}
+[27-Sep-2025 17:20:27 UTC] Get session booking - Raw booking: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2025-10-02","checkout_date":"2025-10-04","sofa_bed":true,"extras":[]}
+[27-Sep-2025 17:20:27 UTC] Get session booking - Stored apartment ID: 1
+[27-Sep-2025 17:20:27 UTC] Get session booking - Calculating for single apartment: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2025-10-02","checkout_date":"2025-10-04","sofa_bed":true,"extras":[]}
+[27-Sep-2025 17:20:27 UTC] Price calc - Input booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2025-10-02","checkout_date":"2025-10-04","sofa_bed":true,"extras":[]}
+[27-Sep-2025 17:20:27 UTC] Price calc - Apartment 1 base rate: 70 * 2 nights = 140
+[27-Sep-2025 17:20:27 UTC] Price calc - Sofa bed: 5 * 2 nights = 10
+[27-Sep-2025 17:20:27 UTC] Price calc - No extras selected
+[27-Sep-2025 17:20:27 UTC] Price calc - Final total: 150
+[27-Sep-2025 17:20:27 UTC] Get session booking - Single apartment total: 150
+[27-Sep-2025 17:20:27 UTC] Get session booking - Final output: total=150, deposit=30, is_deposit=false, amount_due=150
+[27-Sep-2025 17:21:33 UTC] Square payment - Initial session: {"admin_logged_in":true,"booking":{"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2025-10-02","checkout_date":"2025-10-04","sofa_bed":true,"extras":[]},"amount_due":150,"price_breakdown":{"total":150,"nights":2,"breakdown":{"base_rate":140,"sofa_bed":10,"extras":0,"discount":0,"nights":2,"apartments":[1]}},"csrf_token":"647ed50ef9c8f8c70d11d99ab3cde1727ef187cd1c2e4fc24e20da6a6c8f85dc"}
+[27-Sep-2025 17:21:33 UTC] Square payment - Booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2025-10-02","checkout_date":"2025-10-04","sofa_bed":true,"extras":[]}
+[27-Sep-2025 17:21:33 UTC] Square payment - Apartment ID: 1
+[27-Sep-2025 17:21:33 UTC] Price calc - Input booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2025-10-02","checkout_date":"2025-10-04","sofa_bed":true,"extras":[]}
+[27-Sep-2025 17:21:33 UTC] Price calc - Apartment 1 base rate: 70 * 2 nights = 140
+[27-Sep-2025 17:21:33 UTC] Price calc - Sofa bed: 5 * 2 nights = 10
+[27-Sep-2025 17:21:33 UTC] Price calc - No extras selected
+[27-Sep-2025 17:21:33 UTC] Price calc - Final total: 150
+[27-Sep-2025 17:21:33 UTC] Square payment - Total calculated: 150
+[27-Sep-2025 17:21:33 UTC] Square payment - Days until checkin: 4, deposit only: no
+[27-Sep-2025 17:21:33 UTC] Square payment - Amount to charge: 150
+[27-Sep-2025 17:21:33 UTC] Square payment - Amount in cents: 15000
+[27-Sep-2025 17:21:35 UTC] Square payment - Payment successful
+[27-Sep-2025 17:21:35 UTC] Square payment - Generated reservation number: BB68D81D1F618CA
+[27-Sep-2025 17:21:35 UTC] Square payment - Created booking ID: 69
+[27-Sep-2025 17:21:35 UTC] Square payment - Payment record inserted
+[27-Sep-2025 17:21:35 UTC] Square payment - Confirmation email scheduled
+[27-Sep-2025 17:21:35 UTC] Square payment - Check-in reminder scheduled for: 2025-10-01
+[27-Sep-2025 17:21:35 UTC] Square payment - Housekeeping notice scheduled for: 2025-10-02
+[27-Sep-2025 17:21:35 UTC] Square payment - Database transaction committed
+[27-Sep-2025 17:21:35 UTC] Confirmation email sent successfully to: wardy@bigpond.com
+[27-Sep-2025 17:21:35 UTC] Email schedule ID 36 marked as sent
+[27-Sep-2025 17:21:35 UTC] Square payment - Confirmation email sent and marked as sent
+[27-Sep-2025 17:32:04 UTC] Booking Process - Raw POST data: {"apartment_id":"1","checkin_date":"2026-01-04","checkout_date":"2026-01-05","guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49"}
+[27-Sep-2025 17:32:04 UTC] Booking Process - Processed sofa_bed: false
+[27-Sep-2025 17:32:04 UTC] Booking Process - Processed extras: []
+[27-Sep-2025 17:32:04 UTC] Price calc - Input booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2026-01-04","checkout_date":"2026-01-05","sofa_bed":false,"extras":[]}
+[27-Sep-2025 17:32:04 UTC] Price calc - Apartment 1 base rate: 70 * 1 nights = 70
+[27-Sep-2025 17:32:04 UTC] Price calc - No sofa bed selected (value was: false)
+[27-Sep-2025 17:32:04 UTC] Price calc - No extras selected
+[27-Sep-2025 17:32:04 UTC] Price calc - Final total: 70
+[27-Sep-2025 17:32:04 UTC] Single apartment booking - total: 70
+[27-Sep-2025 17:32:04 UTC] Session booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2026-01-04","checkout_date":"2026-01-05","sofa_bed":false,"extras":[]}
+[27-Sep-2025 17:32:04 UTC] Session amount due: 70
+[27-Sep-2025 17:32:05 UTC] Get session booking - Session data: {"admin_logged_in":true,"csrf_token":"647ed50ef9c8f8c70d11d99ab3cde1727ef187cd1c2e4fc24e20da6a6c8f85dc","booking":{"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2026-01-04","checkout_date":"2026-01-05","sofa_bed":false,"extras":[]},"amount_due":70,"price_breakdown":{"total":70,"nights":1,"breakdown":{"base_rate":70,"sofa_bed":0,"extras":0,"discount":0,"nights":1,"apartments":[1]}}}
+[27-Sep-2025 17:32:05 UTC] Get session booking - Raw booking: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2026-01-04","checkout_date":"2026-01-05","sofa_bed":false,"extras":[]}
+[27-Sep-2025 17:32:05 UTC] Get session booking - Stored apartment ID: 1
+[27-Sep-2025 17:32:05 UTC] Get session booking - Calculating for single apartment: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2026-01-04","checkout_date":"2026-01-05","sofa_bed":false,"extras":[]}
+[27-Sep-2025 17:32:05 UTC] Price calc - Input booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2026-01-04","checkout_date":"2026-01-05","sofa_bed":false,"extras":[]}
+[27-Sep-2025 17:32:05 UTC] Price calc - Apartment 1 base rate: 70 * 1 nights = 70
+[27-Sep-2025 17:32:05 UTC] Price calc - No sofa bed selected (value was: false)
+[27-Sep-2025 17:32:05 UTC] Price calc - No extras selected
+[27-Sep-2025 17:32:05 UTC] Price calc - Final total: 70
+[27-Sep-2025 17:32:05 UTC] Get session booking - Single apartment total: 70
+[27-Sep-2025 17:32:05 UTC] Get session booking - Final output: total=70, deposit=14, is_deposit=true, amount_due=14
+[27-Sep-2025 17:32:24 UTC] Square payment - Initial session: {"admin_logged_in":true,"csrf_token":"647ed50ef9c8f8c70d11d99ab3cde1727ef187cd1c2e4fc24e20da6a6c8f85dc","booking":{"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2026-01-04","checkout_date":"2026-01-05","sofa_bed":false,"extras":[]},"amount_due":70,"price_breakdown":{"total":70,"nights":1,"breakdown":{"base_rate":70,"sofa_bed":0,"extras":0,"discount":0,"nights":1,"apartments":[1]}}}
+[27-Sep-2025 17:32:24 UTC] Square payment - Booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2026-01-04","checkout_date":"2026-01-05","sofa_bed":false,"extras":[]}
+[27-Sep-2025 17:32:24 UTC] Square payment - Apartment ID: 1
+[27-Sep-2025 17:32:24 UTC] Price calc - Input booking data: {"guest_first_name":"David","guest_last_name":"Ward","guest_email":"wardy@bigpond.com","guest_phone":"14066091201","guest_address":"1001 S Main St, STE 49","apartment_id":1,"checkin_date":"2026-01-04","checkout_date":"2026-01-05","sofa_bed":false,"extras":[]}
+[27-Sep-2025 17:32:24 UTC] Price calc - Apartment 1 base rate: 70 * 1 nights = 70
+[27-Sep-2025 17:32:24 UTC] Price calc - No sofa bed selected (value was: false)
+[27-Sep-2025 17:32:24 UTC] Price calc - No extras selected
+[27-Sep-2025 17:32:24 UTC] Price calc - Final total: 70
+[27-Sep-2025 17:32:24 UTC] Square payment - Total calculated: 70
+[27-Sep-2025 17:32:24 UTC] Square payment - Days until checkin: 98, deposit only: yes
+[27-Sep-2025 17:32:24 UTC] Square payment - Amount to charge: 14
+[27-Sep-2025 17:32:24 UTC] Square payment - Amount in cents: 1400
+[27-Sep-2025 17:32:25 UTC] Square payment - Payment successful
+[27-Sep-2025 17:32:25 UTC] Square payment - Generated reservation number: BB68D81FA9DC252
+[27-Sep-2025 17:32:25 UTC] Square payment - Created booking ID: 70
+[27-Sep-2025 17:32:25 UTC] Square payment - Payment record inserted
+[27-Sep-2025 17:32:25 UTC] Square payment - Confirmation email scheduled
+[27-Sep-2025 17:32:25 UTC] Square payment - Balance reminder scheduled for: 2025-12-28
+[27-Sep-2025 17:32:25 UTC] Square payment - Check-in reminder scheduled for: 2026-01-03
+[27-Sep-2025 17:32:25 UTC] Square payment - Housekeeping notice scheduled for: 2026-01-04
+[27-Sep-2025 17:32:25 UTC] Square payment - Database transaction committed
+[27-Sep-2025 17:32:26 UTC] Confirmation email sent successfully to: wardy@bigpond.com
+[27-Sep-2025 17:32:26 UTC] Email schedule ID 39 marked as sent
+[27-Sep-2025 17:32:26 UTC] Square payment - Confirmation email sent and marked as sent
